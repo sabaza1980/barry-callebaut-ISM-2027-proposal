@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/barry-callebaut/ISM-2027-proposal", "destination": "/ISM_Cologne_2027_Proposal.html" },
     { "source": "/", "destination": "/ISM_Cologne_2027_Proposal.html" }
   ]
 }
