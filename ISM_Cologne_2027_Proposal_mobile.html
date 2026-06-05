@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ISM Cologne 2027 — Agency Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ── COLOR VARIABLES ─────────────────────────────── */
+:root {
+  --bc-brown:      #3D1C02;
+  --bc-dark:       #1A0A00;
+  --bc-gold:       #C8922A;
+  --bc-gold-light: #E8B84B;
+  --bc-cream:      #FAF6EF;
+  --bc-warm:       #F5ECD8;
+  --bc-mid:        #8B5E2F;
+  --text-dark:     #1A0A00;
+  --text-mid:      #5C3D1E;
+  --text-light:    #9A7351;
+}
+
+/* ── RESET ───────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── PRINT: hide button ──────────────────────────── */
+@media print { .print-btn { display: none !important; } }
+
+/* ── COVER ───────────────────────────────────────── */
+.cover {
+  background: linear-gradient(150deg, var(--bc-dark) 0%, var(--bc-brown) 55%, #5a2a05 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 20px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,146,42,0.15);
+  pointer-events: none;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -60px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,146,42,0.1);
+  pointer-events: none;
+}
+
+.cover-logo-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+}
+#bc-logo {
+  width: 150px;
+  height: auto;
+}
+.cover-agency-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.cover-main-text {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cover-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--bc-gold);
+  margin-bottom: 16px;
+}
+.cover-accent-line {
+  width: 48px;
+  height: 3px;
+  background: var(--bc-gold);
+  margin-bottom: 24px;
+}
+.cover-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.cover-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+.cover-event-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(200,146,42,0.15);
+  border: 1px solid rgba(200,146,42,0.4);
+  border-radius: 40px;
+  padding: 10px 18px;
+  flex-wrap: wrap;
+}
+.cover-event-badge span {
+  color: var(--bc-gold-light);
+  font-size: 12px;
+  font-weight: 500;
+}
+.cover-event-badge .dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--bc-gold);
+  flex-shrink: 0;
+}
+
+.cover-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cover-meta {
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  line-height: 1.9;
+}
+.cover-meta strong { color: rgba(255,255,255,0.8); }
+.cover-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+}
+.cover-logo-text span {
+  display: block;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bc-gold);
+  margin-top: 3px;
+}
+
+/* ── SECTION WRAPPERS ────────────────────────────── */
+.section {
+  padding: 44px 20px 36px;
+}
+.section-alt {
+  background: var(--bc-cream);
+  padding: 44px 20px 36px;
+}
+.section-dark {
+  background: var(--bc-dark);
+  padding: 44px 20px 36px;
+}
+
+/* ── SECTION HEADERS ─────────────────────────────── */
+.section-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--bc-gold);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+.section-title.light { color: #fff; }
+.section-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--bc-gold);
+  margin-bottom: 20px;
+}
+.section-lead {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+.section-lead.light { color: rgba(255,255,255,0.7); }
+
+/* ── OVERVIEW CARDS ──────────────────────────────── */
+.overview-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+.overview-card {
+  background: #fff;
+  border: 1px solid rgba(61,28,2,0.08);
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-shadow: 0 2px 16px rgba(61,28,2,0.06);
+}
+.overview-card-num {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--bc-gold);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.overview-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.overview-card p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ── INTERACTIVE DEMO ────────────────────────────── */
+.demo-section {
+  background: var(--bc-cream);
+  padding: 44px 20px 36px;
+}
+.journey-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.journey-btn {
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 12px;
+  border: 2px solid rgba(61,28,2,0.2);
+  background: #fff;
+  color: var(--text-mid);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.journey-btn.active {
+  background: linear-gradient(135deg, #3d1c02, #8b5e2f);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(61,28,2,0.25);
+}
+
+.flow-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.flow-pill {
+  padding: 8px 14px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(61,28,2,0.15);
+  background: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.flow-pill:hover { border-color: var(--bc-gold); color: var(--bc-mid); }
+.flow-pill-active {
+  background: linear-gradient(135deg, #3d1c02, #8b5e2f);
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 12px rgba(61,28,2,0.25);
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.flow-screen { animation: fadeIn 0.25s ease; }
+
+.demo-frame {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 16px 60px rgba(26,10,0,0.12), 0 0 0 1px rgba(26,10,0,0.06);
+  overflow: hidden;
+}
+.browser-bar {
+  background: #f0ece8;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.browser-dots { display: flex; gap: 5px; }
+.browser-dots span {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+.dot-red   { background: #ff5f56; }
+.dot-amber { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+.browser-url {
+  flex: 1;
+  background: #fff;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #888;
+  border: 1px solid rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.demo-vp {
+  height: 400px;
+  overflow-y: auto;
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── SCOPE BLOCKS ────────────────────────────────── */
+.scope-block {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(61,28,2,0.08);
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 18px rgba(61,28,2,0.06);
+}
+.scope-header {
+  background: linear-gradient(120deg, var(--bc-brown) 0%, var(--bc-mid) 100%);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.scope-icon {
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.scope-header-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+.scope-header-text span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+.scope-body {
+  padding: 20px;
+}
+.scope-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.scope-body ul li {
+  font-size: 13px;
+  color: var(--text-mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  line-height: 1.5;
+}
+.scope-body ul li::before {
+  content: '→';
+  color: var(--bc-gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── TIMELINE ────────────────────────────────────── */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: stretch;
+}
+.timeline-month {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--bc-gold);
+  padding: 14px 12px 14px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: right;
+  border-right: 2px solid rgba(200,146,42,0.3);
+  line-height: 1.3;
+}
+.timeline-bar-wrap {
+  padding: 10px 0 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.timeline-bar {
+  height: 30px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  gap: 6px;
+  align-self: flex-start;
+}
+.bar-coordinator {
+  background: linear-gradient(90deg, var(--bc-brown), var(--bc-mid));
+  color: #fff;
+  min-width: 60px;
+}
+.timeline-days {
+  font-size: 11px;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+.timeline-header-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  margin-bottom: 6px;
+}
+.timeline-header-month {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  text-align: right;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  border-right: 2px solid rgba(200,146,42,0.3);
+}
+.timeline-header-activity {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding-left: 16px;
+  padding-bottom: 10px;
+}
+
+/* ── PROCESS STEPS ───────────────────────────────── */
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 8px;
+}
+.process-step {
+  text-align: center;
+  padding: 0 6px;
+}
+.step-num {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+.step-icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bc-brown), var(--bc-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin: 0 auto 14px;
+}
+.step-icon.gold {
+  background: linear-gradient(135deg, var(--bc-gold), var(--bc-gold-light));
+}
+.process-step h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.process-step p {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── FEE TABLE ───────────────────────────────────── */
+.fee-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+.fee-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+.fee-table thead tr {
+  border-bottom: 2px solid var(--bc-gold);
+}
+.fee-table th {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bc-gold);
+  padding: 10px 14px;
+  text-align: left;
+}
+.fee-table td {
+  padding: 16px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  vertical-align: top;
+}
+.fee-table td.label { color: rgba(255,255,255,0.9); font-weight: 500; }
+.fee-table td.desc  { color: rgba(255,255,255,0.45); font-size: 12px; }
+.fee-table td.amount { color: #fff; font-weight: 600; text-align: right; white-space: nowrap; }
+.fee-table td.tbd   { color: var(--bc-gold-light); font-style: italic; text-align: right; white-space: nowrap; }
+.fee-table tfoot tr { border-top: 2px solid rgba(200,146,42,0.4); }
+.fee-table tfoot td {
+  padding: 20px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: none;
+}
+.fee-table tfoot td.total-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+}
+.fee-table tfoot td.total-amount {
+  color: var(--bc-gold-light);
+  font-size: 20px;
+  text-align: right;
+  font-family: 'Playfair Display', serif;
+}
+.tbd-note {
+  margin-top: 14px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ── CTA / CLOSING ───────────────────────────────── */
+.cta-section {
+  text-align: center;
+  padding: 48px 20px 52px;
+  background: linear-gradient(150deg, var(--bc-dark) 0%, var(--bc-brown) 100%);
+}
+.cta-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--bc-gold);
+  margin-bottom: 16px;
+}
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+.cta-body {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  max-width: 100%;
+  margin: 0 auto 32px;
+  line-height: 1.8;
+}
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+.cta-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(200,146,42,0.12);
+  border: 1px solid rgba(200,146,42,0.35);
+  border-radius: 50px;
+  padding: 14px 20px;
+  color: var(--bc-gold-light);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.quote-ref {
+  margin-top: 32px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.9;
+}
+.quote-ref strong { color: rgba(255,255,255,0.55); }
+
+/* ── TOTAL CALLOUT ───────────────────────────────── */
+.total-callout {
+  margin-top: 24px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(200,146,42,0.25);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.total-callout-label { font-size: 12px; color: var(--text-light); }
+.total-callout-value { font-size: 15px; font-weight: 700; color: var(--bc-gold); }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     COVER
+═══════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-logo-bar">
+    <svg id="bc-logo" width="262" height="40" enable-background="new 0 0 262 40" version="1.1" viewBox="0 0 262 40" xmlns="http://www.w3.org/2000/svg">
+<title>Barry Callebaut logo</title>
+<desc>A Swiss cocoa manufacturer for food industry, founded by merger of Cocoa Barry and Callebaut in 1996</desc>
+ <g clip-rule="evenodd" fill-rule="evenodd">
+  <path d="M0 7h91.3s3.5-6 9.4-5.8c.9 2.1 3.3 13.8 1.6 30 7.9-10.4 1.8-28.7 1.8-28.7s0-1.2.9-.4c5.6 10.7 4.7 23.9 1.7 29.6 8.6-9.2 2.9-23.2 2.7-23.9-.2-.7 0-.9 0-.9H262v26H110.2s-3.6 6-9.4 5.8c-3.3-9.2-2.2-26.5-1.5-30-7.9 10.4-1.8 28.7-1.8 28.7s.1 1.1-.9.4C91 27.1 91.9 13.9 94.9 8.2c-8.6 9.2-2.9 23.2-2.7 23.9.2.7 0 .9 0 .9H0V7z" fill="#4b2f21"/>
+  <path d="M260.5 8.6H110.8s6 11 0 22.8h149.7V8.6zM1.7 31.3h89s-6-11 0-22.8h-89v22.8z" fill="#e1251b"/>
+  <path d="M70.3 12.5h6v1.3h-1s-.5-.1-.2.4 2.7 4.7 2.7 5c.1.3.4 0 .6-.3.1-.3 2.2-3.8 2.5-4.4.5-.8-.5-.7-.5-.7h-.7v-1.3h4.8v1.3h-.7s-.5-.1-.9.6-3.7 6.4-3.7 6.4-.2.3-.2.8v4c0 .4.4.3.4.3h1.4v1.4h-6.5v-1.4h1.5s.4-.1.4-.6V22c0-.5-.5-1.4-.5-1.4s-3-5.2-3.4-6c-.6-1-1.1-.9-1.1-.9h-.7l-.2-1.2m-50.8 9.3c-.6-1.8-2.1-2.3-3.3-2.5 1.4-.3 2.8-1.6 2.6-3.9-.2-2.3-2.9-2.9-4.5-2.9H7.5v1.3h.9s.7-.1.7.6v11.2c0 .4-.6.5-.6.5h-1v1.3h6.8c5.5-.2 5.8-3.8 5.2-5.6M12 14.1c0-.4.2-.4.5-.4s2.3-.1 3.2 1.4c.7 1.9-.3 3.2-1.4 3.5-1.3.4-1.8.4-1.8.4s-.5.1-.5-.4v-4.5m3.9 11.1c-.8.7-3.4.7-3.4.7s-.5 0-.5-.4v-4.7c0-.3.1-.4.4-.4.3 0 2.8-.2 3.6.9.8 1 1.1 2.7-.1 3.9m19.8.7c-.3 0-.6 0-.7-.3-.1-.4-4.9-13.1-4.9-13.1h-2.4S23.2 25 23 25.6c-.2.5-.6.4-.6.4h-.8v1.4h4.5V26h-.9c-.4 0-.5-.3-.3-.7.1-.4 1-3.1 1-3.1h4.9s1.1 3.1 1.3 3.4c.1.4-.1.3-.1.3h-1.4v1.4h5.9v-1.4h-.8zm-6-5.2h-2.8c-.3 0-.5 0-.3-.5s1.4-3.8 1.5-4.1c.1-.3.2-.3.4 0 .1.3 1.4 3.6 1.5 3.9.1.4.3.7-.3.7zm22.5 5.2c-.7-.2-1.3 0-1.9-2.1-.6-2.1-1.4-2.9-1.9-3.3-.5-.4-1.1-.3-1.1-.6 3.2-.7 3.6-2.6 3.4-4.3-.3-2.4-2.4-3.2-5.3-3.2h-6.5v1.3H40s.6 0 .6.8v10.7c0 .8-.5.7-.5.7h-1v1.4H45v-1.4h-.9c-.8 0-.7-.5-.7-.9v-3.8c0-.4.3-.3.3-.3h.7c2 0 2.7 2.8 3.3 4.4.6 1.6 2.3 2.2 3.4 2.2s2-.2 2-.2V26c.1 0-.2.1-.9-.1m-8.3-6.5s-.6.2-.6-.4v-4.7c0-.5.1-.7.6-.7.3 0 2.4-.2 3.1 1 .6 1.1.8 3-.4 4-.8.9-2.7.8-2.7.8M69 25.9c-.7-.2-1.3 0-1.9-2.1-.6-2.1-1.4-2.9-1.9-3.3-.5-.4-1-.3-1.1-.6 3.1-.7 3.6-2.6 3.3-4.3-.3-2.4-2.4-3.2-5.3-3.2h-6.5v1.3h1.1s.6 0 .6.8v10.7c0 .8-.5.7-.5.7h-1v1.4h6.1v-1.4H61c-.8 0-.7-.5-.7-.9v-3.8c0-.4.3-.3.3-.3h.7c2 0 2.7 2.8 3.3 4.4.6 1.6 2.3 2.2 3.4 2.2s2-.2 2-.2V26c.1 0-.2.1-1-.1m-8.2-6.4s-.6.2-.6-.4v-4.7c0-.5.1-.7.5-.7.3 0 2.4-.2 3.1 1 .6 1.1.8 3-.4 4-.8.8-2.6.8-2.6.8m184 7.8h6.5v-1.4H250s-.5-.1-.5-.9V14.2c0-.3.3-.5.5-.5h1.9c.4 0 .6.2.8 1 .1.8.3 1.6.3 1.6h1.5v-3.9h-12.7v3.9h1.5s.1-.7.3-1.6c.1-.8.4-1 .8-1h1.9c.2 0 .5.1.5.5V25c0 .8-.5.9-.5.9H245v1.4m-20.7-14.8h6.2v1.3h-1s-.5 0-.5.6V22c0 1.5.5 3.6 3 3.6 2.6 0 3.9-.8 3.9-4.1v-6.7c0-1.1-1.7-.9-1.7-.9v-1.3h4.9v1.3H238s-.6-.1-.6.8v7.2c0 2.3-.2 4.9-4.2 5.6-3.8.7-7.3-.7-7.3-5.6v-7.1c0-.6-.2-.8-.6-.8h-1v-1.5m-41.8 13.4h4.9s.5 0 .6-.8c.1-.8.2-2 .2-2h1.6s.2 2.4 0 4.2H178v-1.4h1.1s.6.1.6-.8V14.6c0-.9-.6-.8-.6-.8H178v-1.3h11s.1.2.1 1.5v2h-1.6c-.1-1-.5-2.2-.5-2.2h-4s-.5 0-.5.7v4.4h2.4c.4 0 .7-.1.8-.7l.2-1.2h1.4s.1.6.1 2.6-.1 2.7-.1 2.7h-1.4c0-1.1-.4-1.9-.4-1.9h-3v5.5m-32.2-12.2v-1.3h6.3v1.3h-1.2s-.4 0-.4.7v11.5h4.1s.5 0 .6-.8c.1-.8.3-2.2.3-2.2h1.6s.2 2.7 0 4.4h-11v-1.4h1.1s.6.1.6-.8V14.6c0-.9-.6-.8-.6-.8h-1.4m-19.4 3.1s.3-1.9-.1-3.9c-.5-.2-3.3-1.2-6.2-.7-2.9.5-5.8 2.7-6.1 7.1-.3 4.4 2.5 6.9 5.8 7.9 2.8.8 6.4-.7 6.4-.7s.3-1.7.1-3.7h-1.7l-.5 2.5c-.1.4-.1.5-.8.6-.7.1-5.2.7-6.2-5-.5-2.8.7-6.5 4-7.1 3.1-.5 3.1 1.1 3.2 1.6.1.5.2 1.4.2 1.4h1.9m33.3-3.3v-1.3h6.3v1.3h-1.2s-.4 0-.4.7v11.5h4s.5 0 .6-.8c.1-.8.3-2.2.3-2.2h1.6s.2 2.7 0 4.4h-11v-1.4h1.1s.6.1.6-.8V14.4c0-.9-.6-.8-.6-.8h-1.3m-17 12.3c-.3 0-.6 0-.7-.3-.1-.4-4.9-13.1-4.9-13.1h-2.4s-4.5 12.5-4.7 13.1c-.2.5-.6.4-.6.4h-.8v1.4h4.5V26h-.9c-.4 0-.5-.3-.3-.7.1-.4 1-3.1 1-3.1h4.9s1.1 3.1 1.2 3.4c.1.4-.1.3-.1.3H142v1.4h5.9v-1.4h-.7zm-5.9-5.2h-2.8c-.3 0-.5 0-.3-.5s1.4-3.8 1.5-4.1c.1-.3.2-.3.4 0 .1.3 1.4 3.6 1.5 4 0 .3.3.6-.3.6zm80.7 5.2c-.3 0-.6 0-.7-.3-.1-.4-4.9-13.1-4.9-13.1H214s-4.5 12.5-4.7 13.1c-.2.5-.6.4-.6.4h-.8v1.4h4.5V26h-.9c-.4 0-.5-.3-.3-.7.1-.4 1-3.1 1-3.1h4.9s1.1 3.1 1.2 3.4c.1.4-.1.3-.1.3h-1.4v1.4h5.9v-1.4h-.7zm-6-5.2h-2.8c-.3 0-.5 0-.3-.5s1.4-3.8 1.5-4.1c.1-.3.2-.3.4 0 .1.3 1.4 3.6 1.5 4 .1.3.3.6-.3.6zm-10.3 1c-.6-1.8-2.1-2.3-3.3-2.5 1.4-.3 2.8-1.6 2.5-3.9-.2-2.3-2.9-2.9-4.5-2.9h-6.9v1.3h.9s.7-.1.7.6v11.2c0 .4-.6.5-.6.5h-1v1.3h6.8c5.7-.2 6-3.8 5.4-5.6m-7.5-7.6c0-.4.2-.4.5-.4s2.3-.1 3.2 1.4c.7 1.9-.3 3.2-1.4 3.5-1.3.3-1.8.4-1.8.4s-.4.1-.4-.4v-4.5m3.7 11c-.8.7-3.4.7-3.4.7s-.4.1-.4-.4v-4.7c0-.3.1-.4.4-.4.3 0 2.8-.2 3.6.9.8 1.1 1.1 2.7-.2 3.9" fill="#fff"/>
+ </g>
+</svg>
+    <div class="cover-agency-label">Agency Proposal</div>
+  </div>
+
+  <div class="cover-main-text">
+    <div class="cover-tag">Event Logistics &amp; Technology</div>
+    <div class="cover-accent-line"></div>
+    <div class="cover-title">ISM Cologne<br>2027</div>
+    <div class="cover-subtitle">Hotel Logistics, Attendee Platform &amp;<br>Booth Party Management</div>
+    <div class="cover-event-badge">
+      <div class="dot"></div>
+      <span>International Sweets &amp; Biscuits Fair, Cologne</span>
+      <div class="dot"></div>
+      <span>January 2027</span>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-meta">
+      <strong>Prepared for</strong><br>
+      Marta Juanola<br>
+      Barry Callebaut BV — Belgium<br>
+      <br>
+      <strong>Date</strong><br>
+      June 2026
+    </div>
+    <div class="cover-logo-text">
+      Abaza Business Services
+      <span>Agency Proposal</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     OVERVIEW
+═══════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Project Overview</div>
+  <h2 class="section-title">Setting the Stage for ISM 2027</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">
+    Barry Callebaut will once again be present at ISM Cologne, welcoming 90–100 colleagues and key customers. This proposal outlines a comprehensive agency partnership to manage the full attendee logistics journey — from hotel coordination to booth party registrations — powered by a purpose-built digital platform and a dedicated on-site coordinator.
+  </p>
+  <div class="overview-grid">
+    <div class="overview-card">
+      <div class="overview-card-num">01</div>
+      <h3>Digital Platform</h3>
+      <p>A dedicated web platform repurposed from Innovation Summit, tailored for ISM. Attendees manage their own hotel bookings; the team tracks rooming lists in real time.</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-num">02</div>
+      <h3>Hotel Logistics</h3>
+      <p>Seamless coordination of room blocks across multiple hotels for 90–100 BC delegates, with automated confirmations, amendments, and final rooming list delivery.</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-num">03</div>
+      <h3>Booth Party</h3>
+      <p>A complete RSVP module for the BC booth event — enabling the sales team to invite customers, guests to confirm attendance, and post-event comms to close the loop.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     INTERACTIVE DEMO
+═══════════════════════════════════════════════════ -->
+<div class="demo-section">
+  <div class="section-label">See It In Action</div>
+  <h2 class="section-title">Platform Journey — Live Preview</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">Explore two live previews of the platform: the guest party RSVP journey, and the BC staff hotel booking flow. Click through to experience the platform as your attendees will.</p>
+
+  <!-- Journey switcher — stacked buttons -->
+  <div class="journey-switcher">
+    <button id="jt-party" class="journey-btn active" onclick="switchJourney('party')">🎉 Guest Party RSVP</button>
+    <button id="jt-hotel" class="journey-btn" onclick="switchJourney('hotel')">🏨 BC Staff Hotel Booking</button>
+  </div>
+
+  <!-- ── PARTY JOURNEY ──────────────────────────── -->
+  <div id="journey-party">
+    <div class="flow-pills" id="party-pills">
+      <button onclick="partyGoTo(0)" id="pp0" class="flow-pill flow-pill-active">📧 1. Invitation</button>
+      <button onclick="partyGoTo(1)" id="pp1" class="flow-pill">📋 2. Registration</button>
+      <button onclick="partyGoTo(2)" id="pp2" class="flow-pill">✅ 3. Confirmation</button>
+    </div>
+    <div class="demo-frame">
+      <div class="browser-bar">
+        <div class="browser-dots">
+          <span class="dot-red"></span>
+          <span class="dot-amber"></span>
+          <span class="dot-green"></span>
+        </div>
+        <div id="party-url" class="browser-url">mail.google.com — Barry Callebaut Invitation</div>
+      </div>
+      <div id="party-vp" class="demo-vp">
+
+        <!-- Party Screen 0: Invite Email -->
+        <div id="ps-0" class="flow-screen">
+          <div style="background:#f7f4f1;font-family:'Inter',sans-serif;">
+            <div style="background:#fff;padding:16px 20px;border-bottom:1px solid #ece8e3;">
+              <div style="font-size:14px;font-weight:600;color:#1a0a00;margin-bottom:4px;">You're invited — Barry Callebaut Booth Party at ISM 2027</div>
+              <div style="font-size:11px;color:#9a7351;">From: <strong>sarah.johnson@barry-callebaut.com</strong> · To: you</div>
+            </div>
+            <div style="padding:20px 16px;font-family:'Inter',sans-serif;">
+              <div style="background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                <div style="background:linear-gradient(135deg,#1a0a00,#3d1c02,#5a2a05);padding:36px 24px 28px;text-align:center;">
+                  <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,146,42,0.8);margin-bottom:10px;">Barry Callebaut</div>
+                  <div style="font-family:'Playfair Display',serif;font-size:24px;color:#fff;font-weight:700;margin-bottom:5px;">You're Invited</div>
+                  <div style="font-size:13px;color:rgba(255,255,255,0.6);">ISM Cologne 2027 — Exclusive Booth Party</div>
+                  <div style="width:36px;height:2px;background:#c8922a;margin:14px auto 0;"></div>
+                </div>
+                <div style="padding:24px 20px;">
+                  <p style="font-size:13px;color:#5c3d1e;line-height:1.8;margin:0 0 14px;">Dear [First Name],</p>
+                  <p style="font-size:13px;color:#5c3d1e;line-height:1.8;margin:0 0 16px;">We'd love to welcome you to our exclusive evening at the <strong>Barry Callebaut Booth</strong> at ISM Cologne 2027 — fine chocolate, new innovations, and great conversations.</p>
+                  <div style="background:#faf6ef;border-radius:9px;padding:16px 18px;margin:16px 0;border-left:3px solid #c8922a;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                      <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#9a7351;margin-bottom:3px;">Date</div><div style="font-size:12px;font-weight:600;color:#1a0a00;">Wed 28 Jan 2027</div></div>
+                      <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#9a7351;margin-bottom:3px;">Time</div><div style="font-size:12px;font-weight:600;color:#1a0a00;">18:30 – 21:30</div></div>
+                      <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#9a7351;margin-bottom:3px;">Location</div><div style="font-size:12px;font-weight:600;color:#1a0a00;">Booth Hall 10.1, Cologne</div></div>
+                      <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#9a7351;margin-bottom:3px;">Dress</div><div style="font-size:12px;font-weight:600;color:#1a0a00;">Smart Casual</div></div>
+                    </div>
+                  </div>
+                  <p style="font-size:12px;color:#5c3d1e;margin:0 0 20px;">Places are limited — please confirm by <strong>15 December 2026</strong>.</p>
+                  <div style="text-align:center;margin:20px 0 12px;">
+                    <button onclick="partyGoTo(1)" style="background:linear-gradient(135deg,#c8922a,#e8b84b);color:#1a0a00;border:none;border-radius:50px;padding:13px 28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;width:100%;box-shadow:0 4px 14px rgba(200,146,42,0.3);">Confirm My Attendance →</button>
+                  </div>
+                  <p style="font-size:11px;color:#9a7351;text-align:center;">Questions? Reply to this email.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Party Screen 1: Registration Form -->
+        <div id="ps-1" class="flow-screen" style="display:none;">
+          <div style="background:linear-gradient(120deg,#1a0a00,#3d1c02);padding:20px;display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,146,42,0.8);margin-bottom:5px;">Barry Callebaut · ISM 2027</div>
+              <div style="font-family:'Playfair Display',serif;font-size:17px;color:#fff;">Booth Party — Guest Registration</div>
+            </div>
+            <div style="text-align:right;font-size:10px;color:rgba(255,255,255,0.5);">Wed 28 Jan<br>Hall 10.1</div>
+          </div>
+          <div style="padding:20px 16px;font-family:'Inter',sans-serif;">
+            <p style="font-size:13px;color:#5c3d1e;margin:0 0 20px;line-height:1.7;">Confirm your attendance below. Fields marked * are required.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;">
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">First Name *</label><input type="text" placeholder="Sarah" style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;box-sizing:border-box;outline:none;"></div>
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Last Name *</label><input type="text" placeholder="Müller" style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;box-sizing:border-box;outline:none;"></div>
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Company *</label><input type="text" placeholder="Lindt &amp; Sprüngli" style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;box-sizing:border-box;outline:none;"></div>
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Job Title</label><input type="text" placeholder="Procurement Dir." style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;box-sizing:border-box;outline:none;"></div>
+              <div style="grid-column:1/-1;"><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Email *</label><input type="email" placeholder="sarah.muller@lindt.com" style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;box-sizing:border-box;outline:none;"></div>
+              <div style="grid-column:1/-1;"><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Dietary Requirements</label><select style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;background:#fff;outline:none;box-sizing:border-box;"><option>None</option><option>Vegetarian</option><option>Vegan</option><option>Gluten-free</option><option>Halal</option><option>Kosher</option></select></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:9px;margin:16px 0;padding:12px 14px;background:#faf6ef;border-radius:9px;border:1px solid #ece8e3;">
+              <input type="checkbox" checked style="margin-top:2px;accent-color:#c8922a;width:14px;height:14px;flex-shrink:0;">
+              <label style="font-size:12px;color:#5c3d1e;line-height:1.6;">I confirm my attendance and agree to the event terms.</label>
+            </div>
+            <button onclick="partyGoTo(2)" style="background:linear-gradient(135deg,#c8922a,#e8b84b);color:#1a0a00;border:none;border-radius:50px;padding:13px 28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;width:100%;box-shadow:0 4px 14px rgba(200,146,42,0.3);">Confirm My Attendance →</button>
+          </div>
+        </div>
+
+        <!-- Party Screen 2: Confirmation Email -->
+        <div id="ps-2" class="flow-screen" style="display:none;">
+          <div style="background:#f7f4f1;font-family:'Inter',sans-serif;">
+            <div style="background:#fff;padding:16px 20px;border-bottom:1px solid #ece8e3;">
+              <div style="font-size:13px;font-weight:600;color:#1a0a00;margin-bottom:4px;">✅ You're confirmed — Barry Callebaut Booth Party, ISM 2027</div>
+              <div style="font-size:11px;color:#9a7351;">From: <strong>noreply@events.barry-callebaut.com</strong> · To: sarah.muller@lindt.com</div>
+            </div>
+            <div style="padding:16px;font-family:'Inter',sans-serif;">
+              <div style="background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                <div style="background:linear-gradient(135deg,#1a0a00,#3d1c02,#5a2a05);padding:36px 24px 28px;text-align:center;">
+                  <div style="width:48px;height:48px;background:rgba(200,146,42,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:22px;border:2px solid rgba(200,146,42,0.4);">✓</div>
+                  <div style="font-family:'Playfair Display',serif;font-size:22px;color:#fff;font-weight:700;margin-bottom:5px;">You're Confirmed!</div>
+                  <div style="font-size:13px;color:rgba(255,255,255,0.6);">We look forward to welcoming you</div>
+                </div>
+                <div style="padding:24px 20px;">
+                  <p style="font-size:13px;color:#3d1c02;margin:0 0 12px;">Dear Sarah,</p>
+                  <p style="font-size:13px;color:#5c3d1e;line-height:1.8;margin:0 0 16px;">Your spot at the Barry Callebaut Booth Party is confirmed. We can't wait to see you there.</p>
+                  <div style="background:#faf6ef;border-radius:9px;padding:16px 18px;margin-bottom:16px;border-left:3px solid #c8922a;">
+                    <div style="font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#9a7351;margin-bottom:10px;font-weight:600;">Your Booking</div>
+                    <div style="display:grid;gap:7px;">
+                      <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#9a7351;">Guest</span><span style="font-weight:600;color:#1a0a00;">Sarah Müller</span></div>
+                      <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#9a7351;">Company</span><span style="font-weight:600;color:#1a0a00;">Lindt &amp; Sprüngli</span></div>
+                      <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#9a7351;">Date</span><span style="font-weight:600;color:#1a0a00;">Wed 28 Jan 2027 · 18:30</span></div>
+                      <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#9a7351;">Location</span><span style="font-weight:600;color:#1a0a00;">Hall 10.1, Koelnmesse</span></div>
+                    </div>
+                  </div>
+                  <p style="font-size:12px;color:#9a7351;text-align:center;">Two event reminders will be sent closer to the date.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /demo-vp party -->
+    </div><!-- /demo-frame party -->
+  </div><!-- /journey-party -->
+
+  <!-- ── HOTEL JOURNEY ──────────────────────────── -->
+  <div id="journey-hotel" style="display:none;">
+    <div class="flow-pills">
+      <button onclick="hotelGoTo(0)" id="hp0" class="flow-pill flow-pill-active">🏠 1. Portal</button>
+      <button onclick="hotelGoTo(1)" id="hp1" class="flow-pill">🏨 2. Choose Hotel</button>
+      <button onclick="hotelGoTo(2)" id="hp2" class="flow-pill">📅 3. Booking</button>
+      <button onclick="hotelGoTo(3)" id="hp3" class="flow-pill">✅ 4. Confirmed</button>
+    </div>
+    <div class="demo-frame">
+      <div class="browser-bar">
+        <div class="browser-dots">
+          <span class="dot-red"></span>
+          <span class="dot-amber"></span>
+          <span class="dot-green"></span>
+        </div>
+        <div id="hotel-url" class="browser-url">events.barry-callebaut.com/ism2027/staff</div>
+      </div>
+      <div id="hotel-vp" class="demo-vp">
+
+        <!-- Hotel Screen 0: Staff Portal Welcome -->
+        <div id="hs-0" class="flow-screen">
+          <div style="background:linear-gradient(150deg,#1a0a00 0%,#3d1c02 55%,#5a2a05 100%);min-height:260px;padding:36px 24px;position:relative;overflow:hidden;">
+            <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,146,42,0.7);margin-bottom:12px;">ISM Cologne 2027 · Staff Portal</div>
+            <div style="font-family:'Playfair Display',serif;font-size:26px;color:#fff;font-weight:700;margin-bottom:8px;line-height:1.2;">Welcome,<br>[First Name]</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:24px;line-height:1.5;">Your hotel room block has been reserved.<br>Book your room to confirm your stay.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+              <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(200,146,42,0.7);margin-bottom:3px;">Event Dates</div><div style="font-size:13px;color:#fff;font-weight:600;">26–30 Jan 2027</div></div>
+              <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(200,146,42,0.7);margin-bottom:3px;">Location</div><div style="font-size:13px;color:#fff;font-weight:600;">Cologne, Germany</div></div>
+              <div><div style="font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(200,146,42,0.7);margin-bottom:3px;">Booking Deadline</div><div style="font-size:13px;color:#fff;font-weight:600;">15 Dec 2026</div></div>
+            </div>
+            <button onclick="hotelGoTo(1)" style="background:linear-gradient(135deg,#c8922a,#e8b84b);color:#1a0a00;border:none;border-radius:50px;padding:13px 28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;width:100%;box-shadow:0 4px 18px rgba(200,146,42,0.4);">Book My Hotel Room →</button>
+          </div>
+          <div style="padding:20px 16px;font-family:'Inter',sans-serif;">
+            <div style="font-size:11px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">What to expect</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <div style="display:flex;gap:10px;align-items:flex-start;padding:12px;background:#faf6ef;border-radius:9px;"><span style="font-size:18px;">🏨</span><div><div style="font-size:12px;font-weight:600;color:#1a0a00;margin-bottom:2px;">Negotiated Rates</div><div style="font-size:11px;color:#9a7351;">Pre-agreed rates near the venue</div></div></div>
+              <div style="display:flex;gap:10px;align-items:flex-start;padding:12px;background:#faf6ef;border-radius:9px;"><span style="font-size:18px;">💳</span><div><div style="font-size:12px;font-weight:600;color:#1a0a00;margin-bottom:2px;">Direct Payment</div><div style="font-size:11px;color:#9a7351;">Hotel sends secure payment link</div></div></div>
+              <div style="display:flex;gap:10px;align-items:flex-start;padding:12px;background:#faf6ef;border-radius:9px;"><span style="font-size:18px;">✏️</span><div><div style="font-size:12px;font-weight:600;color:#1a0a00;margin-bottom:2px;">Easy Amendments</div><div style="font-size:11px;color:#9a7351;">Update dates before cut-off</div></div></div>
+              <div style="display:flex;gap:10px;align-items:flex-start;padding:12px;background:#faf6ef;border-radius:9px;"><span style="font-size:18px;">📋</span><div><div style="font-size:12px;font-weight:600;color:#1a0a00;margin-bottom:2px;">Rooming List</div><div style="font-size:11px;color:#9a7351;">Feeds into the master list</div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotel Screen 1: Choose Hotel -->
+        <div id="hs-1" class="flow-screen" style="display:none;">
+          <div style="background:linear-gradient(120deg,#1a0a00,#3d1c02);padding:18px 20px;display:flex;align-items:center;justify-content:space-between;">
+            <div style="font-family:'Playfair Display',serif;font-size:16px;color:#fff;">Select Your Hotel</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.5);">4 hotels · block rates</div>
+          </div>
+          <div style="padding:20px 16px;font-family:'Inter',sans-serif;">
+            <p style="font-size:12px;color:#9a7351;margin:0 0 16px;">All hotels near Koelnmesse. Rates reflect your negotiated block. Tap to select.</p>
+            <div style="display:grid;gap:12px;">
+
+              <div onclick="selectHotel('Maritim Hotel Köln','€195')" style="border:1.5px solid #ece8e3;border-radius:10px;padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:14px;">
+                <div style="width:44px;height:44px;background:linear-gradient(135deg,#1a0a00,#5a2a05);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🏰</div>
+                <div style="flex:1;">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px;">
+                    <div style="font-size:13px;font-weight:700;color:#1a0a00;">Maritim Hotel Köln</div>
+                    <div style="font-size:10px;color:#f59e0b;">★★★★★</div>
+                  </div>
+                  <div style="font-size:11px;color:#9a7351;">0.3 km · Breakfast included</div>
+                </div>
+                <div style="text-align:right;flex-shrink:0;">
+                  <div style="font-size:16px;font-weight:700;color:#1a0a00;">€195</div>
+                  <div style="font-size:10px;color:#c8922a;font-weight:600;">BC rate</div>
+                </div>
+              </div>
+
+              <div onclick="selectHotel('Radisson Blu Cologne','€155')" style="border:1.5px solid #ece8e3;border-radius:10px;padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:14px;">
+                <div style="width:44px;height:44px;background:linear-gradient(135deg,#1a3a6e,#2d5bb5);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🏨</div>
+                <div style="flex:1;">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px;">
+                    <div style="font-size:13px;font-weight:700;color:#1a0a00;">Radisson Blu Cologne</div>
+                    <div style="font-size:10px;color:#f59e0b;">★★★★</div>
+                  </div>
+                  <div style="font-size:11px;color:#9a7351;">1.1 km · Breakfast €16</div>
+                </div>
+                <div style="text-align:right;flex-shrink:0;">
+                  <div style="font-size:16px;font-weight:700;color:#1a0a00;">€155</div>
+                  <div style="font-size:10px;color:#c8922a;font-weight:600;">BC rate</div>
+                </div>
+              </div>
+
+              <div onclick="selectHotel('Hyatt Regency Cologne','€225')" style="border:1.5px solid #ece8e3;border-radius:10px;padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:14px;">
+                <div style="width:44px;height:44px;background:linear-gradient(135deg,#1d4530,#2a6845);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">✨</div>
+                <div style="flex:1;">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px;">
+                    <div style="font-size:13px;font-weight:700;color:#1a0a00;">Hyatt Regency Cologne</div>
+                    <div style="font-size:10px;color:#f59e0b;">★★★★★</div>
+                  </div>
+                  <div style="font-size:11px;color:#9a7351;">1.5 km · Breakfast included</div>
+                </div>
+                <div style="text-align:right;flex-shrink:0;">
+                  <div style="font-size:16px;font-weight:700;color:#1a0a00;">€225</div>
+                  <div style="font-size:10px;color:#c8922a;font-weight:600;">BC rate</div>
+                </div>
+              </div>
+
+              <div onclick="selectHotel('Holiday Inn Express Köln-Deutz','€115')" style="border:1.5px solid #ece8e3;border-radius:10px;padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:14px;">
+                <div style="width:44px;height:44px;background:linear-gradient(135deg,#6b3a00,#a05a00);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🛏️</div>
+                <div style="flex:1;">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px;">
+                    <div style="font-size:13px;font-weight:700;color:#1a0a00;">Holiday Inn Express Köln</div>
+                    <div style="font-size:10px;color:#f59e0b;">★★★</div>
+                  </div>
+                  <div style="font-size:11px;color:#9a7351;">0.8 km · Breakfast €13</div>
+                </div>
+                <div style="text-align:right;flex-shrink:0;">
+                  <div style="font-size:16px;font-weight:700;color:#1a0a00;">€115</div>
+                  <div style="font-size:10px;color:#c8922a;font-weight:600;">BC rate</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotel Screen 2: Booking Details -->
+        <div id="hs-2" class="flow-screen" style="display:none;">
+          <div style="background:linear-gradient(120deg,#1a0a00,#3d1c02);padding:18px 20px;">
+            <div style="font-family:'Playfair Display',serif;font-size:16px;color:#fff;margin-bottom:3px;">Your Booking Details</div>
+            <div id="selected-hotel-display" style="font-size:12px;color:rgba(200,146,42,0.9);font-weight:600;">Maritim Hotel Köln · €195/night</div>
+          </div>
+          <div style="padding:20px 16px;font-family:'Inter',sans-serif;">
+            <div style="background:#faf6ef;border-radius:9px;padding:12px 16px;margin-bottom:18px;border-left:3px solid #c8922a;font-size:12px;color:#5c3d1e;">
+              ISM Cologne runs <strong>26–30 January 2027</strong>. Blocks available <strong>Sat 25 Jan – Fri 31 Jan</strong>.
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;">
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Arrival Date *</label><input type="date" value="2027-01-26" style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;box-sizing:border-box;outline:none;"></div>
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Arrival Time *</label><select style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;background:#fff;outline:none;box-sizing:border-box;"><option>Before 12:00</option><option selected>12:00 – 15:00</option><option>15:00 – 18:00</option><option>After 18:00</option></select></div>
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Departure Date *</label><input type="date" value="2027-01-30" style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;box-sizing:border-box;outline:none;"></div>
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Departure Time *</label><select style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;background:#fff;outline:none;box-sizing:border-box;"><option>Before 08:00</option><option>08:00 – 10:00</option><option selected>10:00 – 12:00</option><option>After 12:00</option></select></div>
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Nights</label><input type="number" value="4" min="1" max="7" style="width:100%;padding:8px 11px;border:1.5px solid #c8922a;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;box-sizing:border-box;outline:none;background:#faf6ef;"></div>
+              <div><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Room Type *</label><select style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;background:#fff;outline:none;box-sizing:border-box;"><option>Single Room</option><option>Double (single use)</option><option>Twin Room</option></select></div>
+              <div style="grid-column:1/-1;"><label style="font-size:10px;font-weight:600;color:#9a7351;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Special Requests</label><textarea placeholder="e.g. high floor, quiet room, late check-out..." style="width:100%;padding:8px 11px;border:1.5px solid #ece8e3;border-radius:7px;font-family:'Inter',sans-serif;font-size:12px;box-sizing:border-box;outline:none;height:64px;resize:vertical;"></textarea></div>
+            </div>
+            <div style="background:#1a0a00;border-radius:9px;padding:14px 16px;margin:16px 0;display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:2px;">Estimated total (4 nights)</div>
+                <div id="cost-display" style="font-family:'Playfair Display',serif;font-size:20px;color:#e8b84b;font-weight:700;">€780</div>
+              </div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.4);text-align:right;">Payable directly<br>to the hotel</div>
+            </div>
+            <button onclick="hotelGoTo(3)" style="background:linear-gradient(135deg,#c8922a,#e8b84b);color:#1a0a00;border:none;border-radius:50px;padding:13px 28px;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;cursor:pointer;width:100%;box-shadow:0 4px 14px rgba(200,146,42,0.3);">Submit Booking Request →</button>
+          </div>
+        </div>
+
+        <!-- Hotel Screen 3: Confirmation -->
+        <div id="hs-3" class="flow-screen" style="display:none;">
+          <div style="background:linear-gradient(150deg,#1a0a00,#3d1c02,#5a2a05);padding:40px 24px;text-align:center;">
+            <div style="width:56px;height:56px;background:rgba(200,146,42,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:24px;border:2px solid rgba(200,146,42,0.35);">✓</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;color:#fff;font-weight:700;margin-bottom:6px;">Booking Request Received</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6);">Reference: <strong style="color:#e8b84b;">BC-ISM27-0042</strong></div>
+          </div>
+          <div style="padding:20px 16px;font-family:'Inter',sans-serif;">
+            <div style="background:#faf6ef;border-radius:10px;padding:18px 20px;margin-bottom:16px;border:1.5px solid #c8922a;text-align:center;">
+              <div style="font-size:20px;margin-bottom:8px;">💳</div>
+              <div style="font-size:14px;font-weight:700;color:#1a0a00;margin-bottom:6px;">Payment Link Coming Shortly</div>
+              <p style="font-size:12px;color:#5c3d1e;line-height:1.7;margin:0;">The hotel will send a <strong>secure payment link</strong> directly to your email within <strong>24 hours</strong>. Your room is held pending payment.</p>
+            </div>
+            <div style="background:#fff;border:1.5px solid #ece8e3;border-radius:10px;padding:16px 18px;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#9a7351;margin-bottom:12px;font-weight:600;">Booking Summary</div>
+              <div style="display:grid;gap:9px;">
+                <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#9a7351;">Hotel</span><span id="conf-hotel" style="font-weight:600;color:#1a0a00;">Maritim Hotel Köln</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#9a7351;">Check-in</span><span style="font-weight:600;color:#1a0a00;">26 Jan 2027 · 12:00–15:00</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#9a7351;">Check-out</span><span style="font-weight:600;color:#1a0a00;">30 Jan 2027 · 10:00–12:00</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#9a7351;">Duration</span><span style="font-weight:600;color:#1a0a00;">4 nights · Single Room</span></div>
+                <div style="border-top:1px solid #ece8e3;padding-top:9px;display:flex;justify-content:space-between;font-size:13px;"><span style="color:#9a7351;font-weight:600;">Estimated Total</span><span id="conf-cost" style="font-family:'Playfair Display',serif;font-size:16px;color:#c8922a;font-weight:700;">€780</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /demo-vp hotel -->
+    </div><!-- /demo-frame hotel -->
+  </div><!-- /journey-hotel -->
+
+</div><!-- /demo-section -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     SCOPE OF WORK
+═══════════════════════════════════════════════════ -->
+<div class="section-alt">
+  <div class="section-label">Scope of Work</div>
+  <h2 class="section-title">What We'll Deliver</h2>
+  <div class="section-divider"></div>
+
+  <!-- Block A -->
+  <div class="scope-block">
+    <div class="scope-header">
+      <div class="scope-icon">🖥</div>
+      <div class="scope-header-text">
+        <h3>A — Platform Repurposing &amp; Technical Development</h3>
+        <span>Adapt the Innovation Summit platform for ISM Cologne 2027</span>
+      </div>
+    </div>
+    <div class="scope-body">
+      <ul>
+        <li>Repurpose and rebrand the existing platform for ISM Cologne 2027</li>
+        <li>Integrate hotel room blocks provided by BC Procurement</li>
+        <li>Build attendee-facing booking portal for self-service room reservations</li>
+        <li>Automated rooming list generation for each hotel</li>
+        <li>Admin dashboard for the BC logistics team to monitor bookings</li>
+        <li>Booking amendment and cancellation workflows</li>
+        <li>IT liaison with BC IT Team for DNS, DKIM and SPF configuration</li>
+        <li>Transactional email setup: confirmations, reminders, amendments</li>
+        <li>RSVP &amp; registration module for booth party guests</li>
+        <li>Sales team–facing invite redirect to guest registration page</li>
+        <li>Automated guest confirmation, reminder (×2), and post-event thank-you emails</li>
+        <li>Guest attendance tracking and export</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Block B -->
+  <div class="scope-block">
+    <div class="scope-header">
+      <div class="scope-icon">📬</div>
+      <div class="scope-header-text">
+        <h3>B — Email Infrastructure Setup</h3>
+        <span>Safe, branded email delivery for all platform communications</span>
+      </div>
+    </div>
+    <div class="scope-body">
+      <ul>
+        <li>Coordinate with BC IT to obtain DNS, DKIM and SPF values</li>
+        <li>Configure sending domain for transactional email</li>
+        <li>Ensure inbound reply handling is correctly routed</li>
+        <li>Test delivery across major email clients and flag any compliance issues</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Block C -->
+  <div class="scope-block">
+    <div class="scope-header">
+      <div class="scope-icon">🗂</div>
+      <div class="scope-header-text">
+        <h3>C — Logistics Coordinator (June 2026 – January 2027)</h3>
+        <span>Dedicated agency resource managing day-to-day coordination</span>
+      </div>
+    </div>
+    <div class="scope-body">
+      <ul>
+        <li>Serve as the primary point of contact between BC and hotels</li>
+        <li>Manage individual attendee bookings, changes and special requests</li>
+        <li>Chase outstanding room confirmations and maintain accuracy of rooming lists</li>
+        <li>Coordinate hotel cut-off dates and room release schedules</li>
+        <li>Liaise with BC Procurement on hotel contract milestones</li>
+        <li>Manage booth party guest list: confirmations, dietary needs, capacity</li>
+        <li>Issue final rooming lists to each hotel in required formats</li>
+        <li>On-site support in Cologne during the event (January 2027)</li>
+        <li>Provide post-event reconciliation and reporting</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PROJECT TIMELINE
+═══════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Project Timeline</div>
+  <h2 class="section-title">Coordinator Activity Plan</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">The logistics coordinator is engaged from June 2026, with activity ramping up significantly in the months approaching ISM January 2027.</p>
+
+  <div class="timeline">
+
+    <div class="timeline-header-row">
+      <div class="timeline-header-month">Month</div>
+      <div class="timeline-header-activity">Activity &amp; Days</div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="timeline-month">JUNE '26</div>
+      <div class="timeline-bar-wrap">
+        <div class="timeline-bar bar-coordinator" style="width:56px;">2 days</div>
+        <div class="timeline-days">Platform kick-off, scope alignment, IT liaison initiated</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="timeline-month">JULY</div>
+      <div class="timeline-bar-wrap">
+        <div class="timeline-bar bar-coordinator" style="width:40px;">1 day</div>
+        <div class="timeline-days">Platform development monitoring, hotel contract follow-up</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="timeline-month">AUG</div>
+      <div class="timeline-bar-wrap">
+        <div class="timeline-bar bar-coordinator" style="width:40px;">1 day</div>
+        <div class="timeline-days">Platform testing, hotel room block integration</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="timeline-month">SEPT</div>
+      <div class="timeline-bar-wrap">
+        <div class="timeline-bar bar-coordinator" style="width:72px;">3 days</div>
+        <div class="timeline-days">Platform launch, booking portal open, attendee invitations</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="timeline-month">OCT</div>
+      <div class="timeline-bar-wrap">
+        <div class="timeline-bar bar-coordinator" style="width:72px;">3 days</div>
+        <div class="timeline-days">Booking monitoring, chase-ups, booth party invites issued</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="timeline-month">NOV</div>
+      <div class="timeline-bar-wrap">
+        <div class="timeline-bar bar-coordinator" style="width:72px;">3 days</div>
+        <div class="timeline-days">Cut-off management, interim rooming lists to hotels</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="timeline-month">DEC</div>
+      <div class="timeline-bar-wrap">
+        <div class="timeline-bar bar-coordinator" style="width:90px;">4 days</div>
+        <div class="timeline-days">Final rooming lists, pre-event briefings, booth party confirmations</div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="timeline-month" style="color:var(--bc-gold);font-size:12px;">JAN '27</div>
+      <div class="timeline-bar-wrap">
+        <div class="timeline-bar" style="width:160px;background:linear-gradient(90deg,var(--bc-gold),var(--bc-gold-light));color:var(--bc-dark);font-weight:700;">⭐ 10 days — event</div>
+        <div class="timeline-days">On-site Cologne, day-of coordination, post-event reconciliation &amp; thank-yous</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="total-callout">
+    <div class="total-callout-label">Total engagement:</div>
+    <div class="total-callout-value">27 coordinator days across 8 months</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     BOOTH PARTY MODULE
+═══════════════════════════════════════════════════ -->
+<div class="section-alt">
+  <div class="section-label">Booth Party Module</div>
+  <h2 class="section-title">Customer Invitation &amp; RSVP Journey</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead">The booth party module enables the BC sales team to invite customers via personalised email links. Guests are directed to a branded registration page, receive automated confirmations and reminders, and the team has full visibility of attendance in real time.</p>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <div class="step-icon">📧</div>
+      <h4>Sales Team Sends Invite</h4>
+      <p>Sales team uses personalised links generated by the platform to invite customers. No manual list management required.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <div class="step-icon">📋</div>
+      <h4>Guest Registers</h4>
+      <p>Guest clicks link, lands on branded registration page, confirms attendance and provides required info.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <div class="step-icon">✅</div>
+      <h4>Automated Comms</h4>
+      <p>Instant confirmation email, followed by 2 event reminders in the lead-up. All branded, sent from BC domain.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <div class="step-icon gold">🎉</div>
+      <h4>Post-Event Thank You</h4>
+      <p>Automated thank-you email sent to all attendees after the event — closing the loop and reinforcing the BC relationship.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     INVESTMENT
+═══════════════════════════════════════════════════ -->
+<div class="section-dark">
+  <div class="section-label">Investment Summary</div>
+  <h2 class="section-title light">Project Fees</h2>
+  <div class="section-divider"></div>
+  <p class="section-lead light">All fees are quoted in EUR. Travel and accommodation are invoiced at actuals and subject to confirmation.</p>
+
+  <div class="fee-table-wrap">
+    <table class="fee-table">
+      <thead>
+        <tr>
+          <th style="width:34%">Service</th>
+          <th>Description</th>
+          <th style="width:18%;text-align:right;">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label">Platform Repurposing &amp; Technical Build</td>
+          <td class="desc">Adaptation of Innovation Summit platform for ISM: booking portal, hotel block integration, RSVP module, email infrastructure (DNS / DKIM / SPF), admin dashboard, email copywriting &amp; design, all workflows and templates.</td>
+          <td class="amount">€7,500</td>
+        </tr>
+        <tr>
+          <td class="label">Logistics Coordinator — Professional Fee</td>
+          <td class="desc">27 days × EUR 650/day<br>Jun 2 + Jul 1 + Aug 1 + Sep 3 + Oct 3 + Nov 3 + Dec 4 + Jan 10</td>
+          <td class="amount">€17,550</td>
+        </tr>
+        <tr>
+          <td class="label">Coordinator — Travel &amp; Hotel (Germany)</td>
+          <td class="desc">Return travel and accommodation in Cologne for on-site days. Invoiced at actuals upon confirmation.</td>
+          <td class="tbd">To be confirmed</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="total-label" colspan="2">Total Agency Fee (excl. T&amp;H)</td>
+          <td class="total-amount">€25,050</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <p class="tbd-note">* Travel and hotel costs will be added to a separate expense invoice, billed at actuals. A budget estimate will be provided upon confirmation of on-site dates.</p>
+  <p class="tbd-note" style="margin-top:6px;">* All fees are exclusive of VAT. Payment terms: 30 days from invoice date. Quote reference: QT-SF20230028.</p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CLOSING / CTA
+═══════════════════════════════════════════════════ -->
+<div class="cta-section">
+  <div class="cta-label">Ready to Move Forward?</div>
+  <h2 class="cta-title">Let's Make ISM 2027<br>Seamless for the Team</h2>
+  <p class="cta-body">We're ready to begin as soon as the hotel contracts are in place. To proceed, please confirm your acceptance of this proposal and we'll initiate the platform kick-off and coordinator onboarding immediately.</p>
+  <div class="cta-buttons">
+    <a class="cta-contact" href="mailto:sherif@atomicorganizations.com?cc=sherif_abaza@barry-callebaut.com">✉ sherif@atomicorganizations.com</a>
+  </div>
+  <p class="quote-ref">
+    <strong>Quote Reference:</strong> QT-SF20230028<br>
+    <strong>Valid Until:</strong> 5 July 2026<br>
+    <strong>Client:</strong> Barry Callebaut BV, Belgium
+  </p>
+</div>
+
+
+<script>
+var _selectedHotel = 'Maritim Hotel Köln';
+var _selectedRate  = 195;
+
+function switchJourney(j) {
+  var isParty = j === 'party';
+  document.getElementById('journey-party').style.display = isParty ? 'block' : 'none';
+  document.getElementById('journey-hotel').style.display = isParty ? 'none'  : 'block';
+  document.getElementById('jt-party').className = 'journey-btn' + (isParty ? ' active' : '');
+  document.getElementById('jt-hotel').className = 'journey-btn' + (!isParty ? ' active' : '');
+}
+
+function partyGoTo(n) {
+  [0,1,2].forEach(function(i) {
+    document.getElementById('pp'+i).classList.toggle('flow-pill-active', i===n);
+    document.getElementById('ps-'+i).style.display = i===n ? 'block' : 'none';
+  });
+  var urls = [
+    'mail.google.com — Barry Callebaut Invitation',
+    'events.barry-callebaut.com/ism2027/party/register',
+    'events.barry-callebaut.com/ism2027/party/confirmed'
+  ];
+  document.getElementById('party-url').textContent = urls[n];
+  document.getElementById('party-vp').scrollTop = 0;
+}
+
+function hotelGoTo(n) {
+  [0,1,2,3].forEach(function(i) {
+    document.getElementById('hp'+i).classList.toggle('flow-pill-active', i===n);
+    document.getElementById('hs-'+i).style.display = i===n ? 'block' : 'none';
+  });
+  var urls = [
+    'events.barry-callebaut.com/ism2027/staff',
+    'events.barry-callebaut.com/ism2027/staff/hotels',
+    'events.barry-callebaut.com/ism2027/staff/book',
+    'events.barry-callebaut.com/ism2027/staff/confirmed'
+  ];
+  document.getElementById('hotel-url').textContent = urls[n];
+  document.getElementById('hotel-vp').scrollTop = 0;
+}
+
+function selectHotel(name, rate) {
+  _selectedHotel = name;
+  _selectedRate  = parseInt(rate.replace('€',''));
+  var total = _selectedRate * 4;
+  document.getElementById('selected-hotel-display').textContent = name + ' · ' + rate + '/night';
+  document.getElementById('cost-display').textContent = '€' + total;
+  document.getElementById('conf-hotel').textContent = name;
+  document.getElementById('conf-cost').textContent  = '€' + total;
+  hotelGoTo(2);
+}
+</script>
+
+</body>
+</html>

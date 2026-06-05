@@ -1,6 +1,15 @@
 {
   "rewrites": [
     { "source": "/barry-callebaut/ISM-2027-proposal", "destination": "/ISM_Cologne_2027_Proposal.html" },
-    { "source": "/", "destination": "/ISM_Cologne_2027_Proposal.html" }
+    {
+      "source": "/barry-callebaut/ISM-2027-proposal-mobile",
+      "destination": "/ISM_Cologne_2027_Proposal_mobile.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "user-agent", "value": "(?i).*(mobile|android|iphone|ipad|ipod).*" }],
+      "destination": "/index-mobile.html"
+    },
+    { "source": "/", "destination": "/index.html" }
   ]
 }
