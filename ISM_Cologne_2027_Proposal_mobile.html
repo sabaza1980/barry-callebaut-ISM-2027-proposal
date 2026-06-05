@@ -538,55 +538,53 @@ body {
 }
 
 /* ── FEE TABLE ───────────────────────────────────── */
-.fee-scroll-hint {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 10px 0 8px;
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  font-weight: 500;
-}
-.fee-scroll-hint .arr {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  color: #FF7A1A;
-  font-size: 13px;
-  font-weight: 700;
-}
-.fee-scroll-hint .arr-line {
-  width: 24px; height: 2px;
-  background: #FF7A1A; border-radius: 1px;
-}
-
+/* Hide native scrollbar — replaced by custom always-visible one */
 .fee-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin-top: 4px;
+  margin-top: 8px;
   border-radius: 8px;
-  /* Firefox */
-  scrollbar-color: #FF7A1A rgba(255,255,255,0.12);
-  scrollbar-width: auto;
+  scrollbar-width: none; /* Firefox */
 }
-/* Webkit (Chrome / Android Chrome / Samsung Browser) */
-.fee-table-wrap::-webkit-scrollbar       { height: 14px; }
-.fee-table-wrap::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 7px; margin: 0 2px; }
-.fee-table-wrap::-webkit-scrollbar-thumb { background: #FF7A1A; border-radius: 7px; border: 2px solid rgba(26,10,0,0.5); }
-.fee-table-wrap::-webkit-scrollbar-thumb:active { background: #FF9A40; }
-/* Arrow buttons */
-.fee-table-wrap::-webkit-scrollbar-button:single-button { display: block; height: 14px; width: 18px; }
-.fee-table-wrap::-webkit-scrollbar-button:single-button:horizontal:decrement {
-  border-radius: 7px 0 0 7px;
-  background: #FF7A1A url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M5 1L2 4l3 3' stroke='%23fff' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center no-repeat;
+.fee-table-wrap::-webkit-scrollbar { display: none; } /* Chrome/Safari/Android */
+
+/* Custom always-visible scrollbar */
+.fee-sb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
 }
-.fee-table-wrap::-webkit-scrollbar-button:single-button:horizontal:increment {
-  border-radius: 0 7px 7px 0;
-  background: #FF7A1A url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M3 1l3 3-3 3' stroke='%23fff' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center no-repeat;
+.fee-sb-btn {
+  width: 32px; height: 32px;
+  background: #FF7A1A;
+  border: none; border-radius: 8px;
+  color: #fff; font-size: 18px; font-weight: 700; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
+.fee-sb-btn:active { background: #e06010; }
+.fee-sb-track {
+  flex: 1; height: 14px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 7px;
+  position: relative;
+  cursor: pointer;
+}
+.fee-sb-thumb {
+  position: absolute;
+  top: 1px; height: 12px;
+  background: #FF7A1A;
+  border-radius: 6px;
+  min-width: 36px;
+  cursor: grab;
+  touch-action: none;
+  transition: background 0.1s;
+}
+.fee-sb-thumb:active { background: #e06010; cursor: grabbing; }
 .fee-table {
   width: 100%;
   min-width: 560px;
@@ -1322,12 +1320,7 @@ body {
   <div class="section-divider"></div>
   <p class="section-lead light">All fees are quoted in EUR. Travel and accommodation are invoiced at actuals and subject to confirmation.</p>
 
-  <div class="fee-scroll-hint">
-    <div class="arr"><span class="arr-line"></span>‹</div>
-    <span>Scroll to see all columns</span>
-    <div class="arr">›<span class="arr-line"></span></div>
-  </div>
-  <div class="fee-table-wrap">
+  <div class="fee-table-wrap" id="feeWrap">
     <table class="fee-table">
       <thead>
         <tr>
@@ -1360,6 +1353,15 @@ body {
         </tr>
       </tfoot>
     </table>
+  </div>
+
+  <!-- Custom always-visible scrollbar -->
+  <div class="fee-sb">
+    <button class="fee-sb-btn" id="feeBtnL">&#8249;</button>
+    <div class="fee-sb-track" id="feeSbTrack">
+      <div class="fee-sb-thumb" id="feeSbThumb"></div>
+    </div>
+    <button class="fee-sb-btn" id="feeBtnR">&#8250;</button>
   </div>
 
   <p class="tbd-note">* Travel and hotel costs will be added to a separate expense invoice, billed at actuals. A budget estimate will be provided upon confirmation of on-site dates.</p>
@@ -1436,6 +1438,81 @@ function selectHotel(name, rate) {
   document.getElementById('conf-cost').textContent  = '€' + total;
   hotelGoTo(2);
 }
+</script>
+
+<script>
+/* ── Custom always-visible fee table scrollbar ── */
+(function () {
+  var wrap  = document.getElementById('feeWrap');
+  var track = document.getElementById('feeSbTrack');
+  var thumb = document.getElementById('feeSbThumb');
+  var btnL  = document.getElementById('feeBtnL');
+  var btnR  = document.getElementById('feeBtnR');
+  if (!wrap || !thumb) return;
+
+  /* ── Sync thumb position / size to scroll state ── */
+  function sync() {
+    var scrollable = wrap.scrollWidth - wrap.clientWidth;
+    if (scrollable <= 0) { thumb.style.width = '100%'; thumb.style.left = '0'; return; }
+    var trackW  = track.offsetWidth;
+    var thumbW  = Math.max(36, (wrap.clientWidth / wrap.scrollWidth) * trackW);
+    var maxLeft = trackW - thumbW;
+    thumb.style.width = thumbW + 'px';
+    thumb.style.left  = ((wrap.scrollLeft / scrollable) * maxLeft) + 'px';
+  }
+
+  wrap.addEventListener('scroll', sync);
+  window.addEventListener('resize', sync);
+  setTimeout(sync, 80); /* after layout paint */
+
+  /* ── Arrow buttons: press-and-hold ── */
+  var iv;
+  function startScroll(dir) {
+    wrap.scrollLeft += dir * 80;
+    iv = setInterval(function () { wrap.scrollLeft += dir * 80; }, 120);
+  }
+  function stopScroll() { clearInterval(iv); }
+
+  ['touchstart','mousedown'].forEach(function (ev) {
+    btnL.addEventListener(ev, function (e) { e.preventDefault(); startScroll(-1); }, { passive: false });
+    btnR.addEventListener(ev, function (e) { e.preventDefault(); startScroll( 1); }, { passive: false });
+  });
+  ['touchend','touchcancel','mouseup','mouseleave'].forEach(function (ev) {
+    btnL.addEventListener(ev, stopScroll);
+    btnR.addEventListener(ev, stopScroll);
+  });
+
+  /* ── Track click: jump to position ── */
+  track.addEventListener('click', function (e) {
+    if (e.target === thumb) return;
+    var rect = track.getBoundingClientRect();
+    var pct  = (e.clientX - rect.left) / track.offsetWidth;
+    wrap.scrollLeft = pct * (wrap.scrollWidth - wrap.clientWidth);
+  });
+
+  /* ── Thumb drag (touch) ── */
+  var dragging = false, startTouchX, startScrollLeft;
+
+  thumb.addEventListener('touchstart', function (e) {
+    dragging = true;
+    startTouchX    = e.touches[0].clientX;
+    startScrollLeft = wrap.scrollLeft;
+    e.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener('touchmove', function (e) {
+    if (!dragging) return;
+    var dx        = e.touches[0].clientX - startTouchX;
+    var trackW    = track.offsetWidth;
+    var thumbW    = thumb.offsetWidth;
+    var scrollable = wrap.scrollWidth - wrap.clientWidth;
+    wrap.scrollLeft = startScrollLeft + (dx / (trackW - thumbW)) * scrollable;
+    e.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener('touchend',   function () { dragging = false; });
+  document.addEventListener('touchcancel',function () { dragging = false; });
+})();
 </script>
 
 </body>
