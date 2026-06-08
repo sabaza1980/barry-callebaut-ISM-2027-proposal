@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sherif Abaza — Letter to Jimmy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #050505;
+      --deep: #0d0d0d;
+      --card: #0c0c0e;
+      --border: #1a1a1a;
+      --blue: #1B9CFC;
+      --yellow: #FFD32A;
+      --white: #F5F5F5;
+      --muted: #666;
+      --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 60px 24px 80px;
+    }
+
+    /* Noise overlay */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0; opacity: 0.4;
+    }
+
+    .back-link {
+      position: fixed; top: 24px; left: 32px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      z-index: 10;
+    }
+    .back-link:hover { color: var(--yellow); }
+    .back-link::before { content: '← '; }
+
+    .envelope {
+      width: 100%;
+      max-width: 720px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Top metadata strip */
+    .meta-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #111;
+    }
+    .meta-brand {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .meta-brand span { color: var(--yellow); }
+    .meta-label {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: #2a2a2a;
+    }
+
+    /* Letter paper */
+    .paper {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 72px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .paper::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+      background: linear-gradient(180deg, var(--yellow) 0%, var(--blue) 100%);
+    }
+
+    /* Subtle watermark */
+    .paper::after {
+      content: 'BEAST';
+      position: absolute;
+      right: -20px; bottom: 40px;
+      font-family: var(--font-display);
+      font-size: 9rem;
+      color: rgba(255,211,42,0.02);
+      letter-spacing: 4px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .eyebrow {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 36px;
+    }
+
+    .salutation {
+      font-family: var(--font-display);
+      font-size: clamp(3.6rem, 8vw, 6rem);
+      letter-spacing: 1px; line-height: 1;
+      color: var(--white); margin-bottom: 44px;
+    }
+    .salutation span { color: var(--yellow); }
+
+    .body {
+      font-size: 1rem;
+      line-height: 2;
+      color: #bbb;
+    }
+    .body p { margin-bottom: 22px; }
+    .body strong { color: var(--white); }
+    .body em { color: #999; font-style: italic; }
+
+    .key-line {
+      display: block;
+      background: rgba(255,211,42,0.04);
+      border-left: 3px solid rgba(255,211,42,0.4);
+      padding: 18px 24px;
+      margin: 32px 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.96rem;
+      color: #ccc;
+      line-height: 1.9;
+    }
+
+    .signature {
+      margin-top: 52px;
+      padding-top: 36px;
+      border-top: 1px solid #141414;
+    }
+    .sig-name {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .sig-contact {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 2;
+    }
+    .sig-contact a {
+      color: var(--blue);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .sig-contact a:hover { color: var(--yellow); }
+
+    /* Bottom bar */
+    .footer-strip {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-note {
+      font-size: 0.6rem; color: #1e1e1e;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .footer-cta {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--yellow); text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .footer-cta:hover { opacity: 0.7; }
+
+    @media (max-width: 640px) {
+      .paper { padding: 44px 28px; }
+      .meta-strip { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">Back to application</a>
+
+  <div class="envelope">
+
+    <div class="meta-strip">
+      <div class="meta-brand">SHERIF<span>.</span>ABAZA</div>
+      <div class="meta-label">VP Brand Partnerships · MrBeast · Cover Letter</div>
+    </div>
+
+    <div class="paper">
+      <div class="eyebrow">Personal Letter · Addressed Directly · June 2026</div>
+      <div class="salutation">Jimmy<span>,</span></div>
+
+      <div class="body">
+
+        <p>I'll skip the formal stuff. You built a company that turns down 8-figure deals because "Jimmy wouldn't wear that." I want to work for the person who said that — because that sentence is the entire job description.</p>
+
+        <p>My name is Sherif Abaza. Twenty years building things that cross borders — a 140-person events empire in Dubai, a marketplace scaled to 300+ cities, brand partnerships with global companies who still call me when something important is on the table. I speak 9 languages at boardroom level. When MrBeast targets a new market, I don't need a briefing. I need a flight.</p>
+
+        <span class="key-line">When you want the NBA in the room, I've already been in it — I worked with the NBA on their market launches in Europe and Africa. MrBeast already has a connection with the league; I have the inside relationships to turn that into a landmark deal. When MrBeast is ready for Abu Dhabi, I have a personal relationship with Saleh Al Jaziry, the Head of Abu Dhabi Tourism — that conversation starts with a call, not a cold deck. For Feastibles' chocolate story, I know the Barry Callebaut team directly. I know who to call, what language to use, and exactly how to frame the deal so they say yes.</span>
+
+        <p>I understand why Shopify works and Rolex doesn't. I understand that every brand in your ecosystem either earns its place in the story — or it doesn't. The check size is not the criteria. The story is the criteria.</p>
+
+        <p>I also know what it means to pivot fast under real pressure. When COVID killed travel overnight, I turned Withlocals into a B2B platform in 90 days — not through advertising, through <strong>trusted relationships I'd spent years building</strong>. Seventy corporate clients. Real revenue. No safety net. That muscle memory is what I bring to day one.</p>
+
+        <p>I won't pretend I have all the answers. I'll learn more in 30 days inside than I could figure out from the outside. But I show up <strong>curious, connected, and capable of closing deals that make the audience proud</strong> — not just the CFO.</p>
+
+        <p>This is my dream job. Not because it's MrBeast — because it's the <em>right</em> fit. And I don't take deals that aren't the right fit.</p>
+
+        <p><strong>Let's talk.</strong></p>
+
+      </div>
+
+      <div class="signature">
+        <div class="sig-name">Sherif Abaza</div>
+        <div class="sig-contact">
+          <a href="mailto:sabaza@gmail.com">sabaza@gmail.com</a> &nbsp;·&nbsp;
+          <a href="tel:+31623063073">+31 6 2306 3073</a> &nbsp;·&nbsp;
+          <a href="https://linkedin.com/in/sabaza" target="_blank">linkedin.com/in/sabaza</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-strip">
+      <div class="footer-note">This letter was written for one role, at one company, and one person.</div>
+      <a href="index.html" class="footer-cta">View Full Application →</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

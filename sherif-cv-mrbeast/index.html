@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sherif Abaza — VP Brand Partnerships @ MrBeast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #050505;
+      --deep: #0d0d0d;
+      --card: #111111;
+      --border: #1e1e1e;
+      --blue: #1B9CFC;
+      --blue-dark: #0e6fc9;
+      --yellow: #FFD32A;
+      --red: #EA2027;
+      --white: #F5F5F5;
+      --muted: #888;
+      --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(5,5,5,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .nav-brand span { color: var(--yellow); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+
+    /* ── SECTIONS ── */
+    section { position: relative; z-index: 1; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 40px 80px;
+      overflow: hidden;
+    }
+    .hero-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: clamp(120px, 20vw, 260px);
+      color: rgba(27, 156, 252, 0.04);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -4px;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(27,156,252,0.12);
+      border: 1px solid rgba(27,156,252,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 24px;
+      width: fit-content;
+    }
+    .hero-tag .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--blue);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 10vw, 120px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      margin-bottom: 8px;
+    }
+    .hero h1 .line1 { display: block; }
+    .hero h1 .line2 {
+      display: block;
+      background: linear-gradient(90deg, var(--yellow), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-role {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 3vw, 32px);
+      letter-spacing: 4px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .hero-role span { color: var(--yellow); }
+    .hero-tagline {
+      max-width: 680px;
+      font-size: 1.05rem;
+      color: #aaa;
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+    .hero-tagline strong { color: var(--white); }
+    .hero-cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,211,42,0.35);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    /* ── STAT STRIP ── */
+    .stat-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1px;
+      background: var(--border);
+    }
+    .stat-item {
+      background: var(--black);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1;
+      background: linear-gradient(135deg, var(--yellow), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ── GRID CONTAINER ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      margin-bottom: 64px;
+    }
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .section-title .accent { color: var(--yellow); }
+    .section-sub {
+      margin-top: 16px;
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── SECTION PADDING ── */
+    .section-pad { padding: 100px 0; }
+
+    /* ── WHY ME ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2px;
+      background: var(--border);
+    }
+    .why-card {
+      background: var(--card);
+      padding: 40px;
+      transition: background 0.2s;
+    }
+    .why-card:hover { background: #161616; }
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .why-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .why-card p {
+      font-size: 0.9rem;
+      color: #999;
+      line-height: 1.75;
+    }
+    .why-card p strong { color: var(--white); }
+    .why-tag {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 4px 12px;
+      background: rgba(255,211,42,0.1);
+      border: 1px solid rgba(255,211,42,0.25);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 2px; background: var(--border); }
+    .exp-item {
+      background: var(--card);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      transition: background 0.2s;
+    }
+    .exp-item:hover { background: #161616; }
+    .exp-meta {}
+    .exp-company {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .exp-role {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .exp-period {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .exp-bullets li {
+      font-size: 0.88rem;
+      color: #aaa;
+      line-height: 1.7;
+      padding-left: 16px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 2px;
+      background: var(--yellow);
+    }
+    .exp-bullets li strong { color: var(--white); }
+
+    /* ── LANGUAGES ── */
+    .lang-section { background: var(--deep); }
+    .lang-globe-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .lang-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lang-ring {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 2px solid rgba(27,156,252,0.2);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lang-ring::before {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,211,42,0.15);
+    }
+    .lang-center {
+      font-family: var(--font-display);
+      font-size: 72px;
+      color: var(--yellow);
+      line-height: 1;
+      text-align: center;
+    }
+    .lang-center span {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .lang-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .lang-item {
+      display: grid;
+      grid-template-columns: 120px 1fr 60px;
+      align-items: center;
+      gap: 16px;
+    }
+    .lang-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .lang-bar-wrap {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .lang-bar {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--yellow));
+      transition: width 1s ease;
+    }
+    .lang-level {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    /* ── 100 DAYS ── */
+    .days-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+    .days-number {
+      font-family: var(--font-display);
+      font-size: clamp(80px, 12vw, 140px);
+      line-height: 1;
+      background: linear-gradient(135deg, var(--yellow), var(--red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .days-phases {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+    .phase-card {
+      background: var(--card);
+      padding: 40px;
+    }
+    .phase-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .phase-label.blue { color: var(--blue); }
+    .phase-label.yellow { color: var(--yellow); }
+    .phase-label.red { color: var(--red); }
+    .phase-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+    .phase-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .phase-item {
+      font-size: 0.85rem;
+      color: #999;
+      line-height: 1.6;
+      padding-left: 20px;
+      position: relative;
+    }
+    .phase-item::before {
+      content: attr(data-num);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--yellow);
+    }
+    .phase-item strong { color: var(--white); }
+
+    /* ── NOT 9-5 ── */
+    .not9to5 { background: var(--deep); }
+    .not9to5-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .clock-visual {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+    }
+    .clock-svg { width: 100%; height: 100%; }
+    .not9to5-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .point-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .point-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(27,156,252,0.1);
+      border: 1px solid rgba(27,156,252,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .point-text h4 {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .point-text p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── MISSION ── */
+    .mission-section {
+      background: linear-gradient(135deg, #0d0d0d 0%, #111520 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .mission-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 100px 40px;
+    }
+    .mission-quote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+    .mission-quote .hl { color: var(--yellow); }
+    .mission-quote .hl2 { color: var(--blue); }
+    .mission-sig {
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 60px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-left .logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .footer-left .logo span { color: var(--yellow); }
+    .footer-left p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: right;
+    }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--yellow); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .container { padding: 0 20px; }
+      .stat-strip { padding: 0; }
+      .exp-item { grid-template-columns: 1fr; gap: 20px; }
+      .lang-globe-wrap, .not9to5-grid { grid-template-columns: 1fr; gap: 40px; }
+      .days-phases { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .footer-links { text-align: left; }
+    }
+
+    /* ── FADE-UP ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ── BRAND UNIVERSE ── */
+    #universe { background: #060606; }
+    .universe-wrap {
+      margin-top: 48px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #06060a;
+      position: relative;
+    }
+    #brandCanvas {
+      width: 100%;
+      height: 580px;
+      display: block;
+      cursor: crosshair;
+    }
+    .universe-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .universe-note {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      color: #383838;
+      font-style: italic;
+    }
+    #uTooltip {
+      position: fixed;
+      background: rgba(6,6,10,0.97);
+      border: 1px solid rgba(255,211,42,0.22);
+      border-radius: 10px;
+      padding: 14px 18px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      max-width: 300px;
+      z-index: 500;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.6);
+    }
+    #uTooltip.show { opacity: 1; }
+    .tt-brand { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 1px; color: #fff; margin-bottom: 2px; }
+    .tt-cat { font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+    .tt-thesis { font-size: 0.78rem; color: #aaa; line-height: 1.6; }
+    .tt-badge {
+      display: inline-block; margin-top: 8px;
+      padding: 2px 10px; border-radius: 4px;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .tt-badge.beast { background: rgba(255,211,42,0.1); color: var(--yellow); }
+    .tt-badge.confirmed { background: rgba(27,156,252,0.1); color: var(--blue); }
+    .tt-badge.target { background: rgba(0,230,150,0.1); color: #00e696; }
+    .tt-badge.sherif { background: rgba(255,149,0,0.1); color: #FF9500; }
+    @media (max-width: 768px) { #brandCanvas { height: 320px; } }
+
+    /* ── DEAL MAKER GAME ── */
+    #dealmaker { background: var(--deep); }
+    .game-wrap { max-width: 680px; margin: 0 auto; }
+    .hud {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+    }
+    .hud-score {
+      font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 2px; white-space: nowrap;
+    }
+    .hud-score span { color: var(--yellow); }
+    .hud-bar { flex: 1; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .hud-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--yellow)); border-radius: 2px; transition: width 0.5s ease; width: 0%; }
+    .hud-counter { font-size: 0.78rem; color: var(--muted); font-weight: 600; white-space: nowrap; }
+
+    .card-arena { position: relative; height: 480px; margin-bottom: 24px; }
+    .b-card {
+      position: absolute; inset: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 36px 44px;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1), opacity 0.35s;
+    }
+    .b-card::before {
+      content: ''; position: absolute; top:0; left:0; right:0; height:3px;
+      background: linear-gradient(90deg, var(--blue), var(--yellow));
+      border-radius: 18px 18px 0 0;
+    }
+    .b-card.shadow-card {
+      transform: scale(0.94) translateY(14px);
+      opacity: 0.4;
+    }
+    .b-card.fly-left {
+      transform: translateX(-140%) rotate(-20deg) !important;
+      opacity: 0 !important;
+      transition: transform 0.38s ease-in, opacity 0.3s !important;
+    }
+    .b-card.fly-right {
+      transform: translateX(140%) rotate(20deg) !important;
+      opacity: 0 !important;
+      transition: transform 0.38s ease-in, opacity 0.3s !important;
+    }
+    .bc-cat { font-size: 0.6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .bc-name { font-family: var(--font-display); font-size: clamp(2.4rem,6vw,3.6rem); letter-spacing:-1px; line-height:1; color: var(--white); margin-bottom: 6px; }
+    .bc-tagline { font-size: 0.78rem; color: var(--muted); font-style: italic; margin-bottom: 18px; }
+    .bc-brief { font-size: 0.84rem; color: #aaa; line-height: 1.75; flex: 1; }
+    .bc-sherif {
+      margin-top: 14px; padding: 10px 14px;
+      background: rgba(255,211,42,0.04);
+      border-left: 3px solid rgba(255,211,42,0.35);
+      font-size: 0.76rem; color: #bbb; line-height: 1.6;
+      border-radius: 0 6px 6px 0;
+    }
+    .bc-sherif strong { color: var(--yellow); }
+
+    .verdict-overlay {
+      position: absolute; inset: 0; border-radius: 18px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+      backdrop-filter: blur(6px);
+    }
+    .verdict-overlay.show { opacity: 1; }
+    .verdict-overlay.v-correct { background: rgba(0,220,90,0.16); }
+    .verdict-overlay.v-wrong { background: rgba(234,32,39,0.13); }
+    .verdict-overlay.v-info { background: rgba(27,156,252,0.13); }
+    .v-icon { font-size: 3rem; }
+    .v-title { font-family: var(--font-display); font-size: 2rem; letter-spacing: 2px; color: var(--white); }
+    .v-explain { font-size: 0.78rem; color: #ccc; text-align: center; max-width: 280px; line-height: 1.6; }
+
+    .action-btns { display: flex; gap: 12px; justify-content: center; }
+    .act-btn {
+      flex: 1; max-width: 210px; padding: 16px 20px;
+      border: none; border-radius: 12px;
+      font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 2px;
+      cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .act-btn:hover { transform: translateY(-3px); }
+    .act-beast { background: var(--yellow); color: #000; }
+    .act-beast:hover { box-shadow: 0 8px 28px rgba(255,211,42,0.45); }
+    .act-pass { background: #151515; color: #666; border: 1px solid #252525; }
+    .act-pass:hover { border-color: var(--red); color: var(--red); }
+    .kb-hint { text-align: center; margin-top: 12px; font-size: 0.68rem; color: #333; letter-spacing: 1px; }
+
+    .game-end {
+      display: none; text-align: center; padding: 48px 24px;
+    }
+    .end-score {
+      font-family: var(--font-display); font-size: 7rem; line-height: 1;
+      background: linear-gradient(135deg, var(--yellow), var(--blue));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .end-title { font-family: var(--font-display); font-size: 2.2rem; letter-spacing: 3px; margin-top: 4px; }
+    .end-msg { color: var(--muted); margin: 16px auto; max-width: 460px; font-size: 0.88rem; line-height: 1.8; }
+    .end-quote {
+      margin: 20px auto; max-width: 500px;
+      padding: 20px 24px;
+      background: var(--card); border-left: 4px solid var(--yellow);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.84rem; color: #bbb; line-height: 1.75; text-align: left;
+    }
+    .end-quote strong { color: var(--white); }
+
+    /* ── LETTER SECTION ── */
+    .letter-section { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .letter-wrap { max-width: 760px; margin: 0 auto; }
+    .letter-paper {
+      background: #0b0b0d; border: 1px solid #1a1a1a; border-radius: 4px;
+      padding: 64px 72px; position: relative;
+    }
+    .letter-paper::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: linear-gradient(180deg, var(--yellow), var(--blue));
+      border-radius: 4px 0 0 4px;
+    }
+    .letter-eyebrow { font-size: 0.6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 28px; }
+    .letter-salutation {
+      font-family: var(--font-display); font-size: clamp(3rem, 7vw, 5rem);
+      letter-spacing: 1px; line-height: 1; color: var(--white); margin-bottom: 36px;
+    }
+    .letter-salutation span { color: var(--yellow); }
+    .letter-body { font-size: 0.97rem; line-height: 2; color: #bbb; }
+    .letter-body p { margin-bottom: 20px; }
+    .letter-body strong { color: var(--white); }
+    .letter-key {
+      display: block; background: rgba(255,211,42,0.04);
+      border-left: 3px solid rgba(255,211,42,0.4);
+      padding: 16px 20px; margin: 28px 0; border-radius: 0 6px 6px 0;
+      font-size: 0.92rem; color: #ccc; line-height: 1.85;
+    }
+    .letter-sig { margin-top: 44px; padding-top: 32px; border-top: 1px solid #1a1a1a; }
+    .letter-sig-name { font-family: var(--font-display); font-size: 2rem; letter-spacing: 2px; color: var(--white); }
+    .letter-sig-sub { font-size: 0.7rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 6px; }
+    @media (max-width: 768px) { .letter-paper { padding: 40px 28px; } }
+
+    /* ── PARTNERSHIP CARDS ── */
+    .partner-section { background: var(--deep); }
+    .partner-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+    @media (max-width: 900px) { .partner-grid { grid-template-columns: 1fr; } }
+    .p-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 36px 32px; position: relative; overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .p-card:hover { transform: translateY(-5px); border-color: rgba(255,211,42,0.25); }
+    .p-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--yellow));
+    }
+    .p-logo-wrap {
+      width: 52px; height: 52px; background: #fff; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 20px;
+    }
+    .p-logo { width: 38px; height: 38px; object-fit: contain; }
+    .p-logo-fallback { font-family: var(--font-display); font-size: 1.3rem; color: #111; display: none; }
+    .p-cat { font-size: 0.6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+    .p-brand { font-family: var(--font-display); font-size: clamp(2rem,4vw,2.8rem); letter-spacing: 1px; line-height: 1; color: var(--white); margin-bottom: 6px; }
+    .p-tagline { font-size: 0.74rem; color: var(--muted); font-style: italic; margin-bottom: 16px; }
+    .p-thesis { font-size: 0.83rem; color: #aaa; line-height: 1.8; margin-bottom: 14px; }
+    .p-angle {
+      background: rgba(255,211,42,0.04); border-left: 3px solid rgba(255,211,42,0.35);
+      padding: 10px 14px; border-radius: 0 6px 6px 0;
+      font-size: 0.76rem; color: #bbb; line-height: 1.65;
+    }
+    .p-badge {
+      display: inline-block; margin-top: 14px;
+      padding: 3px 10px; border-radius: 4px;
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      background: rgba(255,149,0,0.1); color: #FF9500;
+    }
+
+    /* ── DEAL BLOCKS ── */
+    .deal-block {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; margin-bottom: 20px; transition: border-color 0.3s;
+    }
+    .deal-block:hover { border-color: rgba(255,211,42,0.12); }
+    .deal-header {
+      display: grid; grid-template-columns: auto 1fr auto;
+      align-items: center; gap: 24px;
+      padding: 24px 32px; border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.01);
+    }
+    .deal-logo-wrap {
+      width: 52px; height: 52px; background: #fff; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .deal-logo { width: 38px; height: 38px; object-fit: contain; }
+    .deal-logo-fallback {
+      font-family: var(--font-display); font-size: 1.1rem; color: #111; display: none;
+      align-items: center; justify-content: center;
+    }
+    .deal-cat { font-size: 0.58rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+    .deal-brand { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: 1px; line-height: 1; color: var(--white); }
+    .deal-market { font-size: 0.63rem; color: #3a3a3a; margin-top: 4px; }
+    .deal-hook {
+      max-width: 300px; font-size: 0.8rem; line-height: 1.65;
+      color: #333; font-style: italic; text-align: right;
+      border-left: 1px solid #1a1a1a; padding-left: 24px;
+    }
+    .deal-body { display: grid; grid-template-columns: 1fr 1.1fr; }
+    .deal-col { padding: 28px 30px; border-right: 1px solid var(--border); }
+    .deal-col:last-child { border-right: none; }
+    .deal-col-label {
+      font-size: 0.56rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #252525; margin-bottom: 14px;
+    }
+    .deal-col p { font-size: 0.82rem; color: #777; line-height: 1.85; }
+    .deal-col p + p { margin-top: 12px; }
+    .deal-ideas { list-style: none; padding: 0; }
+    .deal-ideas li {
+      font-size: 0.81rem; color: #777; line-height: 1.7;
+      padding: 9px 0 9px 18px; border-bottom: 1px solid #0f0f0f;
+      position: relative;
+    }
+    .deal-ideas li::before { content: '→'; position: absolute; left: 0; color: var(--yellow); font-size: 0.7rem; top: 11px; }
+    .deal-ideas li:last-child { border-bottom: none; }
+    .deal-ideas strong { color: #bbb; }
+    .deal-sherif {
+      margin-top: 16px; padding: 11px 14px;
+      background: rgba(255,211,42,0.04); border-left: 3px solid rgba(255,211,42,0.3);
+      border-radius: 0 6px 6px 0; font-size: 0.75rem; color: #777; line-height: 1.7;
+    }
+    .deal-sherif strong { color: #ccc; }
+    @media (max-width: 960px) {
+      .deal-header { grid-template-columns: auto 1fr; }
+      .deal-hook { display: none; }
+      .deal-body { grid-template-columns: 1fr; }
+      .deal-col { border-right: none; border-bottom: 1px solid var(--border); }
+      .deal-col:last-child { border-bottom: none; }
+      .outliers-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .outliers-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── STRATEGY STRIP ── */
+    .strategy-strip { margin-top: 52px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .outliers-section { margin-top: 60px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .outliers-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 28px; }
+    .idea-card { background: var(--deep); border: 1px solid var(--border); border-radius: 10px; padding: 20px 16px; transition: border-color 0.25s, transform 0.2s; }
+    .idea-card:hover { border-color: rgba(255,211,42,0.18); transform: translateY(-3px); }
+    .idea-logo-wrap { width: 32px; height: 32px; background: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 12px; flex-shrink: 0; }
+    .idea-logo { width: 22px; height: 22px; object-fit: contain; }
+    .idea-logo-fallback { font-family: var(--font-display); font-size: 0.75rem; color: #111; display: none; width: 100%; text-align: center; }
+    .idea-brand { font-family: var(--font-display); font-size: 1.05rem; letter-spacing: 0.4px; color: var(--white); margin-bottom: 4px; line-height: 1.1; }
+    .idea-cat { font-size: 0.5rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+    .idea-hook { font-size: 0.72rem; color: #666; line-height: 1.65; }
+    .strategy-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #2a2a2a; margin-bottom: 14px; }
+    .strategy-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .strategy-tag {
+      padding: 6px 14px; border: 1px solid #1c1c1c; border-radius: 20px;
+      font-size: 0.7rem; color: #333; font-weight: 500; transition: all 0.25s; cursor: default;
+    }
+    .strategy-tag:hover { border-color: rgba(255,211,42,0.2); color: #666; }
+
+    /* ── HERO FIT NOTE ── */
+    .hero-fit-note { font-size: 0.8rem; color: #444; letter-spacing: 0.5px; margin-top: 6px; }
+    .hero-fit-note span { color: var(--yellow); }
+
+    /* ── CURSOR GLOW ── */
+    .cursor-glow {
+      position: fixed; pointer-events: none; z-index: 9999;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(27,156,252,0.07) 0%, transparent 70%);
+      transform: translate(-50%,-50%);
+      transition: opacity 0.3s;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">SHERIF<span>.</span>ABAZA</div>
+    <ul class="nav-links">
+      <li><a href="#why">Why Me</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#100days">100 Days</a></li>
+      <li><a href="#not9to5">Not 9–5</a></li>
+      <li><a href="#universe">Partnerships</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg-text">BEAST</div>
+    <div class="hero-tag">
+      <span class="dot"></span>
+      Application · VP of Brand Partnerships · MrBeast
+    </div>
+    <h1>
+      <span class="line1">SHERIF</span>
+      <span class="line2">ABAZA</span>
+    </h1>
+    <p class="hero-role">VP Brand Partnerships <span>·</span> MrBeast</p>
+    <p class="hero-tagline">
+      <strong>20+ years building things that scale globally.</strong>
+      From launching a 140-person events empire in Dubai, to growing a marketplace across 300+ cities,
+      to brokering partnerships with brands that earn their place in the story — not just brands with big budgets.
+      I operate at the intersection of creativity, execution, and global reach. And yes, this is my <strong>dream job</strong>.
+    </p>
+    <p class="hero-fit-note">The right deal or no deal. <span>Always.</span></p>
+    <div class="hero-cta-row">
+      <a href="#100days" class="btn-primary">↓ The First 100 Days</a>
+      <a href="mailto:sabaza@gmail.com" class="btn-secondary">sabaza@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-item">
+      <div class="stat-value">20+</div>
+      <div class="stat-label">Years Building</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">9</div>
+      <div class="stat-label">Languages</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">80+</div>
+      <div class="stat-label">Countries</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">300+</div>
+      <div class="stat-label">Cities Scaled</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">$8M+</div>
+      <div class="stat-label">Revenue Led</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">140</div>
+      <div class="stat-label">Team Built</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">3x</div>
+      <div class="stat-label">COP Delivered</div>
+    </div>
+  </div>
+
+  <!-- WHY ME -->
+  <section id="why" class="section-pad">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">The Case</div>
+        <h2 class="section-title">Why <span class="accent">Me</span></h2>
+        <p class="section-sub">MrBeast is building something the world has never seen. That takes a very specific kind of person to lead brand partnerships. Here's why I'm that person.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🌍</div>
+          <h3>Global From Day One</h3>
+          <p>I've spent 20+ years operating across the Middle East, Europe, Africa, and the Americas. <strong>9 languages. 80+ countries. Hundreds of cultural contexts.</strong> When MrBeast targets a new market, I don't need a briefing — I need a flight.</p>
+          <span class="why-tag">Unfair advantage</span>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🤝</div>
+          <h3>I Close Deals That Matter</h3>
+          <p>At Sphere Events, I led partnerships with <strong>Siemens, Ericsson, Emaar, and Porsche</strong>, delivering $8M+ in annual revenue. At Withlocals, I brokered deals with <strong>70+ global corporate clients</strong> from nothing. I understand what brands want — and what they fear.</p>
+          <span class="why-tag">Revenue track record</span>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>Execution at Scale</h3>
+          <p>I don't just pitch. I deliver. <strong>150+ projects per year</strong> at Sphere. <strong>COP events</strong> with multinational teams and zero tolerance for failure. <strong>A marketplace scaled from 50 to 300+ cities</strong> in years. When something needs to happen, I make it happen.</p>
+          <span class="why-tag">Builder mentality</span>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔗</div>
+          <h3>Real Connections. Real Rooms.</h3>
+          <p>Not a LinkedIn database — actual relationships. <strong>Decision-makers at global brands</strong> across MENA, Europe, Africa, and the Americas. Government stakeholders. Media and entertainment executives. Festival organizers. Corporate partnership leads. Built over 20 years of showing up in person, in the right language, with the right follow-through. <strong>These are the people who say yes to the right deal.</strong></p>
+          <span class="why-tag">Network that converts</span>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏗️</div>
+          <h3>I Build the Infrastructure</h3>
+          <p>I built Withlocals' global host network from scratch. I built Sphere's agency from 1 to 140 people. Outside of work I'm co-creating <strong>World of Kaladan</strong> (a fantasy franchise), building <strong>The Vault</strong> (an app for trading card collectors), and shipping both using AI-assisted design, development, and production workflows. <strong>AI literacy isn't a buzzword for me — it's how I work.</strong> Brand partnerships at MrBeast's level need operational architecture and a builder who stays ahead of the tools. That's me.</p>
+          <span class="why-tag">Builder · AI-native · Systems thinker</span>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h3>I Get the MrBeast Vision</h3>
+          <p>MrBeast isn't just a channel — it's a <strong>cultural force, a media empire, a platform for impact</strong>. The right brand partners aren't just writing checks; they're joining something bigger. I can identify which brands belong in that story and build deals that <strong>amplify the mission, not dilute it</strong>.</p>
+          <span class="why-tag">Mission-aligned</span>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💥</div>
+          <h3>Calm When It Counts Most</h3>
+          <p>I've delivered for heads of state on the world stage. I've kept a 140-person team aligned and moving through the highest-pressure situations. I've pivoted an entire business model during a pandemic — in weeks. <strong>When the stakes are highest, I get calmer</strong> — and that's exactly what closing landmark brand deals requires.</p>
+          <span class="why-tag">High-stakes proven</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section-pad">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Track Record</div>
+        <h2 class="section-title">Built <span class="accent">Big</span> Before</h2>
+        <p class="section-sub">The roles most relevant to what MrBeast needs — in descending order of relevance.</p>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-company">Sphere Events</div>
+            <div class="exp-role">Founder & Managing Director</div>
+            <div class="exp-period">Dubai, UAE · 2008–2013</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><strong>Built a regional brand experiences agency from zero to 140 people</strong> and $8M+ annual revenue across the Middle East.</li>
+            <li>Delivered <strong>150+ projects per year</strong> — public events, brand activations, corporate programs — for Siemens, Ericsson, Emaar, Porsche, and more.</li>
+            <li>Led massive public events including the <strong>Dubai Chocolate Festival</strong> and <strong>Marina Music Festival</strong> — tens of thousands of attendees, millions in brand exposure.</li>
+            <li>Built the client partnership frameworks, supplier networks, and brand storytelling systems that turned one-time clients into multi-year relationships.</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-company">Withlocals</div>
+            <div class="exp-role">Chief Growth Officer → Chief Community Officer</div>
+            <div class="exp-period">Eindhoven · 2018–Present</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Scaled a global marketplace from <strong>50 to 300+ cities</strong> across 40+ countries, building the entire supply side from the ground up.</li>
+            <li>Served <strong>70+ global corporate clients</strong> post-pivot, including some of the world's largest companies, through virtual and hybrid experience programs.</li>
+            <li><strong>2,000+ local partners onboarded</strong> across 80+ countries — each partnership structured, managed, and optimized for performance and brand alignment.</li>
+            <li>Led the COVID pivot: transformed the company's entire model in weeks, launching a new B2B platform that became its most profitable channel.</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-company">Abaza Business Services</div>
+            <div class="exp-role">Founder</div>
+            <div class="exp-period">Global · 2019–Present</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Strategic and execution consultancy delivering <strong>large-scale global events and brand activations</strong> — world-stage programmes coordinated across multinational teams on multiple continents, bridging government, corporate, and NGO partners.</li>
+            <li>Built an <strong>international client and partner network</strong> spanning MENA, Europe, and beyond — relationships developed through years of high-stakes delivery on the ground in diverse markets and cultures.</li>
+            <li>Designed agile operational frameworks that let teams <strong>execute complex programmes across multiple countries and time zones</strong> — direct preparation for managing brand partnerships at global scale without losing execution quality.</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-company">FrontFlip / me360</div>
+            <div class="exp-role">CEO, Middle East & North Africa</div>
+            <div class="exp-period">MENA · 2010–2013</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Co-founded and led MENA operations for a mobile loyalty startup — <strong>raised $1.8M</strong> in early-stage funding.</li>
+            <li>Built one of the region's first app-based consumer engagement platforms — partnerships, product, and field operations across 25 people.</li>
+            <li>Learned the fundamentals of building tech-brand relationships and <strong>navigating failure with clarity and resilience</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- LANGUAGES -->
+  <section id="languages" class="section-pad lang-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Global Reach</div>
+        <h2 class="section-title">9 Languages. <span class="accent">One Mission.</span></h2>
+        <p class="section-sub">MrBeast is global. Brand partnerships are local. The ability to negotiate, connect, and build trust in a brand's own language is an edge most candidates simply don't have.</p>
+      </div>
+      <div class="lang-globe-wrap">
+        <div class="lang-visual">
+          <div class="lang-ring">
+            <div class="lang-center">
+              9
+              <span>Languages</span>
+            </div>
+          </div>
+        </div>
+        <ul class="lang-list">
+          <li class="lang-item">
+            <span class="lang-name">Arabic</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div>
+            <span class="lang-level">Native</span>
+          </li>
+          <li class="lang-item">
+            <span class="lang-name">English</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div>
+            <span class="lang-level">Native</span>
+          </li>
+          <li class="lang-item">
+            <span class="lang-name">French</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:85%"></div></div>
+            <span class="lang-level">Excellent</span>
+          </li>
+          <li class="lang-item">
+            <span class="lang-name">Spanish</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:85%"></div></div>
+            <span class="lang-level">Excellent</span>
+          </li>
+          <li class="lang-item">
+            <span class="lang-name">Dutch</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:60%"></div></div>
+            <span class="lang-level">Working</span>
+          </li>
+          <li class="lang-item">
+            <span class="lang-name">Polish</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:60%"></div></div>
+            <span class="lang-level">Working</span>
+          </li>
+          <li class="lang-item">
+            <span class="lang-name">Portuguese</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:35%"></div></div>
+            <span class="lang-level">Basic</span>
+          </li>
+          <li class="lang-item">
+            <span class="lang-name">Italian</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:35%"></div></div>
+            <span class="lang-level">Basic</span>
+          </li>
+          <li class="lang-item">
+            <span class="lang-name">Romanian</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:35%"></div></div>
+            <span class="lang-level">Basic</span>
+          </li>
+        </ul>
+      </div>
+      <div style="margin-top: 64px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 40px;">
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #bbb; max-width: 800px;">
+          Those 9 languages open doors across <strong style="color:white">the Arab world</strong> (Arabic — 400M+ speakers), <strong style="color:white">Latin America + Spain</strong> (Spanish), <strong style="color:white">22 French-speaking countries</strong> (French), <strong style="color:white">Eastern Europe</strong> (Polish, Romanian), and <strong style="color:white">the Netherlands, Italy, and beyond</strong> (Dutch, Italian). That's not just a language list — it's a <strong style="color:white">relationship network</strong>. I have real connections with decision-makers, brand leads, and cultural gatekeepers across these markets. 100+ countries visited. Relationships built in boardrooms, festivals, marketplaces, and government halls. I can get in the room on every continent — and I know how to close the room in the language that matters most.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 100 DAYS PLAN -->
+  <section id="100days" class="section-pad">
+    <div class="container">
+      <div class="days-header">
+        <div class="days-number">100</div>
+        <div>
+          <div class="section-eyebrow">The Plan</div>
+          <h2 class="section-title">First <span class="accent">100 Days</span></h2>
+          <p style="color: var(--muted); margin-top: 8px; max-width: 480px; font-size: 0.95rem;">Day one thinking. Three phases. One goal: build a partnership machine with global reach and the local depth to make MrBeast a household name in every market it enters.</p>
+        </div>
+      </div>
+      <div class="days-phases">
+        <div class="phase-card">
+          <div class="phase-label blue">Days 1–30</div>
+          <div class="phase-title">LISTEN &amp; MAP</div>
+          <ul class="phase-items">
+            <li data-num="01"><strong>Personally in every room</strong> — I don't delegate the listening phase. I'm at every meeting, every table, with every existing partner and internal team member. The best intelligence doesn't filter through layers. I show up for it directly.</li>
+            <li data-num="02"><strong>Deep partnership audit</strong> — understand every existing deal structure, brand relationship, and internal process from the inside. What's working, what isn't, and what's being left on the table.</li>
+            <li data-num="03"><strong>Build the global opportunity map</strong> — not just what we have, but what's missing. Which categories are unclaimed? Which markets have no local brand champion? What does "household name" mean in Lagos, Lyon, Lima, and Los Angeles — and is MrBeast hitting that bar everywhere?</li>
+            <li data-num="04"><strong>Team alignment</strong> — meet every person in the partnerships, production, and creative chain. Understand exactly how deals flow and where the friction lives before touching anything.</li>
+            <li data-num="05"><strong>Activate the network immediately</strong> — I arrive with existing relationships across FMCG, food &amp; beverage, entertainment, and sport in 80+ countries. Within 30 days, I'm already in warm conversations — not building a contacts list from scratch.</li>
+          </ul>
+        </div>
+        <div class="phase-card">
+          <div class="phase-label yellow">Days 31–70</div>
+          <div class="phase-title">BUILD &amp; PITCH</div>
+          <ul class="phase-items">
+            <li data-num="01"><strong>Build the Partnership Machine</strong> — a scalable, modular framework with global standards and built-in local flexibility. Not one-size-fits-all: a system regional markets can activate, adapt, and own so deals happen in parallel, not in sequence, and MrBeast can grow everywhere at once.</li>
+            <li data-num="02"><strong>Map the aspiration gap</strong> — identify where MrBeast has recognition but not yet aspiration. The markets where the brand is known but not yet felt as native. Build the partnership strategy that closes that gap: the right brands, the right local cultural signals, the right content formats for each region.</li>
+            <li data-num="03"><strong>Open the first warm conversations</strong> — starting with partners where I have existing trust: Barry Callebaut (supply chain relationship, not a cold call), Brand Abu Dhabi through Saleh Al Jaziry (a call, not a pitch deck), and the NBA through my prior work on their European and African launches.</li>
+            <li data-num="04"><strong>Build the pitch infrastructure</strong> — templated decks, media kits, audience data packages, and regional market briefs that make "yes" the easiest answer in any room, on any continent.</li>
+            <li data-num="05"><strong>Close the first landmark deal</strong> — a partnership that signals a new standard: global in ambition, locally activated, built to generate content the audience loves wherever they are in the world.</li>
+          </ul>
+        </div>
+        <div class="phase-card">
+          <div class="phase-label red">Days 71–100</div>
+          <div class="phase-title">SCALE &amp; WIN</div>
+          <ul class="phase-items">
+            <li data-num="01"><strong>Prove the machine works</strong> — take the framework from theory to evidence. Show it produces results at both scales: a landmark global deal and a meaningful regional activation in at least one non-US market, both closed within 100 days.</li>
+            <li data-num="02"><strong>Launch the local champion network</strong> — identify regional leads or agency partners in MENA, Europe, Latin America, and Asia-Pacific who can run the playbook in their markets without HQ bottlenecks. Global reach through local ownership, not global management of local details.</li>
+            <li data-num="03"><strong>Build aspiration into every deal</strong> — each new partnership should make MrBeast feel more like a household name in that market. The right cultural hooks, the right local co-creation, content that makes audiences feel like MrBeast was built for them — not just exported to them.</li>
+            <li data-num="04"><strong>Turn partners into advocates</strong> — structured partner reviews and creative collaboration sessions that convert first deals into multi-year relationships and generate warm referrals to the next partner.</li>
+            <li data-num="05"><strong>Present the 12-month vision</strong> — a data-grounded roadmap for where brand partnerships take MrBeast globally next: built on what I've learned inside, who I know outside, and what the audience responds to everywhere.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROOF POINT CALLOUT -->
+      <div style="margin-top: 2px; background: var(--card); border-left: 4px solid var(--yellow); padding: 40px 48px; display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start;">
+        <div style="font-family: var(--font-display); font-size: 56px; line-height: 1; color: var(--yellow); padding-top: 4px;">★</div>
+        <div>
+          <p style="font-size: 0.65rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 8px;">Proof of concept · The COVID Pivot</p>
+          <p style="font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 10px;">I've done this before. Exactly this.</p>
+          <p style="font-size: 0.9rem; color: #999; line-height: 1.8; max-width: 780px;">When the pandemic shut down travel overnight, Withlocals needed a new revenue model — fast. I went straight to my global network of long-term clients and contacts, and turned those relationships into the company's B2B pivot. Within weeks, we had <strong style="color:var(--white)">70+ corporate clients</strong> signed onto a new virtual experiences platform — not through cold outreach, not through advertising, but through <strong style="color:var(--white)">trusted relationships I'd built over years</strong>. That's exactly what I bring to MrBeast from day one: a warm network that converts, and the experience to know how to deploy it at speed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERSHIP PLAYS -->
+  <section id="universe" class="section-pad" style="background:var(--black);">
+    <div class="container">
+
+      <div class="section-header fade-up">
+        <div class="section-eyebrow">Early Homework · Three Opening Plays</div>
+        <h2 class="section-title">Where I'd <span class="accent">Start</span></h2>
+        <p class="section-sub">This is early thinking — not a finished strategy. I still need to listen and learn before diving in. But the right VP walks in with a point of view, not a blank page.</p>
+      </div>
+
+      <!-- ① NBA -->
+      <div class="deal-block fade-up">
+        <div class="deal-header">
+          <div class="deal-logo-wrap">
+            <img class="deal-logo" src="https://logo.clearbit.com/nba.com" alt="NBA"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="deal-logo-fallback">NBA</span>
+          </div>
+          <div>
+            <div class="deal-cat">🇺🇸 US Core · Sport &amp; Entertainment</div>
+            <div class="deal-brand">NBA</div>
+            <div class="deal-market">National Basketball Association · 30 teams · 1.8B global fans · The most Gen Z-indexed major league in America</div>
+          </div>
+          <div class="deal-hook">"Two of the biggest Gen Z entertainment properties in America — and they haven't collided yet at scale."</div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-col">
+            <div class="deal-col-label">The Opportunity</div>
+            <p>MrBeast's core US audience and the NBA's fastest-growing fan segment are the same demographic. Both are in a race to own Gen Z's long-term cultural attention — and neither has found the other at the scale either deserves. The existing MrBeast connection to the league is the starting point. The real opportunity is a multi-pillar, multi-year partnership that makes the relationship structural, not episodic — content, live events, and Feastibles woven through the entire NBA calendar year.</p>
+          </div>
+          <div class="deal-col">
+            <div class="deal-col-label">Content Concepts</div>
+            <ul class="deal-ideas">
+              <li><strong>"Last Fan in the Arena"</strong> — MrBeast-format endurance event inside an NBA arena. Full league branding. The drama is already built in</li>
+              <li><strong>Player Access Series</strong> — challenge videos with active NBA stars at practice facilities. Real players, real stakes, organic virality</li>
+              <li><strong>Step × NBA Financial Literacy</strong> — co-branded content targeting teen fans. "How NBA rookies manage their first paycheck." Deepens Beast Financial's US cultural relevance at exactly the right age</li>
+              <li><strong>Beast Games × NBA Format</strong> — an amateur basketball competition season with NBA-adjacent branding and $1M+ stakes. A content vertical neither side could build alone</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ② Brand Abu Dhabi -->
+      <div class="deal-block fade-up">
+        <div class="deal-header">
+          <div class="deal-logo-wrap">
+            <img class="deal-logo" src="https://logo.clearbit.com/visitabudhabi.ae" alt="Brand Abu Dhabi"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="deal-logo-fallback">AD</span>
+          </div>
+          <div>
+            <div class="deal-cat">🌍 MENA · Destination &amp; Culture</div>
+            <div class="deal-brand">Brand Abu Dhabi</div>
+            <div class="deal-market">Abu Dhabi Dept. of Culture &amp; Tourism · Formula 1 · Louvre · UFC Fight Island · One of the world's largest destination marketing budgets</div>
+          </div>
+          <div class="deal-hook">"They put the Louvre in the desert and UFC on a private island during a pandemic. They haven't found MrBeast yet."</div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-col">
+            <div class="deal-col-label">The Opportunity</div>
+            <p>Abu Dhabi is one of the most ambitious destination marketing operations in the world — Formula 1, Louvre Abu Dhabi, UFC Fight Island. When they decide to partner, they fund it properly. What they haven't done yet is partner with the world's most-watched content creator at the scale MrBeast operates. That gap is the opportunity: a co-produced content partnership that puts Abu Dhabi in front of 300M+ subscribers and makes MrBeast feel genuinely native to the Arab world for the first time.</p>
+          </div>
+          <div class="deal-col">
+            <div class="deal-col-label">Content Concepts</div>
+            <ul class="deal-ideas">
+              <li><strong>Beast Games Season 2 — Abu Dhabi</strong> — the world's most watched competition format filmed in one of the world's most spectacular locations. Yas Island. Liwa desert. The Corniche. Production infrastructure that makes Hollywood jealous</li>
+              <li><strong>"I Survived 24 Hours in the Arabian Desert"</strong> — survival challenge using Abu Dhabi's Liwa desert access. Authentic, visually extraordinary destination storytelling at 300M+ reach</li>
+              <li><strong>"Last Person to Leave Yas Island"</strong> — endurance challenge across Ferrari World, Warner Bros. World, SeaWorld Abu Dhabi. Unprecedented access, unprecedented scale</li>
+              <li><strong>Annual Tourism Content Series</strong> — 3–5 Abu Dhabi episodes per year, co-funded by ADTCA as destination marketing investment. The creator-tourism model Saudi and Dubai pioneered — now at MrBeast scale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ③ Barry Callebaut -->
+      <div class="deal-block fade-up">
+        <div class="deal-header">
+          <div class="deal-logo-wrap">
+            <img class="deal-logo" src="https://logo.clearbit.com/barry-callebaut.com" alt="Barry Callebaut"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="deal-logo-fallback">BC</span>
+          </div>
+          <div>
+            <div class="deal-cat">🍫 Global Supply Chain · Food &amp; FMCG</div>
+            <div class="deal-brand">Barry Callebaut</div>
+            <div class="deal-market">World's largest B2B chocolate manufacturer · 60+ countries · 25%+ of global chocolate supply · Already inside Feastibles</div>
+          </div>
+          <div class="deal-hook">"They're already in the Feastibles supply chain. The relationship exists at B2B level. The brand story doesn't — yet."</div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-col">
+            <div class="deal-col-label">The Opportunity</div>
+            <p>Barry Callebaut already supplies the chocolate inside Feastibles. The relationship exists at the B2B level — the brand story doesn't, yet. "Where does Feastibles chocolate actually come from?" is a question that could generate millions of views, elevate the product into a premium tier, and give Barry Callebaut its first meaningful consumer-facing narrative. The supply chain partnership becomes the content. Neither side has to invent a connection — they just have to tell the one that already exists.</p>
+          </div>
+          <div class="deal-col">
+            <div class="deal-col-label">Content Concepts</div>
+            <ul class="deal-ideas">
+              <li><strong>"I Went to the Factory Where Feastibles is Made"</strong> — a full production tour at Barry Callebaut's Belgian or Swiss facility. The "how it's made" video MrBeast's audience has never seen for their favourite chocolate</li>
+              <li><strong>Feastibles Reserve — Origin Collection</strong> — co-developed limited edition SKU using single-origin Grand Cru cacao. Higher price point, limited run, dedicated content launch. Proof that Feastibles can own the premium tier</li>
+              <li><strong>"Bean to Bar Challenge"</strong> — can MrBeast's team make chocolate from raw cacao in 24 hours? Barry Callebaut as technical expert and judge. The video writes itself</li>
+              <li><strong>Sustainability Narrative</strong> — "Forever Chocolate" meets Beast Philanthropy. Joint ESG storytelling: world's most viral food brand + most sustainably committed chocolate manufacturer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outliers section -->
+      <div class="outliers-section fade-up">
+        <div class="section-eyebrow" style="margin-bottom: 10px;">Unconventional Plays · Worth Exploring</div>
+        <h3 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--white); letter-spacing: 1px; margin-bottom: 8px;">The <span class="accent">Outliers</span></h3>
+        <p style="font-size: 0.85rem; color: var(--muted); max-width: 560px; line-height: 1.7;">Brand fits that aren't obvious until they are. Each has genuine cultural logic — not to be rushed, but not to be ignored either.</p>
+        <div class="outliers-grid">
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/guinnessworldrecords.com" alt="Guinness World Records" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">GWR</span>
+            </div>
+            <div class="idea-brand">Guinness World Records</div>
+            <div class="idea-cat">Heritage · Record-Breaking</div>
+            <div class="idea-hook">Every MrBeast video is already a world record attempt. Now make it official.</div>
+          </div>
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/duolingo.com" alt="Duolingo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">DL</span>
+            </div>
+            <div class="idea-brand">Duolingo</div>
+            <div class="idea-cat">EdTech · Pop Culture</div>
+            <div class="idea-hook">The internet's two most unhinged educational brands finally find each other.</div>
+          </div>
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/roblox.com" alt="Roblox" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">RBX</span>
+            </div>
+            <div class="idea-brand">Roblox</div>
+            <div class="idea-cat">Gaming · Gen Alpha</div>
+            <div class="idea-hook">300M subscribers meet 200M users. Neither audience has fully crossed over — yet.</div>
+          </div>
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/lego.com" alt="LEGO" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">LEGO</span>
+            </div>
+            <div class="idea-brand">LEGO</div>
+            <div class="idea-cat">Nostalgia · Creator Culture</div>
+            <div class="idea-hook">The original viral toy brand meets the original viral video brand. Build something together.</div>
+          </div>
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/liquiddeath.com" alt="Liquid Death" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">LD</span>
+            </div>
+            <div class="idea-brand">Liquid Death</div>
+            <div class="idea-cat">Challenger Brand · Youth</div>
+            <div class="idea-hook">Two brands that built cult fanbases by being the opposite of corporate.</div>
+          </div>
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/onepeloton.com" alt="Peloton" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">PLT</span>
+            </div>
+            <div class="idea-brand">Peloton</div>
+            <div class="idea-cat">Health &amp; Wellness · Lifestyle</div>
+            <div class="idea-hook">24 hours on a Peloton. MrBeast's fitness challenge era starts here.</div>
+          </div>
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/crumbl.com" alt="Crumbl Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">CRM</span>
+            </div>
+            <div class="idea-brand">Crumbl Cookies</div>
+            <div class="idea-cat">Food &amp; Culture · Drop Model</div>
+            <div class="idea-hook">Limited drops, massive lines, viral unboxing. This is MrBeast culture applied to cookies.</div>
+          </div>
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/mattel.com" alt="Mattel / UNO" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">UNO</span>
+            </div>
+            <div class="idea-brand">UNO / Mattel</div>
+            <div class="idea-cat">Nostalgia · Family Gaming</div>
+            <div class="idea-hook">The world's most played card game gets its biggest tournament ever. $1M prize. Global audience.</div>
+          </div>
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/airbnb.com" alt="Airbnb" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">ABB</span>
+            </div>
+            <div class="idea-brand">Airbnb</div>
+            <div class="idea-cat">Travel &amp; Experience · Creator Economy</div>
+            <div class="idea-hook">MrBeast rents the world's most extreme Airbnb stays. Neither side has done this at this scale.</div>
+          </div>
+
+          <div class="idea-card">
+            <div class="idea-logo-wrap">
+              <img class="idea-logo" src="https://logo.clearbit.com/natgeo.com" alt="National Geographic" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span class="idea-logo-fallback">NGS</span>
+            </div>
+            <div class="idea-brand">National Geographic</div>
+            <div class="idea-cat">Impact · Storytelling · Disney+</div>
+            <div class="idea-hook">Beast Philanthropy meets the greatest nature storytelling brand on earth. The crossover nobody expected.</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- NOT 9-5 -->
+  <section id="not9to5" class="section-pad not9to5">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">The Mindset</div>
+        <h2 class="section-title">This Isn't a <span class="accent">9–5</span></h2>
+        <p class="section-sub">And that's exactly why I'm the right fit. My entire career has been built on doing what the moment demands — not what the clock says.</p>
+      </div>
+      <div class="not9to5-grid">
+        <div class="clock-visual">
+          <svg class="clock-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer ring -->
+            <circle cx="150" cy="150" r="130" fill="none" stroke="#1e1e1e" stroke-width="2"/>
+            <!-- Active arc (24/7) -->
+            <circle cx="150" cy="150" r="130" fill="none" stroke="url(#grad)" stroke-width="8" stroke-dasharray="817" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 150 150)"/>
+            <!-- Inner ring -->
+            <circle cx="150" cy="150" r="100" fill="none" stroke="#1e1e1e" stroke-width="1"/>
+            <!-- Hour ticks -->
+            <line x1="150" y1="25" x2="150" y2="40" stroke="#333" stroke-width="2"/>
+            <line x1="275" y1="150" x2="260" y2="150" stroke="#333" stroke-width="2"/>
+            <line x1="150" y1="275" x2="150" y2="260" stroke="#333" stroke-width="2"/>
+            <line x1="25" y1="150" x2="40" y2="150" stroke="#333" stroke-width="2"/>
+            <!-- Center dot -->
+            <circle cx="150" cy="150" r="6" fill="#FFD32A"/>
+            <!-- Clock hand 1 (pointing roughly 3am) -->
+            <line x1="150" y1="150" x2="222" y2="90" stroke="#1B9CFC" stroke-width="3" stroke-linecap="round"/>
+            <!-- Clock hand 2 (pointing roughly 11pm) -->
+            <line x1="150" y1="150" x2="130" y2="70" stroke="#FFD32A" stroke-width="2" stroke-linecap="round"/>
+            <!-- 24/7 label -->
+            <text x="150" y="158" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="42" fill="#F5F5F5" letter-spacing="2">24/7</text>
+            <defs>
+              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1B9CFC"/>
+                <stop offset="100%" stop-color="#FFD32A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <ul class="not9to5-points">
+          <li class="point-item">
+            <div class="point-icon">🌐</div>
+            <div class="point-text">
+              <h4>I've always operated across time zones</h4>
+              <p>Managing teams in Dubai, clients in New York, partners in Tokyo — I learned early that great work doesn't respect time zones. Neither do I. My phone is always on for the right reasons.</p>
+            </div>
+          </li>
+          <li class="point-item">
+            <div class="point-icon">🔥</div>
+            <div class="point-text">
+              <h4>I built a 140-person company from scratch</h4>
+              <p>Entrepreneurs don't have office hours. Building Sphere Events meant being everywhere at once — on a production floor at 4am, in a client meeting at 7am, pitching a new account at noon. That's my natural rhythm.</p>
+            </div>
+          </li>
+          <li class="point-item">
+            <div class="point-icon">⚡</div>
+            <div class="point-text">
+              <h4>High pressure is where I do my best work</h4>
+              <p>World-stage events. A pandemic pivot that saved a company. A startup that failed and taught me more than any success. I've made high-stakes decisions that kept teams together and clients satisfied. When everything is on the line, I get sharper — not slower.</p>
+            </div>
+          </li>
+          <li class="point-item">
+            <div class="point-icon">🎮</div>
+            <div class="point-text">
+              <h4>I ship products in my spare time</h4>
+              <p>I'm building <em>World of Kaladan</em> — a fantasy franchise with a board game and digital universe — and <em>The Vault</em>, an app for trading card collectors. Both built using AI-assisted workflows across design, development, and content. <strong>AI literacy is a core skill, not a side interest.</strong> Creating doesn't turn off when the workday ends.</p>
+            </div>
+          </li>
+          <li class="point-item">
+            <div class="point-icon">🏀</div>
+            <div class="point-text">
+              <h4>Team sports are in my DNA</h4>
+              <p>I played basketball at national youth level — I know what it means to compete, to trust your teammates, and to win as a unit. Now I coach youth teams because the best investment you can make is in developing the next generation. It's the same reason I believe in MrBeast: the mission is bigger than any individual play.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION STATEMENT -->
+  <section class="mission-section">
+    <div class="mission-inner">
+      <p class="mission-quote">
+        "MrBeast is building <span class="hl">the most watched thing</span> on the planet. I want to make sure the brands in that story <span class="hl2">deserve to be there</span> — and that they know how lucky they are."
+      </p>
+      <p class="mission-sig">— Sherif Abaza · Applying for VP of Brand Partnerships</p>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONNECT -->
+  <footer id="connect">
+    <div class="footer-left">
+      <div class="logo">SHERIF<span>.</span>ABAZA</div>
+      <p>Available Worldwide · Moving Fast</p>
+      <p style="margin-top: 4px; color: #555; font-size: 0.75rem;">linkedin.com/in/sabaza</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:sabaza@gmail.com">sabaza@gmail.com</a>
+      <a href="tel:+31623063073">+31 6 2306 3073</a>
+      <a href="https://linkedin.com/in/sabaza" target="_blank">LinkedIn →</a>
+    </div>
+  </footer>
+
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+<script>
+// ═══════════════════════════════════════════
+//  CURSOR GLOW
+// ═══════════════════════════════════════════
+(function() {
+  const glow = document.getElementById('cursorGlow');
+  document.addEventListener('mousemove', e => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+})();
+
+// ═══════════════════════════════════════════
+//  SCROLL ANIMATIONS + STAT COUNTERS
+// ═══════════════════════════════════════════
+(function() {
+  // Fade-up observer
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // Stat counter observer
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target._counted) {
+        e.target._counted = true;
+        animCount(e.target);
+        cio.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.8 });
+
+  function animCount(el) {
+    const text = el.textContent.trim();
+    const match = text.match(/([\d.]+)(.*)/);
+    if (!match) return;
+    const target = parseFloat(match[1]);
+    const suffix = match[2];
+    const prefix = text.startsWith('$') ? '$' : '';
+    const cleanTarget = parseFloat(match[1]);
+    const dur = 1600;
+    const t0 = performance.now();
+    function step(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const val = cleanTarget < 10 ? (ease * cleanTarget).toFixed(0) : Math.round(ease * cleanTarget);
+      el.textContent = prefix + val + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  document.querySelectorAll('.stat-value').forEach(el => cio.observe(el));
+})();
+
+// ═══════════════════════════════════════════
+//  BRAND UNIVERSE CANVAS
+// ═══════════════════════════════════════════
+(function() {
+  const canvas = document.getElementById('brandCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, dpr, raf = null, frame = 0, hovId = null;
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight || 580;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const COL = { beast:'#FFD32A', confirmed:'#1B9CFC', target:'#00e696', sherif:'#FF9500' };
+
+  function hexRgba(h, a) {
+    const r = parseInt(h.slice(1,3),16), g = parseInt(h.slice(3,5),16), b = parseInt(h.slice(5,7),16);
+    return `rgba(${r},${g},${b},${a})`;
+  }
+
+  const NODES = [
+    // Beast Industries brands
+    {id:'bi',  label:'BEAST\nINDUSTRIES', type:'beast',     r:50, rx:.50, ry:.50, cat:'Media Empire',        thesis:'$5.2B valuation · 300M+ YouTube subscribers · $1.6B projected 2026 revenue · The most watched creator in history', badge:'Heart of the Empire'},
+    {id:'fe',  label:'Feastibles',        type:'beast',     r:32, rx:.31, ry:.25, cat:'Food & Bev',           thesis:'$520M 2025 revenue · 80,000+ retail locations · Barry Callebaut supply chain · Premium chocolate challenger brand', badge:'Beast Brand'},
+    {id:'bg',  label:'Beast Games',       type:'beast',     r:28, rx:.72, ry:.23, cat:'Streaming',            thesis:'Amazon Prime Video · $100M+ production budget · Largest unscripted show on Prime · Global launch strategy needed', badge:'Beast Brand'},
+    {id:'sf',  label:'Step / Beast\nFinancial', type:'beast',r:26,rx:.81, ry:.58, cat:'FinTech',              thesis:'Acquired Feb 2026 · 7M+ teen users · Banking, crypto, insurance, credit — full Gen Z financial suite in one app', badge:'Beast Brand'},
+    {id:'lc',  label:'Lunchly',           type:'beast',     r:22, rx:.21, ry:.74, cat:'Food',                 thesis:'Packaged school meals · Walmart distribution · Natural extension of Feastibles food platform into lunch category', badge:'Beast Brand'},
+    {id:'bph', label:'Beast\nPhilanthropy',type:'beast',    r:20, rx:.50, ry:.12, cat:'Impact',               thesis:'Team Trees · Team Seas · Largest creator-led charity in history · Brand halo multiplier for all partnerships', badge:'Beast Brand'},
+    // Confirmed partners
+    {id:'sh',  label:'Shopify',           type:'confirmed', r:26, rx:.07, ry:.36, cat:'E-Commerce',           thesis:'#1 most frequent sponsor · 7+ video integrations · Creator economy x e-commerce alignment is textbook perfect', badge:'Confirmed Partner'},
+    {id:'bc',  label:'Barry\nCallebaut',  type:'sherif',    r:22, rx:.13, ry:.13, cat:'Chocolate / FMCG',     thesis:"Feastibles' chocolate supplier · World's largest B2B chocolate maker · Sherif knows the team personally. Opportunity: turn the supply relationship into a visible co-branded story", badge:"Sherif's Network"},
+    {id:'ap',  label:'Amazon\nPrime',     type:'confirmed', r:24, rx:.91, ry:.27, cat:'Media + Retail',       thesis:'Beast Games streaming deal · Prime retail distribution for Feastibles · Multi-platform relationship with enormous potential beyond gaming', badge:'Confirmed Partner'},
+    {id:'lw',  label:"Lowe's",           type:'confirmed', r:20, rx:.94, ry:.60, cat:'Home Improvement',     thesis:"Multi-year strategic partner · Challenge/build content natural fit · First-mover narrative vs Home Depot · Gen Z's first home = huge future audience", badge:'Confirmed Partner'},
+    {id:'jl',  label:"Jack Link's",      type:'confirmed', r:18, rx:.08, ry:.62, cat:'Snacks',               thesis:'Snacks for the male 18-34 core demo · Challenge content = protein fuel narrative · Natural integration, never forced', badge:'Confirmed Partner'},
+    {id:'dd',  label:'DoorDash',          type:'confirmed', r:18, rx:.27, ry:.91, cat:'Food Delivery',        thesis:'MrBeast Burger integration · Food content natural fit · Youth audience dominates delivery apps · Data partnership potential', badge:'Confirmed Partner'},
+    {id:'nk',  label:'Nike',              type:'confirmed', r:22, rx:.53, ry:.93, cat:'Apparel',              thesis:'Apparel partnership · Challenge and sports content · Global Gen Z brand · "Just Do It" is challenge culture in five words', badge:'Confirmed Partner'},
+    {id:'mt',  label:'Moose Toys',        type:'confirmed', r:16, rx:.80, ry:.90, cat:'Toys',                 thesis:'Toy category sponsor · Younger audience + gifting content · Product integration in challenge videos · Family bridge', badge:'Confirmed Partner'},
+    // Target opportunities
+    {id:'ul',  label:'Unilever',          type:'sherif',    r:22, rx:.05, ry:.78, cat:'FMCG Global',          thesis:"Axe/Lynx, Dove, Lipton · Category-exclusive deal across 3+ youth brands · Sherif's FMCG event network opens the door to their CMO conversations", badge:"Sherif's Play"},
+    {id:'ad',  label:'Adidas',            type:'target',    r:20, rx:.30, ry:.05, cat:'Apparel',              thesis:"Youth culture + street + sport · Nike is confirmed — Adidas is hungry. That hunger creates the best deal terms and fastest closing timeline", badge:'Target Opportunity'},
+    {id:'rv',  label:'Revolut',           type:'sherif',    r:20, rx:.70, ry:.05, cat:'FinTech',              thesis:"45M+ users globally · Gen Z banking dominant in Europe · Complements Step's US focus · Sherif's European network opens the intro · One Beast Financial world", badge:"Sherif's Play"},
+    {id:'em',  label:'Emirates',          type:'sherif',    r:20, rx:.98, ry:.44, cat:'Aviation / MENA',      thesis:"150+ countries · 'Fly the entire MrBeast crew anywhere' is a content format, not a logo placement · Sherif built a business in Dubai — this call gets made", badge:"Sherif's Play"},
+    {id:'pp',  label:'PepsiCo',           type:'target',    r:22, rx:.06, ry:.08, cat:'Beverages',            thesis:'Gatorade + Mountain Dew + Doritos · Challenge culture alignment · Feastibles drink extension opportunity · $86B portfolio seeking Gen Z cultural relevance', badge:'Target Opportunity'},
+    {id:'al',  label:'Almarai',           type:'sherif',    r:18, rx:.94, ry:.10, cat:'FMCG – Arab World',    thesis:"Arab world's largest dairy + food company · Feastibles MENA distribution key · 450M person market barely touched · Sherif's Saudi and GCC relationships deliver the introduction", badge:"Sherif's Play"},
+    {id:'cf',  label:'Carrefour',         type:'sherif',    r:18, rx:.27, ry:.97, cat:'Retail Global',        thesis:"30+ countries · Feastibles + Lunchly shelf deal = global distribution play · France, MENA, Southeast Asia · Sherif's network spans every one of their core markets", badge:"Sherif's Play"},
+    {id:'rb',  label:'Red Bull',          type:'target',    r:22, rx:.73, ry:.97, cat:'Energy Drinks',        thesis:'190+ countries · Challenge + extreme content DNA match · Youth audience perfect overlap · Energy category unclaimed in Beast ecosystem — first-mover value is enormous', badge:'Target Opportunity'},
+  ];
+
+  const EDGES = [
+    ['bi','fe'],['bi','bg'],['bi','sf'],['bi','lc'],['bi','bph'],
+    ['bi','sh'],['bi','ap'],['bi','lw'],['bi','jl'],['bi','nk'],['bi','dd'],
+    ['fe','bc'],['fe','ul'],['fe','al'],['fe','cf'],['fe','pp'],['fe','lc'],
+    ['bg','ap'],['sf','rv'],['sf','ap'],
+    ['nk','ad'],['sh','pp'],
+  ];
+
+  function px(node) { return { x: node.rx * W, y: node.ry * H }; }
+
+  function draw() {
+    frame++;
+    ctx.clearRect(0, 0, W, H);
+
+    // Subtle grid
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255,255,255,0.013)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x < W; x += 64) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for (let y = 0; y < H; y += 64) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+    ctx.restore();
+
+    // Edges
+    EDGES.forEach(([a,b]) => {
+      const na = NODES.find(n=>n.id===a), nb = NODES.find(n=>n.id===b);
+      if (!na||!nb) return;
+      const pa = px(na), pb = px(nb);
+      const lit = hovId===a||hovId===b;
+      ctx.save();
+      ctx.beginPath(); ctx.moveTo(pa.x,pa.y); ctx.lineTo(pb.x,pb.y);
+      ctx.strokeStyle = lit ? 'rgba(255,211,42,0.3)' : 'rgba(255,255,255,0.04)';
+      ctx.lineWidth = lit ? 1.5 : 1;
+      ctx.setLineDash(lit ? [] : [3,9]);
+      ctx.stroke(); ctx.restore();
+    });
+
+    // Nodes
+    NODES.forEach(n => {
+      const p = px(n);
+      const col = COL[n.type]||'#fff';
+      const hov = hovId===n.id;
+      const pulse = Math.sin(frame*0.032 + n.rx*7)*2.5;
+      const r = n.r + (hov?7:0);
+
+      // Glow
+      const g = ctx.createRadialGradient(p.x,p.y,r*0.4,p.x,p.y,r+(hov?24:16)+pulse);
+      g.addColorStop(0, hexRgba(col, hov?0.22:0.09));
+      g.addColorStop(1, hexRgba(col, 0));
+      ctx.save(); ctx.beginPath(); ctx.arc(p.x,p.y,r+(hov?24:16)+pulse,0,Math.PI*2);
+      ctx.fillStyle=g; ctx.fill(); ctx.restore();
+
+      // Circle
+      ctx.save(); ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2);
+      ctx.fillStyle = hov ? hexRgba(col,0.16) : 'rgba(6,6,10,0.93)';
+      ctx.fill();
+      ctx.strokeStyle = col; ctx.lineWidth = hov ? 2.5 : 1.5;
+      ctx.stroke(); ctx.restore();
+
+      // Label
+      const lines = n.label.split('\n');
+      const fs = n.id==='bi' ? 11 : (r>28?10:9);
+      ctx.save();
+      ctx.fillStyle = hov ? col : (n.id==='bi'?'#fff':'#ccc');
+      ctx.font = `700 ${fs}px Inter,sans-serif`;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      lines.forEach((l,i)=>{ ctx.fillText(l, p.x, p.y+(i-(lines.length-1)/2)*(fs+3)); });
+      ctx.restore();
+    });
+
+    raf = requestAnimationFrame(draw);
+  }
+
+  // Pause when off-screen
+  new IntersectionObserver(entries=>{
+    if (entries[0].isIntersecting) { if(!raf) draw(); }
+    else { cancelAnimationFrame(raf); raf=null; }
+  }).observe(canvas);
+
+  // Hover / tooltip
+  const tt = document.getElementById('uTooltip');
+  canvas.addEventListener('mousemove', e=>{
+    const rect = canvas.getBoundingClientRect();
+    const mx = (e.clientX-rect.left)*(W/rect.width);
+    const my = (e.clientY-rect.top)*(H/rect.height);
+    let found = null;
+    NODES.forEach(n=>{ const p=px(n); const d=Math.hypot(mx-p.x,my-p.y); if(d<n.r+12) found=n; });
+    hovId = found ? found.id : null;
+    canvas.style.cursor = found ? 'pointer' : 'crosshair';
+    if (found) {
+      document.getElementById('ttBrand').textContent = found.label.replace('\n',' ');
+      document.getElementById('ttCat').textContent = found.cat;
+      document.getElementById('ttThesis').textContent = found.thesis;
+      const b = document.getElementById('ttBadge');
+      b.textContent = found.badge; b.className = 'tt-badge '+found.type;
+      let tx = e.clientX+20, ty = e.clientY-14;
+      if (tx+310>window.innerWidth) tx = e.clientX-320;
+      if (ty+200>window.innerHeight) ty = e.clientY-190;
+      tt.style.left=tx+'px'; tt.style.top=ty+'px';
+      tt.classList.add('show');
+    } else { tt.classList.remove('show'); }
+  });
+  canvas.addEventListener('mouseleave',()=>{ tt.classList.remove('show'); hovId=null; });
+})();
+
+// ═══════════════════════════════════════════
+//  DEAL MAKER GAME
+// ═══════════════════════════════════════════
+(function() {
+  const BRANDS = [
+    { name:'Shopify', cat:'E-Commerce', tagline:'Commerce for everyone',
+      brief:'The world\'s leading e-commerce platform. Already MrBeast\'s most frequent sponsor — 7+ video integrations. Creator economy x Shopify is the most obvious brand alignment in the space.',
+      sherif:'Already in the family. My focus here: deepen it. Category exclusivity, multi-year terms, global co-marketing activation that goes beyond video spots.',
+      answer:'beast', vtype:'correct',
+      verdict:'✓ CONFIRMED', explain:'MrBeast\'s #1 sponsor. The model for what brand-fit looks like — deep, multi-year, and genuinely integrated.' },
+    { name:'Rolex', cat:'Luxury Watches', tagline:'A Crown for Every Achievement',
+      brief:'The world\'s most iconic luxury watch brand. Premium and aspirational. A brand many would say represents "success" — and willing to write a very large check.',
+      sherif:'Strong global brand, connections everywhere — but fundamentally wrong audience. MrBeast is Gen Z and Gen Alpha. Rolex purchase consideration starts at 40+. Beast Industries literally turns down exactly this deal.',
+      answer:'pass', vtype:'correct',
+      verdict:'✗ HARD PASS', explain:'Wrong demographic entirely. This is the kind of 8-figure deal Beast Industries turns down because "Jimmy would never wear that."' },
+    { name:'Red Bull', cat:'Energy Drinks', tagline:'Gives You Wings',
+      brief:'190+ countries. Challenge and extreme sports brand with a YouTube-native marketing DNA that predates most platforms. The 18-34 audience overlap with MrBeast is near-perfect.',
+      sherif:'Energy is the most glaring unclaimed category in the Beast ecosystem. Red Bull and MrBeast share the same DNA: spectacle, challenge, going all-in. This would be one of the great brand collab stories in creator history.',
+      answer:'beast', vtype:'correct',
+      verdict:'⚡ BEAST FIT', explain:'Highest-upside unclaimed category. Same DNA, different channels. The collab almost writes itself.' },
+    { name:'Almarai', cat:'FMCG – Arab World', tagline:'The taste you trust',
+      brief:'The Arab world\'s largest vertically integrated dairy and food company. GCC-wide presence. A 450M person market with massive distribution infrastructure and brand trust.',
+      sherif:'Feastibles isn\'t on Arab shelves yet. Almarai is the key. My Saudi and GCC connections make this introduction possible — this isn\'t a cold call, it\'s a warm conversation waiting to happen.',
+      answer:'beast', vtype:'info',
+      verdict:'🌍 SHERIF\'S PLAY', explain:'450M person market. Feastibles has no MENA distribution yet. Sherif\'s network makes the intro. This is what global expansion looks like.' },
+    { name:'McKinsey & Co.', cat:'Management Consulting', tagline:'Helping leaders navigate complexity',
+      brief:'The world\'s leading management consulting firm. Prestigious, analytical, willing to pay a premium. Would bring a perception of business credibility to any partnership.',
+      sherif:'Audience mismatch at maximum. MrBeast\'s viewers aren\'t hiring consultants. Even the most creative integration would feel inauthentic — and Gen Z detects inauthenticity instantly.',
+      answer:'pass', vtype:'correct',
+      verdict:'✗ WRONG ROOM', explain:'Right brand, completely wrong audience. This is what an expensive mistake looks like before it gets made.' },
+    { name:'Adidas', cat:'Apparel', tagline:'Impossible is Nothing',
+      brief:'Global sportswear icon with deep youth culture credentials in street fashion, sport, and music. Nike is already a confirmed MrBeast partner in the apparel category.',
+      sherif:'Nike\'s presence is the opportunity, not the obstacle. Adidas is hungry for a counter-play — and hunger creates the best deal terms and fastest closing timelines. Competitive tension = leverage.',
+      answer:'beast', vtype:'correct',
+      verdict:'⚡ STRATEGIC PLAY', explain:'Nike\'s deal creates the Adidas opportunity. Category competition = negotiating leverage. This is how you engineer a bidding dynamic.' },
+    { name:'Emirates', cat:'Aviation & MENA', tagline:'Fly Better',
+      brief:'Dubai-based airline flying to 150+ cities. One of the world\'s largest marketing budgets. Global aspirational brand with proven appetite for iconic collaborations.',
+      sherif:'I built a business in Dubai. I know Emirates\'s brand world and the team behind it. "Fly the MrBeast crew — or 100 strangers — to anywhere on earth" isn\'t a sponsor mention. It\'s a content format. My intro to their marketing leadership makes it real.',
+      answer:'beast', vtype:'info',
+      verdict:'🌍 SHERIF\'S PLAY', explain:'Travel content + global scale + Sherif\'s MENA network = a deal that creates the content, not just funds it.' },
+    { name:'Revolut', cat:'FinTech', tagline:'The global financial super app',
+      brief:'45M+ users globally. The Gen Z banking app of choice across Europe and growing fast worldwide. Multi-currency, crypto, savings — all in one. A real global youth brand.',
+      sherif:'Beast just acquired Step for US teen banking. Revolut dominates European Gen Z. These aren\'t competitors — they\'re complementary. My European network opens the Revolut conversation. The pitch: one Beast Financial world, two platforms.',
+      answer:'beast', vtype:'info',
+      verdict:'⚡ GLOBAL PLAY', explain:'Step (US) + Revolut (Europe) = Beast Financial goes global. Sherif\'s European network opens the door.' },
+  ];
+
+  let idx=0, score=0, busy=false;
+  const arena = document.getElementById('gameArena');
+  const endScreen = document.getElementById('gameEnd');
+  const btns = document.getElementById('gameBtns');
+  if (!arena) return;
+
+  function render() {
+    arena.innerHTML = '';
+    if (idx >= BRANDS.length) { showEnd(); return; }
+    // Shadow
+    if (idx+1 < BRANDS.length) {
+      const s = document.createElement('div');
+      s.className = 'b-card shadow-card';
+      s.innerHTML = `<div class="bc-cat">${BRANDS[idx+1].cat}</div><div class="bc-name">${BRANDS[idx+1].name}</div>`;
+      arena.appendChild(s);
+    }
+    // Main
+    const d = BRANDS[idx];
+    const c = document.createElement('div');
+    c.className = 'b-card'; c.id = 'aC';
+    c.innerHTML = `
+      <div class="bc-cat">${d.cat}</div>
+      <div class="bc-name">${d.name}</div>
+      <div class="bc-tagline">"${d.tagline}"</div>
+      <div class="bc-brief">${d.brief}</div>
+      <div class="bc-sherif"><strong>Sherif's angle:</strong> ${d.sherif}</div>
+      <div class="verdict-overlay" id="vO">
+        <div class="v-icon" id="vI"></div>
+        <div class="v-title" id="vT"></div>
+        <div class="v-explain" id="vE"></div>
+      </div>`;
+    arena.appendChild(c);
+    busy = false;
+    updateHUD();
+  }
+
+  function updateHUD() {
+    document.getElementById('gScore').textContent = score;
+    document.getElementById('gProgress').style.width = (idx/BRANDS.length*100)+'%';
+    document.getElementById('gCounter').textContent = `${Math.min(idx+1,BRANDS.length)} / ${BRANDS.length}`;
+  }
+
+  window.dealChoice = function(choice) {
+    if (busy) return; busy = true;
+    const d = BRANDS[idx];
+    const c = document.getElementById('aC');
+    const ov = document.getElementById('vO');
+    if (choice===d.answer) score++;
+    const [icon, ...rest] = d.verdict.split(' ');
+    document.getElementById('vI').textContent = icon;
+    document.getElementById('vT').textContent = rest.join(' ');
+    document.getElementById('vE').textContent = d.explain;
+    ov.className = `verdict-overlay show v-${d.vtype}`;
+    setTimeout(()=>{
+      c.className = 'b-card '+(choice==='beast'?'fly-right':'fly-left');
+      setTimeout(()=>{ idx++; render(); }, 400);
+    }, 1600);
+  };
+
+  function showEnd() {
+    btns.style.display='none';
+    endScreen.style.display='block';
+    const pct = score/BRANDS.length;
+    document.getElementById('endScore').textContent = `${score}/${BRANDS.length}`;
+    let title,msg;
+    if(pct>=.875){title='DEAL MAKER';msg='You read the room like a 20-year veteran. This is the brand judgment that separates great partnership leaders from the rest.';}
+    else if(pct>=.625){title='STRONG INSTINCTS';msg='Solid brand sense. A few divergences — which can signal independent thinking, if you can defend the call.';}
+    else{title='LEARNING THE ROOM';msg='Brand judgment builds with exposure. The shortcut is 20 years of client experience — which Sherif happens to have.';}
+    document.getElementById('endTitle').textContent = title;
+    document.getElementById('endMsg').textContent = msg;
+  }
+
+  window.restartDealMaker = function() {
+    idx=0; score=0; busy=false;
+    endScreen.style.display='none';
+    btns.style.display='flex';
+    render(); updateHUD();
+  };
+
+  // Keyboard
+  document.addEventListener('keydown', e=>{
+    if(e.key==='ArrowLeft') window.dealChoice('pass');
+    if(e.key==='ArrowRight') window.dealChoice('beast');
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
