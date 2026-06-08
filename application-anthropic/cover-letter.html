@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sherif Abaza — Cover Letter · Anthropic Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rust:      #D4613A;
+      --rust-dk:   #B84F2B;
+      --rust-lt:   #E8825F;
+      --dark:      #0F0E0D;
+      --deep:      #1C1A17;
+      --panel:     #252218;
+      --border:    rgba(255,255,255,0.07);
+      --white:     #FFFFFF;
+      --offwhite:  #F7F3EC;
+      --muted:     #8A8070;
+      --text:      #E8E2D9;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-disp: 'Space Grotesk', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 60px 24px 80px;
+    }
+
+    .back-link {
+      position: fixed; top: 24px; left: 32px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      z-index: 10;
+    }
+    .back-link:hover { color: var(--rust-lt); }
+    .back-link::before { content: '← '; }
+
+    .envelope {
+      width: 100%;
+      max-width: 740px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Top metadata strip */
+    .meta-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .meta-brand {
+      font-family: var(--font-disp);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+    .meta-brand span { color: var(--rust); }
+    .meta-label {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    /* Letter paper */
+    .paper {
+      background: var(--deep);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 72px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .paper::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+      background: linear-gradient(180deg, var(--rust) 0%, var(--rust-lt) 100%);
+    }
+    /* Subtle watermark */
+    .paper::after {
+      content: 'ANTHROPIC';
+      position: absolute;
+      right: -30px; bottom: 30px;
+      font-family: var(--font-disp);
+      font-size: 7rem;
+      font-weight: 800;
+      color: rgba(212,97,58,0.025);
+      letter-spacing: 4px;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .eyebrow {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--rust); margin-bottom: 36px;
+    }
+
+    .salutation {
+      font-family: var(--font-disp);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em; line-height: 1.1;
+      color: var(--white); margin-bottom: 44px;
+    }
+    .salutation span { color: var(--rust-lt); }
+
+    .body {
+      font-size: 1rem;
+      line-height: 2;
+      color: var(--muted);
+    }
+    .body p { margin-bottom: 22px; }
+    .body strong { color: var(--text); font-weight: 600; }
+    .body em { color: var(--muted); font-style: italic; }
+
+    .key-line {
+      display: block;
+      background: rgba(212,97,58,0.06);
+      border-left: 3px solid rgba(212,97,58,0.45);
+      padding: 20px 26px;
+      margin: 32px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.97rem;
+      color: var(--text);
+      line-height: 1.85;
+    }
+
+    .signature {
+      margin-top: 52px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+    .sig-name {
+      font-family: var(--font-disp);
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .sig-contact {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 2.2;
+    }
+    .sig-contact a {
+      color: var(--rust-lt);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .sig-contact a:hover { color: var(--white); }
+
+    /* Bottom bar */
+    .footer-strip {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-note {
+      font-size: 0.6rem; color: rgba(255,255,255,0.12);
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .footer-cta {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--rust-lt); text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .footer-cta:hover { opacity: 0.7; }
+
+    @media (max-width: 640px) {
+      .paper { padding: 44px 28px; }
+      .meta-strip { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">Back to application</a>
+
+  <div class="envelope">
+
+    <div class="meta-strip">
+      <div class="meta-brand">SHERIF<span>.</span>ABAZA</div>
+      <div class="meta-label">Events Lead, Brand · Anthropic · Cover Letter</div>
+    </div>
+
+    <div class="paper">
+      <div class="eyebrow">Personal Letter · Addressed Directly · June 2026</div>
+      <div class="salutation">To the<br/><span>Anthropic</span><br/>team,</div>
+
+      <div class="body">
+
+        <p>I'll be direct: I didn't apply to Anthropic because I needed a job. I applied because this is the only company whose events brief genuinely excites me at this stage of my career.</p>
+
+        <p>My name is Sherif Abaza. Twenty years designing and running events that move people — not just through rooms, but in their thinking. A 140-person events agency in Dubai, three consecutive COP summits, the inaugural Dubai International Film Festival. Events that carried real stakes and real audiences: policymakers, scientists, executives, ministers. The kind of people Anthropic is trying to reach.</p>
+
+        <span class="key-line">At COP27 in Egypt and COP29 in Azerbaijan, I was coordinating multinational teams and programming events for exactly the mixed-expertise audience Anthropic faces at every conference: experts who want rigour, decision-makers who want narrative, and press who want a headline. Making all three walk away with the same story is not a logistics problem. It's a brand problem. And it's the problem I've been solving for 20 years.</span>
+
+        <p>I understand what's at stake in Anthropic's events programme. Every developer night, every policy roundtable, every summit appearance is either building the case that safe AI is achievable — or it isn't. That's not a decoration brief. It's a conviction brief. The Events Lead, Brand is the person responsible for making that argument land in physical space, not just in papers and press releases.</p>
+
+        <p>At Sphere Events, I built a machine that could deliver 150+ events a year across every format while protecting the creative quality that kept Siemens, Porsche, and Emaar coming back for a decade. Playbooks and systems weren't constraints — they were what gave the creative team permission to be ambitious, because the engine underneath was tight.</p>
+
+        <p>I also understand that Anthropic is still defining what its event programme looks like at scale. That is precisely where I want to be. <strong>Building the playbook, not inheriting it.</strong> Setting the standard for what an Anthropic event should feel like — and then building the systems that deliver it consistently, globally, at the pace a frontier AI company moves.</p>
+
+        <p>The "Built with Claude" tag on my application page is genuine, not performative. I've been using Claude in my workflow for months — to think through brief structures, stress-test assumptions, and accelerate production. I understand what this product does and why it matters. That understanding will show up in every event I design for Anthropic.</p>
+
+        <p><strong>Let's talk about what the events programme needs to become.</strong></p>
+
+      </div>
+
+      <div class="signature">
+        <div class="sig-name">Sherif Abaza</div>
+        <div class="sig-contact">
+          <a href="mailto:sabaza@gmail.com">sabaza@gmail.com</a> &nbsp;·&nbsp;
+          <a href="tel:+31623063073">+31 6 2306 3073</a> &nbsp;·&nbsp;
+          <a href="https://linkedin.com/in/sabaza" target="_blank">linkedin.com/in/sabaza</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-strip">
+      <div class="footer-note">Written specifically for this role, at this company.</div>
+      <a href="index.html" class="footer-cta">View Full Application →</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

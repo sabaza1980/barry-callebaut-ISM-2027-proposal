@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sherif Abaza — Events Lead, Brand · CV · Anthropic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50:  #f8fafc;
+      --rust-600:  #b84f2b;
+      --rust-500:  #d4613a;
+      --rust-400:  #e8825f;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--slate-200);
+      color: var(--slate-800);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 24px auto;
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.14);
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--slate-800);
+      color: var(--slate-200);
+      padding: 32px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .sidebar-photo {
+      display: flex;
+      justify-content: center;
+    }
+    .photo-circle {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: var(--slate-600);
+      border: 2.5px solid var(--rust-400);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--rust-400);
+      overflow: hidden;
+    }
+
+    .sidebar-section { display: flex; flex-direction: column; gap: 8px; }
+    .sidebar-section-title {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rust-400);
+      border-bottom: 1px solid var(--slate-600);
+      padding-bottom: 5px;
+    }
+
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 7px;
+      font-size: 0.72rem; color: var(--slate-300);
+    }
+    .contact-icon { color: var(--rust-400); min-width: 14px; font-style: normal; line-height: 1.5; }
+
+    .cap-list { display: flex; flex-direction: column; gap: 5px; }
+    .cap-item {
+      font-size: 0.71rem; color: var(--slate-300);
+      display: flex; align-items: flex-start; gap: 6px;
+    }
+    .cap-dot { color: var(--rust-400); margin-top: 1px; font-size: 0.85em; }
+
+    .skill-entry { display: flex; flex-direction: column; gap: 3px; }
+    .skill-label { font-size: 0.7rem; color: var(--slate-300); }
+    .bar-track { height: 5px; border-radius: 9999px; background: var(--slate-600); }
+    .bar-fill { height: 5px; border-radius: 9999px; background: var(--rust-400); }
+
+    .lang-entry { display: flex; flex-direction: column; gap: 3px; }
+    .lang-row { display: flex; justify-content: space-between; font-size: 0.7rem; }
+    .lang-name { color: var(--slate-300); }
+    .lang-level { color: var(--rust-400); font-weight: 600; }
+
+    .interests-list { display: flex; flex-direction: column; gap: 6px; }
+    .interest-item {
+      font-size: 0.7rem; color: var(--slate-300);
+      display: flex; align-items: flex-start; gap: 6px;
+      line-height: 1.5;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .main {
+      background: var(--white);
+      padding: 36px 38px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .name-block { border-bottom: 1px solid var(--slate-200); padding-bottom: 14px; }
+    .name-block h1 {
+      font-size: 2rem; font-weight: 700; color: var(--slate-900);
+      letter-spacing: -0.02em; line-height: 1.1;
+    }
+    .name-block .role-title {
+      font-size: 0.85rem; font-weight: 600; color: var(--rust-600); margin-top: 3px;
+    }
+    .name-block .contact-strip {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px;
+      font-size: 0.72rem; color: var(--slate-500);
+    }
+    .name-block .contact-strip span { display: flex; align-items: center; gap: 4px; }
+
+    .content-section { display: flex; flex-direction: column; gap: 14px; }
+    .section-header {
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 2px solid var(--rust-500); padding-bottom: 5px;
+    }
+    .section-icon { color: var(--rust-600); font-size: 1.1rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: var(--slate-800); letter-spacing: -0.01em; }
+
+    .profile-text { font-size: 0.8rem; color: var(--slate-700); line-height: 1.75; }
+    .profile-text + .profile-text { margin-top: 8px; }
+
+    .exp-entry { display: flex; flex-direction: column; gap: 7px; }
+    .exp-entry + .exp-entry { border-top: 1px solid var(--slate-100); padding-top: 14px; }
+    .exp-header { display: flex; flex-direction: column; gap: 2px; }
+    .exp-company { font-weight: 700; font-size: 0.88rem; color: var(--slate-800); }
+    .exp-company-note { font-size: 0.7rem; color: var(--slate-500); font-style: italic; }
+    .exp-roles { display: flex; flex-direction: column; gap: 1px; margin-top: 2px; }
+    .exp-role-row { display: flex; align-items: baseline; gap: 8px; }
+    .exp-role-title { font-size: 0.8rem; font-weight: 600; color: var(--rust-600); }
+    .exp-period { font-size: 0.7rem; color: var(--slate-500); }
+    .sub-roles { margin-top: 4px; display: flex; flex-direction: column; gap: 3px; }
+    .sub-role { font-size: 0.72rem; color: var(--slate-600); }
+    .sub-role strong { color: var(--rust-600); }
+    .highlights { list-style: disc; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; }
+    .highlights li { font-size: 0.78rem; color: var(--slate-700); line-height: 1.6; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; }
+      .page { margin: 0; border-radius: 0; box-shadow: none; max-width: 100%; }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ────────────────── SIDEBAR ────────────────── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-photo">
+      <div class="photo-circle">SA</div>
+    </div>
+
+    <!-- Contact -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Contact</div>
+      <div class="contact-item"><i class="contact-icon">✉</i> sabaza@gmail.com</div>
+      <div class="contact-item"><i class="contact-icon">☎</i> +31 6 2306 3073</div>
+      <div class="contact-item"><i class="contact-icon">in</i> linkedin.com/in/sabaza</div>
+      <div class="contact-item"><i class="contact-icon">⊕</i> Available Worldwide</div>
+    </div>
+
+    <!-- Core Capabilities -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Core Capabilities</div>
+      <div class="cap-list">
+        <div class="cap-item"><span class="cap-dot">›</span> End-to-end event lifecycle ownership</div>
+        <div class="cap-item"><span class="cap-dot">›</span> Brand event strategy &amp; creative direction</div>
+        <div class="cap-item"><span class="cap-dot">›</span> Spatial design &amp; production management</div>
+        <div class="cap-item"><span class="cap-dot">›</span> Policy, government &amp; academic audiences</div>
+        <div class="cap-item"><span class="cap-dot">›</span> Agency building &amp; team leadership (140+)</div>
+        <div class="cap-item"><span class="cap-dot">›</span> Operational playbooks &amp; vendor frameworks</div>
+        <div class="cap-item"><span class="cap-dot">›</span> Cross-cultural programme delivery</div>
+        <div class="cap-item"><span class="cap-dot">›</span> Measurement frameworks &amp; brand outcomes</div>
+      </div>
+    </div>
+
+    <!-- Skills Snapshot -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Skills Snapshot</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="skill-entry">
+          <div class="skill-label">Event Strategy &amp; Direction</div>
+          <div class="bar-track"><div class="bar-fill" style="width:97%"></div></div>
+        </div>
+        <div class="skill-entry">
+          <div class="skill-label">Production &amp; Logistics</div>
+          <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-entry">
+          <div class="skill-label">Brand Storytelling</div>
+          <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-entry">
+          <div class="skill-label">Stakeholder Management</div>
+          <div class="bar-track"><div class="bar-fill" style="width:93%"></div></div>
+        </div>
+        <div class="skill-entry">
+          <div class="skill-label">Team &amp; Agency Leadership</div>
+          <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Languages</div>
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <div class="lang-entry">
+          <div class="lang-row"><span class="lang-name">Arabic</span><span class="lang-level">Native</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-entry">
+          <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Native</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-entry">
+          <div class="lang-row"><span class="lang-name">French</span><span class="lang-level">Excellent</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="lang-entry">
+          <div class="lang-row"><span class="lang-name">Spanish</span><span class="lang-level">Excellent</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="lang-entry">
+          <div class="lang-row"><span class="lang-name">Dutch</span><span class="lang-level">Working</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+        </div>
+        <div class="lang-entry">
+          <div class="lang-row"><span class="lang-name">Polish</span><span class="lang-level">Working</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+        </div>
+        <div class="lang-entry">
+          <div class="lang-row"><span class="lang-name">+ 3 more</span><span class="lang-level">Basic</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:35%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interests -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Interests</div>
+      <div class="interests-list">
+        <div class="interest-item"><span class="cap-dot" style="margin-top:2px">›</span> Basketball coach for local youth teams. Former national youth player — teamwork, discipline, leadership.</div>
+        <div class="interest-item"><span class="cap-dot" style="margin-top:2px">›</span> Extensive global travel across 100+ countries — deep appreciation for cultural nuance in brand experiences.</div>
+        <div class="interest-item"><span class="cap-dot" style="margin-top:2px">›</span> AI and emerging technology, with active use of Claude in professional workflow and brief development.</div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ────────────────── MAIN CONTENT ────────────────── -->
+  <main class="main">
+
+    <!-- Name & Title -->
+    <div class="name-block">
+      <h1>Sherif Abaza</h1>
+      <div class="role-title">Events Lead, Brand · Anthropic Application | Global Events &amp; Brand Experience Leader</div>
+      <div class="contact-strip">
+        <span>✉ sabaza@gmail.com</span>
+        <span>☎ +31 6 2306 3073</span>
+        <span>in linkedin.com/in/sabaza</span>
+        <span>⊕ Available Worldwide</span>
+      </div>
+    </div>
+
+    <!-- Profile -->
+    <div class="content-section">
+      <div class="section-header">
+        <span class="section-icon">👤</span>
+        <span class="section-title">Profile</span>
+      </div>
+      <p class="profile-text">Brand events leader with 20+ years designing and delivering experiences that shift perception — not just fill rooms. Built a 140-person events agency in Dubai delivering 150+ projects a year, directed three consecutive COP climate summits, and produced the inaugural Dubai International Film Festival. Across every format — policy forum, consumer festival, brand activation, government programme — the driving question has always been the same: what should people believe when they walk out that they didn't believe walking in?</p>
+      <p class="profile-text">I operate across the full event lifecycle: strategy and creative direction, spatial design brief, production management, stakeholder programming, and post-event measurement. I've built the playbooks, the supplier networks, and the team structures that allow creative ambition to survive operational complexity. Nine languages, events across 80+ countries, and audiences ranging from government ministers to tens of thousands of consumers.</p>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="content-section">
+      <div class="section-header">
+        <span class="section-icon">💼</span>
+        <span class="section-title">Professional Experience</span>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-company">Abaza Business Services · Global</div>
+          <div class="exp-roles">
+            <div class="exp-role-row"><span class="exp-role-title">Founder &amp; Managing Director</span><span class="exp-period">2019 – Present</span></div>
+          </div>
+        </div>
+        <ul class="highlights">
+          <li>End-to-end event delivery for <strong>COP27 (Egypt)</strong>, <strong>COP26 UAE</strong>, and <strong>COP29 (Azerbaijan)</strong> — multinational team coordination, on-site logistics, and stakeholder programming for the world's highest-stakes mixed-audience events.</li>
+          <li>Designed and delivered multi-day conferences, innovation fairs, and global brand activations for international clients across three continents.</li>
+          <li>Directed the <strong>Dubai Chocolate Festival</strong> in collaboration with Barry Callebaut's commercial and brand leadership — spatial design, programme curation, and audience experience for tens of thousands of attendees.</li>
+          <li>Strategic advisor on event design, brand experience, and stakeholder management for government and corporate clients navigating complex audience environments.</li>
+          <li>NBA market launch support: developed event programme strategy for European and African market entry initiatives with senior league stakeholders.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-company">Sphere Events and Communication · Dubai, UAE</div>
+          <div class="exp-roles">
+            <div class="exp-role-row"><span class="exp-role-title">Founder &amp; Managing Director</span><span class="exp-period">2008 – 2018</span></div>
+          </div>
+        </div>
+        <ul class="highlights">
+          <li>Built from a sole operator to a <strong>140-person multinational events agency</strong>; revenues exceeding <strong>USD 8 million</strong> annually across 150+ brand activation, conference, and public experience programmes.</li>
+          <li>Developed and managed long-term brand event relationships with global corporations including <strong>Siemens, Porsche, Ericsson, and Emaar</strong> — translating brand conviction into spatial and programmatic experience.</li>
+          <li>Produced landmark public events including <strong>Street Nights</strong>, <strong>Dubai Chocolate Festival</strong>, and <strong>Marina Music Festival</strong> — audiences of tens of thousands, brand-first creative direction throughout.</li>
+          <li>Built the agency's operational playbooks, QA systems, and supplier frameworks — the infrastructure that made 150+ events per year possible without sacrificing creative quality.</li>
+          <li>Led full-function team: production, design, logistics, client servicing, talent — structured for performance under high-pressure delivery environments.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-company">Withlocals B.V. · Eindhoven, Netherlands</div>
+          <div class="exp-roles">
+            <div class="exp-role-row"><span class="exp-role-title">Chief Community Officer</span><span class="exp-period">2022 – Present</span></div>
+            <div class="exp-role-row"><span class="exp-role-title">Chief Growth Officer</span><span class="exp-period">2018 – 2022</span></div>
+          </div>
+        </div>
+        <ul class="highlights">
+          <li>Built and scaled a global community and experience organisation across <strong>80+ countries, 300+ cities</strong> — designing experiential touchpoints that connected travellers with local expertise at scale.</li>
+          <li>Led pivot to virtual experiences during COVID: activated global relationship network to deliver <strong>70+ corporate clients</strong> in under 90 days, zero ad budget — proof of what a trusted network enables under pressure.</li>
+          <li>Owned the B2B experience partnership framework: deal structure, client onboarding, and multi-year retention across enterprise accounts.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-company">ASDAA Burson-Marsteller · Dubai, UAE</div>
+          <div class="exp-roles">
+            <div class="exp-role-row"><span class="exp-role-title">Senior Account Manager</span><span class="exp-period">2004 – 2006</span></div>
+          </div>
+        </div>
+        <ul class="highlights">
+          <li>Key role in producing the <strong>inaugural Dubai International Film Festival</strong> — a flagship brand-building event that positioned Dubai as an international cultural destination from day one.</li>
+          <li>Brand experience campaigns for Siemens, Adidas, and Hilton across the Middle East — early foundation in brand storytelling and stakeholder alignment.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-company">FrontFlip (me360) · Kansas City, USA / MENA</div>
+          <div class="exp-roles">
+            <div class="exp-role-row"><span class="exp-role-title">CEO, Middle East &amp; North Africa</span><span class="exp-period">2010 – 2015</span></div>
+          </div>
+        </div>
+        <ul class="highlights">
+          <li>Co-led regional operations for a mobile loyalty startup; raised <strong>USD 1.8M</strong> in early-stage funding.</li>
+          <li>Built and managed a 35-person cross-functional team across 6+ MENA markets — product, partnerships, and field operations.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-company">Sundance Events · Dubai, UAE</div>
+          <div class="exp-roles">
+            <div class="exp-role-row"><span class="exp-role-title">Business Development &amp; Operations Manager</span><span class="exp-period">2006 – 2008</span></div>
+          </div>
+        </div>
+        <ul class="highlights">
+          <li>Events business development and operational delivery for corporate and government clients across the UAE.</li>
+          <li>Built client relationships and managed supplier networks that laid the foundation for founding Sphere Events.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Leadership & Development -->
+    <div class="content-section">
+      <div class="section-header">
+        <span class="section-icon">🌱</span>
+        <span class="section-title">Leadership &amp; Development</span>
+      </div>
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-company">AIESEC International</div>
+          <div class="exp-roles">
+            <div class="exp-role-row"><span class="exp-role-title">Various Leadership Roles</span><span class="exp-period">1999 – 2004</span></div>
+          </div>
+        </div>
+        <ul class="highlights">
+          <li>Progressive leadership positions including Local Committee President and National Support Team roles.</li>
+          <li>Led cross-cultural teams and international exchange programmes — the earliest foundation of a career built on cross-cultural trust and programme design.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="content-section">
+      <div class="section-header">
+        <span class="section-icon">🎓</span>
+        <span class="section-title">Education</span>
+      </div>
+      <div>
+        <div class="exp-company">Bachelor of Computer Engineering</div>
+        <div style="font-size:0.78rem;color:var(--slate-600);margin-top:2px;">Arab Academy for Science, Technology and Maritime Transport · Alexandria, Egypt</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
