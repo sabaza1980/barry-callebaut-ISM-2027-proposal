@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/sherif-cv-mrbeast", "destination": "/sherif-cv-mrbeast/index.html" },
+    { "source": "/application-whatnot", "destination": "/application-whatnot/index.html" },
     { "source": "/barry-callebaut/ISM-2027-proposal", "destination": "/ISM_Cologne_2027_Proposal.html" },
     {
       "source": "/barry-callebaut/ISM-2027-proposal-mobile",

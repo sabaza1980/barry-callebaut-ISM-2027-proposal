@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sherif Abaza — PM International Growth · Whatnot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --yellow:    #FFD200;
+      --yellow-dk: #E6BC00;
+      --dark:      #0D0D0F;
+      --deep:      #17171A;
+      --panel:     #1E1E24;
+      --border:    rgba(255,255,255,0.07);
+      --white:     #FFFFFF;
+      --offwhite:  #F7F7F9;
+      --muted:     #888899;
+      --text:      #E8E8F0;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-disp: 'Space Grotesk', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 40px;
+      background: rgba(13,13,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-disp); font-size: 1rem; font-weight: 700;
+      color: var(--white); letter-spacing: -0.3px;
+    }
+    .nav-logo span { color: var(--yellow); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      font-size: 0.8rem; color: var(--muted); text-decoration: none;
+      font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-cta {
+      background: var(--yellow); color: var(--dark);
+      font-size: 0.78rem; font-weight: 700;
+      padding: 8px 18px; border-radius: 6px; text-decoration: none;
+      letter-spacing: 0.02em; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--yellow-dk); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 120px 10% 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-noise {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(255,210,0,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,210,0,0.04) 0%, transparent 70%);
+    }
+    .hero-tag {
+      position: relative; z-index: 1;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,210,0,0.1); border: 1px solid rgba(255,210,0,0.25);
+      border-radius: 100px; padding: 6px 14px;
+      font-size: 0.72rem; font-weight: 600; color: var(--yellow);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero-dot { width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+    .hero h1 {
+      position: relative; z-index: 1;
+      font-family: var(--font-disp); font-size: clamp(2.8rem, 6vw, 5.2rem);
+      font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
+      color: var(--white); margin-bottom: 14px;
+    }
+    .hero h1 em { font-style: normal; color: var(--yellow); }
+
+    .hero-sub {
+      position: relative; z-index: 1;
+      font-size: clamp(1rem, 1.8vw, 1.25rem); color: var(--muted);
+      max-width: 600px; margin-bottom: 40px; font-weight: 400; line-height: 1.65;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 500; }
+
+    .hero-actions { position: relative; z-index: 1; display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--yellow); color: var(--dark);
+      font-size: 0.9rem; font-weight: 700; padding: 14px 28px;
+      border-radius: 8px; text-decoration: none; letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--yellow-dk); transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border); font-size: 0.9rem; font-weight: 500;
+      padding: 14px 28px; border-radius: 8px; text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,210,0,0.4); color: var(--yellow); }
+
+    .hero-stats {
+      position: relative; z-index: 1;
+      display: flex; gap: 48px; margin-top: 64px;
+      padding-top: 36px; border-top: 1px solid var(--border);
+    }
+    .stat-item {}
+    .stat-num { font-family: var(--font-disp); font-size: 2rem; font-weight: 800; color: var(--yellow); }
+    .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── SECTION CHROME ── */
+    section { padding: 96px 10%; }
+    .sec-eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--yellow); margin-bottom: 14px;
+    }
+    .sec-title {
+      font-family: var(--font-disp); font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700; color: var(--white); line-height: 1.15;
+      letter-spacing: -0.02em; margin-bottom: 18px;
+    }
+    .sec-lead {
+      font-size: 1.05rem; color: var(--muted); max-width: 680px;
+      line-height: 1.75; margin-bottom: 52px;
+    }
+
+    /* ── OPPORTUNITY SECTION ── */
+    .opportunity { background: var(--deep); }
+    .opp-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px; margin-top: 52px;
+    }
+    .opp-card {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px;
+      transition: border-color 0.25s;
+    }
+    .opp-card:hover { border-color: rgba(255,210,0,0.2); }
+    .opp-num {
+      font-family: var(--font-disp); font-size: 2.4rem; font-weight: 800;
+      color: var(--yellow); line-height: 1; margin-bottom: 8px;
+    }
+    .opp-label { font-size: 0.92rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+    .opp-text { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+
+    .thesis-block {
+      margin-top: 52px; background: rgba(255,210,0,0.06);
+      border: 1px solid rgba(255,210,0,0.2); border-radius: 14px;
+      padding: 32px 36px;
+    }
+    .thesis-block p {
+      font-size: 1.05rem; line-height: 1.8; color: var(--text); font-style: italic;
+    }
+    .thesis-block p strong { color: var(--yellow); font-style: normal; }
+
+    /* ── WHY ME ── */
+    .whyme { background: var(--dark); }
+    .match-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .match-card {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; position: relative;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .match-card:hover { border-color: rgba(255,210,0,0.25); transform: translateY(-3px); }
+    .match-role {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--yellow); margin-bottom: 8px;
+    }
+    .match-title { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .match-body { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+    .match-link {
+      display: inline-block; margin-top: 10px;
+      font-size: 0.75rem; color: var(--yellow); font-weight: 600;
+    }
+
+    /* ── FRAMEWORK ── */
+    .framework { background: var(--deep); }
+    .fw-row {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 0; border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; margin-bottom: 16px;
+    }
+    .fw-label {
+      background: var(--panel); padding: 24px 28px;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .fw-label-num {
+      font-family: var(--font-disp); font-size: 2rem; font-weight: 800;
+      color: rgba(255,210,0,0.2); line-height: 1; margin-bottom: 6px;
+    }
+    .fw-label-name {
+      font-size: 0.85rem; font-weight: 700; color: var(--white);
+    }
+    .fw-content { padding: 24px 28px; }
+    .fw-content h4 { font-size: 0.9rem; font-weight: 700; color: var(--yellow); margin-bottom: 6px; }
+    .fw-content p { font-size: 0.87rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── 90 DAYS ── */
+    .ninety { background: var(--dark); }
+    .phase-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+    }
+    .phase {
+      padding: 28px 24px;
+      border-right: 1px solid var(--border);
+    }
+    .phase:last-child { border-right: none; }
+    .phase-tag {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--yellow); margin-bottom: 8px;
+    }
+    .phase-title {
+      font-family: var(--font-disp); font-size: 1.1rem;
+      font-weight: 700; color: var(--white); margin-bottom: 14px;
+      padding-bottom: 14px; border-bottom: 1px solid var(--border);
+    }
+    .phase-list { list-style: none; }
+    .phase-list li {
+      font-size: 0.86rem; color: var(--muted); line-height: 1.6;
+      padding: 6px 0; border-bottom: 1px solid var(--border);
+      padding-left: 14px; position: relative;
+    }
+    .phase-list li:last-child { border-bottom: none; }
+    .phase-list li::before {
+      content: ''; position: absolute; left: 0; top: 14px;
+      width: 5px; height: 5px; background: var(--yellow);
+      border-radius: 50%;
+    }
+
+    /* ── METRICS ── */
+    .metrics { background: var(--deep); }
+    .metrics-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+    }
+    .metric-block {
+      background: var(--panel); padding: 28px 22px;
+    }
+    .metric-cat {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--yellow); margin-bottom: 10px;
+    }
+    .metric-name { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .metric-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── CREDENTIALS ── */
+    .credentials { background: var(--dark); }
+    .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .cred-card {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px 30px;
+    }
+    .cred-company { font-size: 0.85rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .cred-role { font-size: 0.78rem; color: var(--yellow); font-weight: 600; margin-bottom: 12px; }
+    .cred-list { list-style: none; }
+    .cred-list li {
+      font-size: 0.85rem; color: var(--muted); line-height: 1.65;
+      padding: 5px 0 5px 14px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .cred-list li:last-child { border-bottom: none; }
+    .cred-list li::before {
+      content: ''; position: absolute; left: 0; top: 13px;
+      width: 5px; height: 5px; background: var(--yellow); border-radius: 50%;
+    }
+    .cred-list li strong { color: var(--text); }
+
+    /* ── CLOSING ── */
+    .closing {
+      background: var(--deep);
+      text-align: center; padding: 96px 10%;
+    }
+    .closing .sec-title { margin: 0 auto 18px; max-width: 700px; }
+    .closing .sec-lead { margin: 0 auto 36px; }
+    .contact-row {
+      display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 28px 10%;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-left { font-size: 0.8rem; color: var(--muted); }
+    .footer-right { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── FADE ── */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 960px) {
+      .opp-grid { grid-template-columns: 1fr; }
+      .match-grid { grid-template-columns: 1fr 1fr; }
+      .phase-grid { grid-template-columns: 1fr; }
+      .phase { border-right: none; border-bottom: 1px solid var(--border); }
+      .phase:last-child { border-bottom: none; }
+      .metrics-strip { grid-template-columns: 1fr 1fr; }
+      .cred-grid { grid-template-columns: 1fr; }
+      .fw-row { grid-template-columns: 1fr; }
+      .fw-label { border-right: none; border-bottom: 1px solid var(--border); }
+      nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      section { padding: 64px 7%; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Sherif <span>Abaza</span></div>
+  <div class="nav-links">
+    <a href="#opportunity">The Opportunity</a>
+    <a href="#framework">My Approach</a>
+    <a href="#90days">90 Days</a>
+    <a href="#credentials">Background</a>
+  </div>
+  <a href="mailto:sabaza@gmail.com" class="nav-cta">Get In Touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-tag"><div class="hero-dot"></div>PM International Growth · Whatnot Application</div>
+  <h1>The person who<br/>scales <em>Whatnot</em><br/>internationally.</h1>
+  <p class="hero-sub">
+    Sherif Abaza. Growth leader who scaled a global marketplace to <strong>300+ cities across 80+ countries</strong>, activated international markets from scratch, and built the playbooks to make it repeatable — in 9 languages. Also an active Whatnot user, as both buyer and seller — not just applying to a job, but bringing genuine product insight from inside the platform.
+  </p>
+  <div class="hero-actions">
+    <a href="#framework" class="btn-primary">See My Approach</a>
+    <a href="#credentials" class="btn-ghost">My Background</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">300+</div>
+      <div class="stat-label">Cities scaled at Withlocals</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">80+</div>
+      <div class="stat-label">Countries operated in</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">70+</div>
+      <div class="stat-label">B2B clients in 90 days</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">9</div>
+      <div class="stat-label">Languages</div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section class="opportunity" id="opportunity">
+  <div class="fade-up">
+    <div class="sec-eyebrow">The Case for International</div>
+    <h2 class="sec-title">Whatnot's biggest unlock<br/>isn't in the US.</h2>
+    <p class="sec-lead">
+      You've crossed $6B in GMV, doubled year-on-year, hit #1 Shopping in both the US and UK. The infrastructure is proven. The model works. The next chapter isn't just Canada, France, and Germany — it's Europe-wide, the Middle East, Latin America, and beyond. That scale requires a different kind of product thinking.
+    </p>
+  </div>
+
+  <div class="opp-grid fade-up">
+    <div class="opp-card">
+      <div class="opp-num">Europe</div>
+      <div class="opp-label">Dozens of markets, most barely touched</div>
+      <div class="opp-text">UK, France, Germany are live — but the Netherlands, Spain, Italy, Poland, Scandinavia, and a dozen more markets are waiting. Europe is not one market. It's 30+ with different languages, payment behaviours, and category cultures. The opportunity is enormous and the playbook doesn't exist yet.</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-num">Playbook</div>
+      <div class="opp-label">The repeatable international model doesn't exist yet</div>
+      <div class="opp-text">Every market Whatnot enters today requires bespoke investment. The opportunity is to build a repeatable expansion playbook — standardised buyer/seller onboarding, local trust architecture, and market health scorecards that make the next launch 3x faster.</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-num">Hub &amp; Spoke</div>
+      <div class="opp-label">International shouldn't be a fork of the US product</div>
+      <div class="opp-text">Every "international feature" built as a one-off fork creates long-term debt. The unlock is building global-ready foundations: i18n by default, localisation as a configuration layer, not a rebuild.</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-num">MENA + LatAm</div>
+      <div class="opp-label">The markets nobody's mapped yet</div>
+      <div class="opp-text">The Middle East has massive collector culture, high mobile commerce adoption, and deep passion for categories Whatnot already owns. Latin America — Brazil, Mexico, Argentina — is live commerce native. These are not distant future markets. They're the next wave, if someone builds the right entry strategy.</div>
+    </div>
+  </div>
+
+  <div class="thesis-block fade-up">
+    <p>
+      "Every new market is its own company. Same infrastructure, but different language, different regulations, different cultural moments. <strong>The secret is scalable processes that flex for local relevance — so each expansion moves faster than the last.</strong>"
+    </p>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="whyme" id="whyme">
+  <div class="fade-up">
+    <div class="sec-eyebrow">The Match</div>
+    <h2 class="sec-title">What the role needs.<br/>What I bring.</h2>
+    <p class="sec-lead">Every requirement in the job description maps directly to something I've already done — at marketplace scale, across international markets, with real accountability for growth metrics.</p>
+  </div>
+
+  <div class="match-grid fade-up">
+    <div class="match-card">
+      <div class="match-role">Role Requirement</div>
+      <div class="match-title">Own international growth roadmap: acquisition, activation, engagement, retention</div>
+      <div class="match-body">As Chief Growth Officer at Withlocals, I owned the full international growth funnel across 80+ countries — supply acquisition, host activation, traveller retention, and market-level monetisation. I set the KPIs, built the frameworks, and held the team accountable to outcomes.</div>
+    </div>
+    <div class="match-card">
+      <div class="match-role">Role Requirement</div>
+      <div class="match-title">Proven track record driving measurable growth in a high-velocity marketplace</div>
+      <div class="match-body">Scaled Withlocals from 50 to 300+ cities using data-based market prioritisation frameworks. During COVID, activated a pivot that acquired 70+ corporate clients in under 90 days — zero advertising, 100% through product-led and relationship-led growth. Both required owning the full funnel.</div>
+    </div>
+    <div class="match-card">
+      <div class="match-role">Role Requirement</div>
+      <div class="match-title">Launch or grow products in multiple countries; adapt to local behaviours and regulations</div>
+      <div class="match-body">I've built and managed operations across 80+ countries in 9 languages. At Withlocals, I owned supply and community across Europe, MENA, APAC, and the Americas — each requiring different activation approaches, regulatory awareness, and cultural adaptation.</div>
+    </div>
+    <div class="match-card">
+      <div class="match-role">Role Requirement</div>
+      <div class="match-title">Data frameworks, analytics, and experimentation to move core KPIs</div>
+      <div class="match-body">Built the market-level performance frameworks at Withlocals — market readiness scoring, supply depth metrics, activation funnels by country, GMV-per-user benchmarks by cohort. Defined what "healthy" looked like per market and used that to guide resourcing and prioritisation decisions at leadership level.</div>
+    </div>
+    <div class="match-card">
+      <div class="match-role">Role Requirement</div>
+      <div class="match-title">Build repeatable international playbooks with regional CatEx, Sales, Ops, Marketing</div>
+      <div class="match-body">At Withlocals I partnered with supply operations, marketing, and local community teams to productise the market launch process — standardised onboarding flows, localised quality rubrics, regional go-live checklists. Each new market was 40% faster to launch than the last because of it.</div>
+    </div>
+    <div class="match-card">
+      <div class="match-role">Role Requirement</div>
+      <div class="match-title">Excellent cross-functional leadership across Engineering, Design, Data Science, BizOps</div>
+      <div class="match-body">Partnered with Product and Engineering at Withlocals to design the tools, automation, and dashboards that powered host performance and operational clarity. Translated regional complexity into clean product requirements without creating one-off forks — exactly the hub-and-spoke discipline Whatnot needs.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section class="framework" id="framework">
+  <div class="fade-up">
+    <div class="sec-eyebrow">How I'd Approach It</div>
+    <h2 class="sec-title">The international growth<br/>framework I'd bring.</h2>
+    <p class="sec-lead">Four principles I've used to scale marketplaces internationally — and that map directly to what Whatnot needs to do in UK, France, Germany, Canada, and Australia.</p>
+  </div>
+
+  <div class="fade-up">
+    <div class="fw-row">
+      <div class="fw-label">
+        <div class="fw-label-num">01</div>
+        <div class="fw-label-name">Measure First</div>
+      </div>
+      <div class="fw-content">
+        <h4>Define healthy before you optimise</h4>
+        <p>Before any experiment, I'd establish what "good" looks like per market — acquisition, activation (first transaction within N days), engagement (repeat buying, show attendance), and monetisation (GMV per active user). These become the shared language between PM, regional teams, and leadership, and the basis for every prioritisation decision. One clear definition of health beats ten competing opinions.</p>
+      </div>
+    </div>
+
+    <div class="fw-row">
+      <div class="fw-label">
+        <div class="fw-label-num">02</div>
+        <div class="fw-label-name">Systemic Unlocks</div>
+      </div>
+      <div class="fw-content">
+        <h4>Find the chronic blockers before the paper cuts</h4>
+        <p>In each market, I'd identify the 2–3 friction points that block the most users from reaching their first valuable moment — whether that's payment trust in Germany, category depth in France, or logistics speed in the UK. One systemic fix beats ten paper cuts. I'd size each opportunity in GMV impact before any engineering commitment.</p>
+      </div>
+    </div>
+
+    <div class="fw-row">
+      <div class="fw-label">
+        <div class="fw-label-num">03</div>
+        <div class="fw-label-name">Hub &amp; Spoke</div>
+      </div>
+      <div class="fw-content">
+        <h4>Global foundations, local configuration</h4>
+        <p>Every localisation should be a configuration layer on top of a scalable platform — not a fork. I'd work with Engineering and Design to bake i18n, regulatory constraints, and local UX requirements into the core product from the start. This means international features ship faster, degrade more gracefully, and compound across markets rather than fragmenting the codebase.</p>
+      </div>
+    </div>
+
+    <div class="fw-row">
+      <div class="fw-label">
+        <div class="fw-label-num">04</div>
+        <div class="fw-label-name">Playbook Machine</div>
+      </div>
+      <div class="fw-content">
+        <h4>Make each market launch faster than the last</h4>
+        <p>Every new market we enter teaches us something. I'd systematise those learnings — regional launch templates, seller onboarding playbooks, local trust-building sequences — so that the fifth market we launch is 3x faster and cheaper than the first. The goal is a repeatable international expansion engine, not a series of one-off projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 90 DAYS -->
+<section class="ninety" id="90days">
+  <div class="fade-up">
+    <div class="sec-eyebrow">First 90 Days</div>
+    <h2 class="sec-title">What I'd actually do.</h2>
+    <p class="sec-lead">Not a generic onboarding plan. A sequenced set of moves designed to deliver the first scorecard, the first systemic unlock, and the first cross-market experiment within 90 days.</p>
+  </div>
+
+  <div class="phase-grid fade-up">
+    <div class="phase">
+      <div class="phase-tag">Days 1 – 30</div>
+      <div class="phase-title">Understand the machine</div>
+      <ul class="phase-list">
+        <li>Deeply inside every international market — talk to 20+ sellers and buyers in UK, France, Germany, Canada, Australia</li>
+        <li>Shadow regional CatEx, Ops, and Marketing — understand where the friction is, not just what the data says</li>
+        <li>Audit existing country-level metrics and identify gaps in measurement coverage</li>
+        <li>Map the current international product surface: what's localised, what's forked, what's missing</li>
+        <li>Identify the single biggest chronic blocker per market — the one thing that is costing the most GMV</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-tag">Days 31 – 60</div>
+      <div class="phase-title">Build the foundation</div>
+      <ul class="phase-list">
+        <li>Publish the first version of country-level health metrics with agreed definitions across leadership, regional teams, and Data Science</li>
+        <li>Prioritise the international roadmap for the next two quarters: systemic unlocks ranked by GMV impact, paper cuts ranked by fix cost</li>
+        <li>Design the first cross-market experiment: one hypothesis that can be tested simultaneously across 2–3 markets</li>
+        <li>Draft the international hub-and-spoke architecture proposal with Engineering and Design — what needs to be built at platform level vs. configured locally</li>
+        <li>Align with regional leads on a shared cadence: weekly country scorecard reviews, monthly roadmap syncs</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-tag">Days 61 – 90</div>
+      <div class="phase-title">Ship the first thing</div>
+      <ul class="phase-list">
+        <li>First systemic unlock live in at least one market — impact measured against agreed targets</li>
+        <li>First cross-market experiment running — activation funnel or seller onboarding improvement</li>
+        <li>International playbook v1 drafted: a launch template that makes the next new market faster</li>
+        <li>Present the 12-month international roadmap to leadership — grounded in scorecard data, sequenced by impact</li>
+        <li>Begin building the case for "global-ready by default" in the core product development process</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics">
+  <div class="fade-up">
+    <div class="sec-eyebrow">The Numbers I'd Own</div>
+    <h2 class="sec-title">The numbers I'd own.<br/>The accountability I'd hold.</h2>
+    <p class="sec-lead">International growth is only as good as the metrics you're willing to be held to. These are the four layers I'd measure across every market — per country, per cohort, per quarter.</p>
+  </div>
+
+  <div class="metrics-strip fade-up">
+    <div class="metric-block">
+      <div class="metric-cat">Acquisition</div>
+      <div class="metric-name">New buyers &amp; sellers per market</div>
+      <div class="metric-desc">CAC by channel and country. New-to-platform growth rate vs. US baseline. Supply depth per category per market.</div>
+    </div>
+    <div class="metric-block">
+      <div class="metric-cat">Activation</div>
+      <div class="metric-name">First transaction rate within 7/30 days</div>
+      <div class="metric-desc">Percentage of new buyers who transact within 7 days. Percentage of new sellers who run their first live show within 30 days. Funnel drop-off by step and market.</div>
+    </div>
+    <div class="metric-block">
+      <div class="metric-cat">Engagement &amp; Retention</div>
+      <div class="metric-name">Repeat behaviour and show attendance</div>
+      <div class="metric-desc">D30/D90 retention by cohort. Average sessions per week. Repeat buyer rate. Seller consistency (shows per month). Country-level engagement index vs. US.</div>
+    </div>
+    <div class="metric-block">
+      <div class="metric-cat">Monetisation</div>
+      <div class="metric-name">GMV per active user per market</div>
+      <div class="metric-desc">GMV per active buyer. GMV per active seller. Average order value by category and country. Revenue per user relative to US baseline — the ultimate measure of market health.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials" id="credentials">
+  <div class="fade-up">
+    <div class="sec-eyebrow">The Background</div>
+    <h2 class="sec-title">20 years of building<br/>things that scale.</h2>
+    <p class="sec-lead">The experience that makes me the right person for this role — not just on paper, but in practice.</p>
+  </div>
+
+  <div class="cred-grid fade-up">
+    <div class="cred-card">
+      <div class="cred-company">Withlocals B.V. — Eindhoven, Netherlands</div>
+      <div class="cred-role">Chief Growth Officer → Chief Community Officer &nbsp;·&nbsp; 2018 – Present</div>
+      <ul class="cred-list">
+        <li><strong>Scaled from 50 to 300+ cities</strong> across 80+ countries using data-based market prioritisation frameworks — the same kind of country scorecarding and funnel ownership this role requires.</li>
+        <li><strong>Owned the full international growth funnel:</strong> supply acquisition, host activation, marketplace health, demand-side retention. Set and held KPIs across every market.</li>
+        <li><strong>COVID pivot in 90 days:</strong> activated a virtual product, acquired 70+ corporate clients with zero advertising spend — product-led growth at speed under pressure.</li>
+        <li>Partnered with Product and Engineering to build the tools, dashboards, and automation that powered host performance and operational clarity across 80+ countries.</li>
+        <li>Built the community and quality frameworks that allowed the marketplace to scale without the service level degrading — the same "global-ready by default" discipline this role needs.</li>
+      </ul>
+    </div>
+    <div class="cred-card">
+      <div class="cred-company">Sphere Events &amp; Communication — Dubai, UAE</div>
+      <div class="cred-role">Managing Director &nbsp;·&nbsp; 2008 – 2018</div>
+      <ul class="cred-list">
+        <li><strong>Built from one person to a 140-person company</strong> generating USD 8M+ annually — proof of scaling an operation, not just managing one.</li>
+        <li>Delivered 150+ brand activations annually across MENA, building deep relationships with Abu Dhabi government, tourism leadership, and global brands.</li>
+        <li>Operated across markets where <strong>local cultural nuance was not a UX detail — it was the product.</strong> Applied that same lens to every growth decision.</li>
+      </ul>
+    </div>
+    <div class="cred-card">
+      <div class="cred-company">Abaza Business Services — Eindhoven, Netherlands</div>
+      <div class="cred-role">Founder &nbsp;·&nbsp; 2019 – Present</div>
+      <ul class="cred-list">
+        <li>Delivered global programmes at diplomatic scale: COP 27 (Egypt), COP 28 (UAE), COP 29 (Azerbaijan) — coordinating multinational teams across countries and time zones.</li>
+        <li>Strategic advisor on international go-to-market for clients operating across MENA, Europe, and the Americas.</li>
+      </ul>
+    </div>
+    <div class="cred-card">
+      <div class="cred-company">FrontFlip (me360) — Kansas City / MENA</div>
+      <div class="cred-role">CEO, Middle East &amp; North Africa &nbsp;·&nbsp; 2010 – 2013</div>
+      <ul class="cred-list">
+        <li>Co-founded and led regional operations for one of MENA's first mobile loyalty platforms. Raised USD 1.8M. Built a 25-person team across product, partnerships, and field ops.</li>
+        <li>Led market localisation and rollout across 6+ countries — early experience with adapting a product experience to local behaviours, infrastructure constraints, and regulations.</li>
+        <li><strong>Failed, learned, and built better.</strong> The product was right but too early. That experience shaped how I think about product-market fit timing and international sequencing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing" id="contact">
+  <div class="fade-up">
+    <div class="sec-eyebrow">Let's Talk</div>
+    <h2 class="sec-title">I want to build the international growth engine at Whatnot.</h2>
+    <p class="sec-lead">
+      I've spent my career scaling marketplaces across international markets. I know what the scorecards should look like, what the experiments should test, and what it takes to make a playbook that works in London as well as it does in Los Angeles. Let's find out if this is the right match.
+    </p>
+    <div class="contact-row">
+      <a href="mailto:sabaza@gmail.com" class="btn-primary">sabaza@gmail.com</a>
+      <a href="https://linkedin.com/in/sabaza" class="btn-ghost" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">Sherif Abaza &nbsp;·&nbsp; PM International Growth Application &nbsp;·&nbsp; Whatnot</div>
+  <div class="footer-right">Available Worldwide</div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
