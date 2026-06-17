@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sherif Abaza — CV · NBA Application</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red:    #C8102E;
+      --blue:   #1D428A;
+      --dark:   #0A0A14;
+      --ink:    #1A1A2A;
+      --ink2:   #3A3A52;
+      --muted:  #7A7A96;
+      --rule:   #E2E2EC;
+      --bg:     #F9F9FC;
+      --paper:  #FFFFFF;
+      --ff-d:   'Barlow Condensed', 'Arial Narrow', sans-serif;
+      --ff-b:   'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--ff-b);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 9.5pt;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 0 0 1px var(--rule), 0 4px 32px rgba(0,0,0,0.06);
+    }
+
+    /* ── HEADER ── */
+    .cv-header {
+      background: var(--dark);
+      color: white;
+      padding: 22px 36px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cv-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--red) 50%, var(--blue) 50%);
+    }
+    .header-watermark { display: none; }
+
+    .cv-name {
+      font-family: var(--ff-d);
+      font-size: 32pt;
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      color: white;
+    }
+    .cv-name span { color: var(--red); }
+
+    .cv-role {
+      font-family: var(--ff-d);
+      font-size: 10pt;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 6px;
+    }
+    .cv-role em { font-style: normal; color: rgba(255,255,255,0.85); }
+
+    .header-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+      font-size: 8pt;
+      color: rgba(255,255,255,0.6);
+    }
+    .header-contact a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .contact-row {
+      display: flex; align-items: center; gap: 6px;
+      white-space: nowrap;
+    }
+    .contact-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    /* ── BASKETBALL PROFILE BANNER ── */
+    .bball-banner { display: none; }
+    .bball-banner-x {
+      background: var(--red);
+      padding: 8px 36px;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 10px;
+    }
+    .bball-banner-label {
+      font-family: var(--ff-d);
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      white-space: nowrap;
+    }
+    .bball-banner-dots {
+      display: flex; flex-wrap: wrap; gap: 5px;
+    }
+    .bball-chip {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 3px;
+      padding: 2px 8px;
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: white;
+      white-space: nowrap;
+    }
+
+    /* ── SIDEBAR BASKETBALL CHIPS ── */
+    .bball-chips-sb {
+      display: flex; flex-wrap: wrap; gap: 4px;
+      margin-bottom: 10px;
+    }
+    .bball-chip-sb {
+      background: rgba(200,16,46,0.15);
+      border: 1px solid rgba(200,16,46,0.3);
+      border-radius: 3px;
+      padding: 2px 6px;
+      font-size: 6.5pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ── BODY LAYOUT ── */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--dark);
+      color: rgba(255,255,255,0.8);
+      padding: 18px 16px;
+      border-right: none;
+    }
+    .sb-section {
+      margin-bottom: 18px;
+    }
+    .sb-section:last-child { margin-bottom: 0; }
+
+    .sb-title {
+      font-family: var(--ff-d);
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      border-bottom: 1px solid rgba(200,16,46,0.3);
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+    .sb-item {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+    .sb-item strong {
+      display: block;
+      color: rgba(255,255,255,0.9);
+      font-size: 8.5pt;
+      margin-bottom: 1px;
+    }
+
+    /* Skill bars */
+    .skill-bar-wrap {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .skill-item {
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .skill-label {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.7);
+    }
+    .skill-track {
+      height: 3px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .skill-fill { height: 100%; border-radius: 2px; }
+    .skill-fill.red  { background: var(--red); }
+    .skill-fill.blue { background: #4A80D4; }
+
+    /* Lang bars */
+    .lang-item { margin-bottom: 6px; }
+    .lang-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .lang-name-sb { font-size: 7.5pt; color: rgba(255,255,255,0.8); }
+    .lang-level-sb {
+      font-size: 6.5pt; font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--red);
+    }
+    .lang-bar-sb {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .lang-bar-fill { display: block; height: 100%; border-radius: 2px; }
+    .lang-bar-fill.r { background: var(--red); }
+    .lang-bar-fill.b { background: #4A80D4; }
+    .lang-bar-fill.g { background: rgba(255,255,255,0.3); }
+
+    /* ── MAIN CONTENT ── */
+    .main {
+      padding: 18px 24px;
+    }
+
+    .section {
+      margin-bottom: 14px;
+    }
+    .section:last-child { margin-bottom: 0; }
+
+    .sec-title {
+      font-family: var(--ff-d);
+      font-size: 9pt;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .sec-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .profile-text {
+      font-size: 8pt;
+      color: var(--ink2);
+      line-height: 1.6;
+    }
+    .profile-text strong { color: var(--ink); }
+
+    /* Experience */
+    .exp-entry {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .exp-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .exp-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+    .exp-company {
+      font-family: var(--ff-d);
+      font-size: 12pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--ink);
+    }
+    .exp-period {
+      font-size: 7.5pt;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .exp-title-row {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 8px;
+    }
+    .exp-role-cv {
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .exp-location {
+      font-size: 7.5pt;
+      color: var(--muted);
+    }
+
+    .exp-bullets-cv {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .exp-bullets-cv li {
+      font-size: 7.8pt;
+      color: var(--ink2);
+      line-height: 1.45;
+      padding-left: 14px;
+      position: relative;
+    }
+    .exp-bullets-cv li::before {
+      content: '';
+      position: absolute; left: 0; top: 7px;
+      width: 7px; height: 1.5px;
+      background: var(--red);
+    }
+    .exp-bullets-cv li strong { color: var(--ink); }
+
+    /* Two-col grid for earlier roles */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* Education */
+    .edu-item {
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .edu-degree {
+      font-size: 8.5pt; font-weight: 600; color: var(--ink);
+    }
+    .edu-school {
+      font-size: 7.5pt; color: var(--muted);
+    }
+
+    /* AIESEC */
+    .leadership-item {
+      font-size: 7.5pt; color: var(--ink2); line-height: 1.5;
+    }
+    .leadership-item strong { color: var(--ink); }
+
+    /* ── PRINT ── */
+    @page { margin: 0; size: A4; }
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; width: 210mm; overflow: hidden; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="cv-header">
+    <!-- NBA Logo watermark -->
+    <img src="nba-logo.png" alt="NBA" class="header-watermark"/>
+
+    <div>
+      <div class="cv-name">Sherif <span>Abaza</span></div>
+      <div class="cv-role"><em>Experiential Business Lead</em> · NBA Application</div>
+    </div>
+    <div class="header-contact">
+      <div class="contact-row"><span class="contact-dot"></span>sabaza@gmail.com</div>
+      <div class="contact-row"><span class="contact-dot"></span>+31 6 2306 3073</div>
+      <div class="contact-row"><span class="contact-dot"></span>linkedin.com/in/sabaza</div>
+      <div class="contact-row"><span class="contact-dot"></span>Available Worldwide</div>
+    </div>
+  </div>
+
+  <!-- BASKETBALL BANNER -->
+
+  <!-- BODY -->
+  <div class="cv-body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="sb-section">
+        <div class="sb-title">Basketball</div>
+        <div class="sb-item"><strong>National Youth Player</strong>Egypt — competed at regional &amp; national youth level</div>
+        <div class="sb-item"><strong>Coach</strong>Youth &amp; community teams, 10+ years, 500+ players developed</div>
+        <div class="sb-item"><strong>Global Perspective</strong>NBA, EuroLeague, FIBA, grassroots — all markets</div>
+        <div class="sb-item"><strong>The Culture</strong>Jordan era to present — the sport as entertainment</div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-title">Core Skills</div>
+        <div class="skill-bar-wrap">
+          <div class="skill-item">
+            <span class="skill-label">Event Production &amp; Activation</span>
+            <div class="skill-track"><div class="skill-fill red" style="width:97%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-label">Fan Experience Design</span>
+            <div class="skill-track"><div class="skill-fill red" style="width:90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-label">Global Operations</span>
+            <div class="skill-track"><div class="skill-fill blue" style="width:92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-label">Brand &amp; Partnerships</span>
+            <div class="skill-track"><div class="skill-fill blue" style="width:85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-label">Community Building</span>
+            <div class="skill-track"><div class="skill-fill red" style="width:88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-label">Entertainment &amp; Creative</span>
+            <div class="skill-track"><div class="skill-fill red" style="width:87%"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-label">Stakeholder Management</span>
+            <div class="skill-track"><div class="skill-fill blue" style="width:93%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-title">Languages</div>
+        <div class="lang-item">
+          <div class="lang-row-top">
+            <span class="lang-name-sb">Arabic</span>
+            <span class="lang-level-sb">Native</span>
+          </div>
+          <div class="lang-bar-sb"><div class="lang-bar-fill r" style="width:100%"></div>
+        </div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-row-top">
+            <span class="lang-name-sb">English</span>
+            <span class="lang-level-sb">Native</span>
+          </div>
+          <div class="lang-bar-sb"><div class="lang-bar-fill r" style="width:100%"></div>
+        </div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-row-top">
+            <span class="lang-name-sb">French</span>
+            <span class="lang-level-sb">Excellent</span>
+          </div>
+          <div class="lang-bar-sb"><div class="lang-bar-fill b" style="width:88%"></div>
+        </div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-row-top">
+            <span class="lang-name-sb">Spanish</span>
+            <span class="lang-level-sb">Excellent</span>
+          </div>
+          <div class="lang-bar-sb"><div class="lang-bar-fill b" style="width:85%"></div>
+        </div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-row-top">
+            <span class="lang-name-sb">Dutch</span>
+            <span class="lang-level-sb">Working</span>
+          </div>
+          <div class="lang-bar-sb"><div class="lang-bar-fill g" style="width:60%"></div>
+        </div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-row-top">
+            <span class="lang-name-sb">Polish</span>
+            <span class="lang-level-sb">Working</span>
+          </div>
+          <div class="lang-bar-sb"><div class="lang-bar-fill g" style="width:55%"></div>
+        </div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-row-top">
+            <span class="lang-name-sb">Portuguese</span>
+            <span class="lang-level-sb">Basic</span>
+          </div>
+          <div class="lang-bar-sb"><div class="lang-bar-fill g" style="width:35%"></div>
+        </div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-row-top">
+            <span class="lang-name-sb">Italian</span>
+            <span class="lang-level-sb">Basic</span>
+          </div>
+          <div class="lang-bar-sb"><div class="lang-bar-fill g" style="width:30%"></div>
+        </div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-row-top">
+            <span class="lang-name-sb">Romanian</span>
+            <span class="lang-level-sb">Basic</span>
+          </div>
+          <div class="lang-bar-sb"><div class="lang-bar-fill g" style="width:25%"></div>
+        </div>
+        </div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-title">Global Reach</div>
+        <div class="sb-item"><strong>100+ countries</strong> visited &amp; operated in</div>
+        <div class="sb-item"><strong>3 continents</strong> of primary operations (MENA, Europe, Americas)</div>
+        <div class="sb-item"><strong>40+ countries</strong> with direct operational delivery</div>
+      </div>
+
+      <div class="sb-section">
+        <div class="sb-title">Education</div>
+        <div class="sb-item"><strong>B.Sc. Computer Engineering</strong>Arab Academy for Science, Technology &amp; Maritime Transport, Alexandria</div>
+      </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- PROFILE -->
+      <div class="section">
+        <div class="sec-title">Profile</div>
+        <p class="profile-text">
+          Entrepreneurial events and activations leader with <strong>27+ years building public experiences, fan moments, and brand activations</strong> at global scale — and a lifelong basketball player and coach with genuine insider fluency. Built a 140-person event agency in Dubai, delivered activations for the FIFA Club World Cup, Paris 2024 Olympics, and COP 27/26/29 across 40+ countries. I think entertainment-first, operate under pressure, and believe the NBA's greatest opportunity lives <em>beyond the arena</em>.
+        </p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="sec-title">Experience</div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-company">Abaza Business Services</div>
+            <div class="exp-period">Jan 2019 – Present</div>
+          </div>
+          <div class="exp-title-row">
+            <span class="exp-role-cv">Founder &amp; Director</span>
+            <span class="exp-location">Netherlands</span>
+          </div>
+          <ul class="exp-bullets-cv">
+            <li>Delivered activations and event operations for the <strong>FIFA Club World Cup</strong> and the <strong>Paris 2024 Olympic Games</strong> — operating at the highest level of global sports production</li>
+            <li>Designed and delivered <strong>end-to-end activations for COP 27 (Egypt), COP 26 (UAE), and COP 29 (Azerbaijan)</strong> — coordinating multinational teams and on-site logistics at true global scale</li>
+            <li>Built agile operational frameworks enabling complex multi-country programs to run reliably across time zones under high-stakes conditions</li>
+            <li>Strategic advisor on event design, logistics, and delivery for senior government and corporate clients — translating creative vision into structured execution plans</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-company">Withlocals B.V.</div>
+            <div class="exp-period">Nov 2018 – Jun 2026</div>
+          </div>
+          <div class="exp-title-row">
+            <span class="exp-role-cv">Chief Growth Officer</span>
+            <span class="exp-location">Eindhoven, Netherlands</span>
+          </div>
+          <ul class="exp-bullets-cv">
+            <li>Owned full-funnel demand growth for a global travel marketplace — from new market entry and supply acquisition to host activation, retention, and corporate revenue conversion; scaled from 50 to <strong>300+ cities across 40+ countries</strong></li>
+            <li>Built and scaled a community of <strong>2,000+ experience hosts</strong>; designed the onboarding programs, engagement systems, and host tooling that drove quality, retention, and performance at scale</li>
+            <li>Generated demand across digital and experiential channels, growing the platform to serve <strong>70+ global corporate clients</strong>; pivoted the full product and demand model to virtual during COVID-19, opening a new B2B revenue stream</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-company">Sphere Events &amp; Communication</div>
+            <div class="exp-period">Jan 2008 – Nov 2018</div>
+          </div>
+          <div class="exp-title-row">
+            <span class="exp-role-cv">Founder &amp; Managing Director</span>
+            <span class="exp-location">Dubai, UAE</span>
+          </div>
+          <ul class="exp-bullets-cv">
+            <li>Founded and scaled a regional event &amp; communications agency into a <strong>140-person operation delivering 150+ projects per year</strong>, generating USD 8M+ in annual revenue at peak</li>
+            <li>Led major public entertainment events including <strong>Street Nights, Dubai Chocolate Festival, and Marina Music Festival</strong> — designing crowd experiences from zero for audiences of tens of thousands</li>
+            <li>Partnered with global brands (Adidas, Emirates Airlines, Abu Dhabi Tourism, FIFA, Siemens, Porsche, Emaar) on activations blending creative ambition with flawless operational delivery across the region</li>
+            <li>Built cross-functional teams (production, design, logistics, client services) and the systems and supplier networks to sustain high performance in high-pressure environments</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-company">FrontFlip (me360)</div>
+            <div class="exp-period">Mar 2010 – Oct 2013</div>
+          </div>
+          <div class="exp-title-row">
+            <span class="exp-role-cv">CEO, Middle East &amp; North Africa</span>
+            <span class="exp-location">Kansas City, USA / MENA</span>
+          </div>
+          <ul class="exp-bullets-cv">
+            <li>Co-founded regional operations of a mobile loyalty startup; raised USD 1.8M in early-stage funding; built a 25-person cross-functional team</li>
+            <li>Delivered major experiential brand partnerships with <strong>Budweiser</strong> and <strong>McDonald's</strong> — including large-scale activations for the <strong>Super Bowl XLVII (2013)</strong> with Budweiser</li>
+            <li>Led market localization and UX design for one of the region's earliest app-based customer engagement platforms</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-company">ASDAA Burson-Marsteller</div>
+            <div class="exp-period">2005 – 2006</div>
+          </div>
+          <div class="exp-title-row">
+            <span class="exp-role-cv">Senior Account Manager</span>
+            <span class="exp-location">Dubai, UAE</span>
+          </div>
+          <ul class="exp-bullets-cv">
+            <li>Played a key role in launching the <strong>inaugural Dubai International Film Festival</strong> — managing stakeholder engagement and communications at global scale</li>
+            <li>Led accounts for multinational clients including Siemens, Adidas, and Hilton across high-profile campaigns and public events</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-company">Sundance Events</div>
+            <div class="exp-period">2004 – 2005</div>
+          </div>
+          <div class="exp-title-row">
+            <span class="exp-role-cv">Events &amp; Operations</span>
+            <span class="exp-location">Dubai, UAE</span>
+          </div>
+          <ul class="exp-bullets-cv">
+            <li>Coordinated event logistics and on-the-ground operations for branded experiences and public events across the UAE market</li>
+            <li>Early foundation in live event production, client services, and cross-functional team delivery</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- LEADERSHIP -->
+      <div class="section">
+        <div class="sec-title">Leadership Development</div>
+        <div class="leadership-item">
+          <strong>AIESEC International (1999–2004)</strong> — Held progressive leadership positions including Local Committee President and National Support Team roles; led cross-cultural teams and international exchange programs across youth leadership and entrepreneurship. Thrived in diverse, high-energy environments that continue to inform my leadership approach.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

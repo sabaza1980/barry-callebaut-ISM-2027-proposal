@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sherif Abaza — VP Global Events & Activations · NBA Application</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --red:      #C8102E;
+      --red-dk:   #A00D24;
+      --red-lt:   #E8243E;
+      --blue:     #1D428A;
+      --blue-lt:  #2D5AB5;
+      --blue-bright: #4A80D4;
+      --silver:   #C4CED4;
+      --dark:     #05050A;
+      --deep:     #0A0A12;
+      --panel:    #0F0F18;
+      --card:     #13131C;
+      --card2:    #171724;
+      --border:   rgba(255,255,255,0.07);
+      --border2:  rgba(255,255,255,0.13);
+      --white:    #FFFFFF;
+      --text:     #D8D8E8;
+      --muted:    #5A5A72;
+      --ff-disp:  'Barlow Condensed', 'Arial Narrow', sans-serif;
+      --ff-body:  'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: var(--ff-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px;
+      background: rgba(5,5,10,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 14px; }
+    .nav-nba-logo { height: 36px; width: auto; }
+    .nav-divider {
+      width: 1px; height: 24px;
+      background: var(--border2);
+    }
+    .nav-name {
+      font-family: var(--ff-disp);
+      font-size: 1.05rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--white);
+    }
+    .nav-name em { font-style: normal; color: var(--red); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta {
+      background: var(--red); color: var(--white);
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 9px 22px; border-radius: 4px;
+      text-decoration: none; transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--red-lt); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 130px 8% 80px;
+      overflow: hidden; position: relative;
+    }
+    /* Court-line background */
+    .hero-court {
+      position: absolute; inset: 0; z-index: 0;
+      pointer-events: none;
+    }
+    .hero-glow-red {
+      position: absolute;
+      width: 800px; height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,16,46,0.07) 0%, transparent 70%);
+      top: -200px; left: -200px;
+    }
+    .hero-glow-blue {
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(29,66,138,0.08) 0%, transparent 70%);
+      bottom: -100px; right: -100px;
+    }
+    /* Subtle half-court line */
+    .hero-halfcourt {
+      position: absolute;
+      left: 0; right: 0; top: 50%;
+      height: 1px;
+      background: rgba(255,255,255,0.025);
+    }
+    .hero-centercircle {
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.025);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    /* Large NBA logo watermark */
+    .hero-watermark {
+      position: absolute;
+      right: -8%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.035;
+      width: 55vw;
+      max-width: 700px;
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 7px 18px;
+      background: rgba(200,16,46,0.1);
+      border: 1px solid rgba(200,16,46,0.28);
+      border-radius: 100px;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: #E8304A;
+      margin-bottom: 32px;
+    }
+    .pulse-dot {
+      width: 7px; height: 7px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulse 1.8s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(0.55); opacity: 0.35; }
+    }
+
+    .hero-logo-wrap {
+      margin-bottom: 28px;
+    }
+    .hero-nba-logo { height: 90px; }
+
+    .hero h1 {
+      font-family: var(--ff-disp);
+      font-size: clamp(72px, 12vw, 160px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .h1-white { display: block; color: var(--white); }
+    .h1-red {
+      display: block;
+      background: linear-gradient(110deg, #C8102E 0%, #FF3355 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .h1-blue {
+      display: block;
+      background: linear-gradient(110deg, #2D5AB5 0%, #5A90E8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-role {
+      font-family: var(--ff-disp);
+      font-size: clamp(16px, 2.2vw, 26px);
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+    .hero-role strong { color: var(--silver); font-weight: 600; }
+
+    .hero-intro {
+      max-width: 680px;
+      font-size: 1.08rem;
+      color: #9090A8;
+      line-height: 1.9;
+      margin-bottom: 48px;
+    }
+    .hero-intro strong { color: var(--white); }
+
+    .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-red {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--red); color: var(--white);
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 14px 30px; border-radius: 6px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .btn-red:hover {
+      background: var(--red-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(200,16,46,0.38);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--text);
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 14px 30px; border-radius: 6px;
+      border: 1px solid var(--border2);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--blue-bright); color: var(--blue-bright); }
+
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 8%; z-index: 2;
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hero-scroll::before {
+      content: ''; display: block;
+      width: 36px; height: 1px; background: var(--muted);
+    }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px; background: var(--border);
+    }
+    .stat-box {
+      background: var(--deep);
+      padding: 44px 20px;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center; gap: 6px;
+      transition: background 0.25s;
+    }
+    .stat-box:hover { background: var(--panel); }
+    .stat-num {
+      font-family: var(--ff-disp);
+      font-size: clamp(44px, 5vw, 68px);
+      font-weight: 900; line-height: 1;
+      color: var(--white);
+    }
+    .stat-num.red { color: var(--red); }
+    .stat-num.blue { color: var(--blue-bright); }
+    .stat-suffix {
+      font-family: var(--ff-disp);
+      font-size: 2rem; font-weight: 700;
+      color: var(--muted); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.67rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); margin-top: 4px;
+    }
+    .stat-sublabel {
+      font-size: 0.65rem; color: rgba(90,90,114,0.7);
+    }
+
+    /* ── SHARED LAYOUT ── */
+    .container {
+      max-width: 1240px; margin: 0 auto; padding: 0 48px;
+    }
+    .section-pad { padding: 100px 0; }
+    section { position: relative; z-index: 1; }
+
+    .eyebrow {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 3.5px; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .eyebrow.red { color: var(--red); }
+    .eyebrow.blue { color: var(--blue-bright); }
+
+    .s-title {
+      font-family: var(--ff-disp);
+      font-size: clamp(52px, 8vw, 100px);
+      font-weight: 900; line-height: 0.93;
+      text-transform: uppercase; letter-spacing: -1px;
+      color: var(--white); margin-bottom: 20px;
+    }
+    .s-title .red  { color: var(--red); }
+    .s-title .blue { color: var(--blue-bright); }
+
+    .s-sub {
+      max-width: 600px; font-size: 1rem;
+      color: var(--muted); line-height: 1.8;
+    }
+
+    /* ── BASKETBALL SECTION ── */
+    .bball-section { background: var(--deep); }
+    .bball-grid {
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      gap: 80px; align-items: start;
+    }
+
+    .bball-pull-quote {
+      font-family: var(--ff-disp);
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 800; font-style: italic;
+      line-height: 1.15; color: var(--white);
+      margin-bottom: 32px;
+      border-left: 4px solid var(--red);
+      padding-left: 24px;
+    }
+    .bball-pull-quote em { font-style: normal; color: var(--red); }
+
+    .bball-body {
+      font-size: 0.98rem; color: #8888A0;
+      line-height: 1.9; margin-bottom: 20px;
+    }
+    .bball-body strong { color: var(--white); }
+
+    .bball-cards {
+      display: flex; flex-direction: column;
+      gap: 1px; background: var(--border);
+      margin-top: 40px;
+    }
+    .bball-card {
+      background: var(--panel);
+      padding: 20px 24px;
+      display: flex; align-items: flex-start; gap: 14px;
+      transition: background 0.2s;
+    }
+    .bball-card:hover { background: var(--card); }
+    .bball-card-icon {
+      font-size: 1.4rem; flex-shrink: 0; margin-top: 2px;
+    }
+    .bball-card-text { font-size: 0.88rem; color: var(--text); line-height: 1.6; }
+    .bball-card-text strong { color: var(--white); }
+
+    /* Court SVG visual */
+    .court-wrap {
+      position: relative;
+    }
+    .court-svg { width: 100%; border-radius: 8px; }
+
+    .bball-mini-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); margin-top: 16px;
+    }
+    .bball-mini-stat {
+      background: var(--panel);
+      padding: 22px 16px; text-align: center;
+    }
+    .bball-mini-num {
+      font-family: var(--ff-disp);
+      font-size: 2.8rem; font-weight: 900;
+      color: var(--red); line-height: 1;
+    }
+    .bball-mini-label {
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--muted); margin-top: 6px;
+    }
+
+    /* ── WHY NBA ── */
+    .why-section { background: var(--dark); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      margin-top: 64px;
+    }
+    .why-card {
+      background: var(--card);
+      padding: 52px 40px;
+      transition: background 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .why-card:hover { background: var(--card2); }
+    .why-card::before {
+      content: attr(data-num);
+      position: absolute; top: -10px; left: 28px;
+      font-family: var(--ff-disp);
+      font-size: 7rem; font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      line-height: 1; pointer-events: none;
+    }
+    .why-icon { font-size: 2.4rem; margin-bottom: 20px; display: block; }
+    .why-title {
+      font-family: var(--ff-disp);
+      font-size: 2rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--white); margin-bottom: 16px;
+    }
+    .why-body { font-size: 0.9rem; color: #888899; line-height: 1.8; }
+    .why-body strong { color: var(--white); }
+    .why-tag {
+      display: inline-block; margin-top: 24px;
+      padding: 5px 14px;
+      font-size: 0.67rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 4px;
+    }
+    .why-tag.red {
+      background: rgba(200,16,46,0.1);
+      border: 1px solid rgba(200,16,46,0.22);
+      color: #E8304A;
+    }
+    .why-tag.blue {
+      background: rgba(29,66,138,0.12);
+      border: 1px solid rgba(45,90,181,0.3);
+      color: var(--blue-bright);
+    }
+    .why-tag.silver {
+      background: rgba(196,206,212,0.06);
+      border: 1px solid rgba(196,206,212,0.15);
+      color: var(--silver);
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-section { background: var(--deep); }
+    .exp-list {
+      display: flex; flex-direction: column;
+      gap: 1px; background: var(--border);
+      margin-top: 64px;
+    }
+    .exp-card {
+      background: var(--card);
+      padding: 52px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 52px;
+      transition: background 0.2s;
+    }
+    .exp-card:hover { background: var(--card2); }
+    .exp-chip {
+      display: inline-block; margin-bottom: 14px;
+      padding: 4px 10px;
+      font-size: 0.63rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 3px;
+    }
+    .exp-chip.red {
+      background: rgba(200,16,46,0.1);
+      border: 1px solid rgba(200,16,46,0.2);
+      color: var(--red);
+    }
+    .exp-chip.blue {
+      background: rgba(29,66,138,0.12);
+      border: 1px solid rgba(45,90,181,0.25);
+      color: var(--blue-bright);
+    }
+    .exp-company {
+      font-family: var(--ff-disp);
+      font-size: 1.7rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--white); margin-bottom: 4px;
+    }
+    .exp-role {
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--blue-bright); margin-bottom: 8px;
+    }
+    .exp-period { font-size: 0.75rem; color: var(--muted); }
+    .exp-bullets {
+      list-style: none; display: flex;
+      flex-direction: column; gap: 12px;
+    }
+    .exp-bullets li {
+      font-size: 0.9rem; color: #8888A0;
+      line-height: 1.75; padding-left: 20px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: ''; position: absolute;
+      left: 0; top: 11px;
+      width: 9px; height: 2px;
+      background: var(--red);
+    }
+    .exp-bullets li strong { color: var(--white); }
+
+    /* ── VISION / PLAYBOOK ── */
+    .vision-section { background: var(--dark); }
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--border);
+      margin-top: 64px;
+    }
+    .vision-card {
+      background: var(--card);
+      padding: 44px;
+      transition: background 0.2s;
+    }
+    .vision-card:hover { background: var(--card2); }
+    .vision-label {
+      font-size: 0.67rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--red); margin-bottom: 14px;
+    }
+    .vision-title {
+      font-family: var(--ff-disp);
+      font-size: 1.7rem; font-weight: 800;
+      text-transform: uppercase; line-height: 1.1;
+      color: var(--white); margin-bottom: 16px;
+    }
+    .vision-body {
+      font-size: 0.88rem; color: #8888A0;
+      line-height: 1.82;
+    }
+    .vision-body strong { color: var(--white); }
+
+    /* ── GLOBAL REACH ── */
+    .global-section { background: var(--panel); }
+    .global-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 80px; align-items: center;
+    }
+    .lang-list {
+      display: flex; flex-direction: column; gap: 16px;
+      margin-top: 40px;
+    }
+    .lang-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 80px;
+      gap: 16px; align-items: center;
+    }
+    .lang-name { font-size: 0.88rem; font-weight: 500; color: var(--text); }
+    .lang-bar-bg {
+      height: 3px; background: rgba(255,255,255,0.07);
+      border-radius: 2px; overflow: hidden;
+    }
+    .lang-bar { height: 100%; border-radius: 2px; }
+    .lang-bar.red   { background: var(--red); }
+    .lang-bar.blue  { background: var(--blue-bright); }
+    .lang-bar.grey  { background: var(--muted); }
+    .lang-level {
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--muted); text-align: right;
+    }
+
+    .globe-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .globe-num {
+      font-family: var(--ff-disp);
+      font-size: 7rem; font-weight: 900;
+      line-height: 1; color: var(--red);
+    }
+    .globe-plus {
+      font-family: var(--ff-disp);
+      font-size: 3.5rem; font-weight: 700;
+      color: rgba(200,16,46,0.5);
+    }
+    .globe-label {
+      font-family: var(--ff-disp);
+      font-size: 1.5rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 20px;
+    }
+    .globe-text {
+      font-size: 0.85rem; color: var(--muted);
+      line-height: 1.75;
+    }
+    .market-tags {
+      display: flex; flex-direction: column; gap: 8px;
+      margin-top: 24px;
+    }
+    .market-tag {
+      padding: 10px 16px;
+      border-radius: 5px;
+      font-size: 0.78rem; color: rgba(255,255,255,0.6);
+      text-align: left;
+    }
+    .market-tag.red  { background: rgba(200,16,46,0.08); border: 1px solid rgba(200,16,46,0.15); }
+    .market-tag.blue { background: rgba(29,66,138,0.1);  border: 1px solid rgba(29,66,138,0.2); }
+    .market-tag.grey { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--red);
+      padding: 110px 48px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: 'NBA';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--ff-disp);
+      font-size: clamp(160px, 28vw, 380px);
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      letter-spacing: -8px;
+      pointer-events: none; user-select: none;
+    }
+    .cta-title {
+      font-family: var(--ff-disp);
+      font-size: clamp(52px, 9vw, 110px);
+      font-weight: 900; text-transform: uppercase;
+      line-height: 0.92; color: var(--white);
+      margin-bottom: 22px; position: relative;
+    }
+    .cta-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.68);
+      max-width: 540px; margin: 0 auto 44px;
+      line-height: 1.75; position: relative;
+    }
+    .cta-links {
+      display: flex; justify-content: center;
+      gap: 14px; flex-wrap: wrap;
+      position: relative;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 15px 30px; border-radius: 6px;
+      text-decoration: none; transition: background 0.2s, transform 0.15s;
+    }
+    .cta-btn.light {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+    }
+    .cta-btn.light:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+    .cta-btn.dark {
+      background: rgba(0,0,0,0.2);
+      border: 1px solid rgba(0,0,0,0.25);
+      color: var(--white);
+    }
+    .cta-btn.dark:hover { background: rgba(0,0,0,0.35); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      padding: 28px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-name {
+      font-family: var(--ff-disp);
+      font-size: 0.95rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-name em { font-style: normal; color: var(--red); }
+    .footer-copy { font-size: 0.72rem; color: var(--muted); }
+
+    /* ── REVEAL ANIMATIONS ── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .hero { padding: 110px 6% 80px; }
+      .container { padding: 0 24px; }
+      .stats-inner { grid-template-columns: repeat(3, 1fr); }
+      .bball-grid { grid-template-columns: 1fr; gap: 48px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .exp-card { grid-template-columns: 1fr; gap: 24px; }
+      .vision-grid { grid-template-columns: 1fr; }
+      .global-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ NAV -->
+<nav>
+  <div class="nav-brand">
+    <!-- NBA Logo -->
+    <img src="nba-logo.png" alt="NBA" class="nav-nba-logo"/>
+    <div class="nav-divider"></div>
+    <span class="nav-name">Sherif <em>Abaza</em></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#basketball">The Game</a></li>
+    <li><a href="#why">Why NBA</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#vision">Playbook</a></li>
+  </ul>
+  <a href="mailto:sabaza@gmail.com" class="nav-cta">Let's Talk →</a>
+</nav>
+
+<!-- ══════════════════════════════════════════ HERO -->
+<section class="hero" id="hero">
+  <!-- Court textures -->
+  <div class="hero-court">
+    <div class="hero-glow-red"></div>
+    <div class="hero-glow-blue"></div>
+    <div class="hero-halfcourt"></div>
+    <div class="hero-centercircle"></div>
+  </div>
+  <!-- Watermark NBA logo -->
+  <img src="nba-logo.png" alt="NBA" class="hero-watermark"/>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      Application · Experiential Business Lead
+    </div>
+
+    <!-- Larger NBA Logo in hero -->
+    <div class="hero-logo-wrap">
+      <img src="nba-logo.png" alt="NBA" class="hero-nba-logo"/>
+    </div>
+
+    <h1>
+      <span class="h1-white">I've Lived</span>
+      <span class="h1-red">This Game.</span>
+      <span class="h1-blue">I Love This Game.</span>
+    </h1>
+
+    <div class="hero-role">
+      Sherif Abaza &nbsp;·&nbsp; <strong>Experiential Business Lead</strong>
+    </div>
+
+    <p class="hero-intro">
+      I didn't just grow up watching basketball — <strong>I played it, coached it, and studied it across six continents.</strong>
+      For 25 years, the game shaped how I think about performance, culture, and experience design.
+      Now I bring that same instinct — and 20 years of building world-class events, activations, and communities at scale —
+      to the league that made basketball a global religion.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="#basketball" class="btn-red">↓ See Why I'm Different</a>
+      <a href="mailto:sabaza@gmail.com" class="btn-ghost">sabaza@gmail.com</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<!-- ══════════════════════════════════════════ STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-box">
+      <div class="stat-num red">25<span class="stat-suffix">+</span></div>
+      <div class="stat-label">Years Playing</div>
+      <div class="stat-sublabel">National youth level</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">27<span class="stat-suffix">+</span></div>
+      <div class="stat-label">Yrs Experience</div>
+      <div class="stat-sublabel">Youth & community teams</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num blue">150<span class="stat-suffix">+</span></div>
+      <div class="stat-label">Events Per Year</div>
+      <div class="stat-sublabel">Peak operational output</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num red">40<span class="stat-suffix">+</span></div>
+      <div class="stat-label">Countries</div>
+      <div class="stat-sublabel">Operational reach</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">9</div>
+      <div class="stat-label">Languages</div>
+      <div class="stat-sublabel">Spoken fluently</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ BASKETBALL -->
+<section id="basketball" class="bball-section">
+  <div class="container section-pad">
+    <div class="bball-grid">
+
+      <div class="reveal">
+        <div class="eyebrow red">The Game</div>
+        <h2 class="s-title">BASKETBALL<br/><span class="red">IS MY DNA</span></h2>
+
+        <div class="bball-pull-quote">
+          "I don't just understand basketball.<br/>
+          I speak it. I <em>live</em> it."
+        </div>
+
+        <p class="bball-body">
+          I picked up a basketball as a kid in Egypt and never put it down.
+          I played at <strong>national youth level</strong>, competed across the Middle East and Europe,
+          and have spent years coaching community and youth teams.
+          This isn't a weekend hobby. This is a lifelong relationship with a sport that shaped how I see the world.
+        </p>
+
+        <p class="bball-body">
+          I've watched the NBA evolve from the Jordan era to the global entertainment phenomenon it is today.
+          I've followed EuroLeague, the G-League, FIBA, and grassroots scenes on five continents.
+          I understand <strong>what fans feel</strong> at every touchpoint — from the electricity of a Game 7 crowd
+          to the quiet magic of a pickup game in a neighborhood park.
+          And that understanding is the foundation of every <strong>activation, fan experience, and public event</strong> I've ever designed.
+        </p>
+
+        <p class="bball-body">
+          That's what makes me different. I'm not a great events professional who happens to like basketball.
+          I'm the basketball person who spent 27 years building fan experiences, brand activations, and public events
+          at global scale — and I know exactly what it feels like to be in the crowd.
+          <strong>The NBA's fans deserve experiences designed by someone who feels the game the way they do.</strong>
+        </p>
+
+        <div class="bball-cards">
+          <div class="bball-card">
+            <span class="bball-card-icon">🏀</span>
+            <div class="bball-card-text"><strong>National youth player</strong> — competed at youth-level representing Egypt, trained across the region</div>
+          </div>
+          <div class="bball-card">
+            <span class="bball-card-icon">🎽</span>
+            <div class="bball-card-text"><strong>Active coach</strong> — youth and community teams for over a decade, teaching the game as a discipline</div>
+          </div>
+          <div class="bball-card">
+            <span class="bball-card-icon">🌍</span>
+            <div class="bball-card-text"><strong>Global basketball landscape</strong> — fluent in NBA, EuroLeague, FIBA, grassroots scenes worldwide</div>
+          </div>
+          <div class="bball-card">
+            <span class="bball-card-icon">📺</span>
+            <div class="bball-card-text"><strong>The culture, deep</strong> — Jordan to LeBron, the evolution of basketball as global entertainment</div>
+          </div>
+          <div class="bball-card">
+            <span class="bball-card-icon">🎯</span>
+            <div class="bball-card-text"><strong>The fan journey</strong> — I know what pulls someone from the couch to the arena and makes them stay for life</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Court visual + mini stats -->
+      <div class="court-wrap reveal reveal-delay-2">
+        <!-- Half-court SVG diagram -->
+        <svg class="court-svg" viewBox="0 0 360 440" xmlns="http://www.w3.org/2000/svg">
+          <rect width="360" height="440" fill="#0A0A12" rx="10"/>
+          <!-- Outer boundary -->
+          <rect x="18" y="18" width="324" height="404" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="2"/>
+          <!-- Half court line -->
+          <line x1="18" y1="220" x2="342" y2="220" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+          <!-- Center circle -->
+          <circle cx="180" cy="220" r="52" fill="none" stroke="rgba(200,16,46,0.2)" stroke-width="1.5"/>
+          <circle cx="180" cy="220" r="4" fill="rgba(200,16,46,0.3)"/>
+          <!-- Top paint -->
+          <rect x="124" y="18" width="112" height="152" fill="rgba(29,66,138,0.12)" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+          <!-- Bottom paint -->
+          <rect x="124" y="270" width="112" height="152" fill="rgba(29,66,138,0.12)" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+          <!-- Top basket line -->
+          <line x1="18" y1="88" x2="342" y2="88" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <!-- Bottom basket line -->
+          <line x1="18" y1="352" x2="342" y2="352" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <!-- Top basket -->
+          <circle cx="180" cy="46" r="18" fill="none" stroke="rgba(200,16,46,0.4)" stroke-width="2"/>
+          <line x1="162" y1="46" x2="198" y2="46" stroke="rgba(200,16,46,0.25)" stroke-width="1"/>
+          <!-- Bottom basket -->
+          <circle cx="180" cy="394" r="18" fill="none" stroke="rgba(200,16,46,0.4)" stroke-width="2"/>
+          <line x1="162" y1="394" x2="198" y2="394" stroke="rgba(200,16,46,0.25)" stroke-width="1"/>
+          <!-- Top 3-point arc -->
+          <path d="M52,158 Q52,18 180,18 Q308,18 308,158" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+          <!-- Bottom 3-point arc -->
+          <path d="M52,282 Q52,422 180,422 Q308,422 308,282" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+          <!-- Free throw arcs -->
+          <path d="M124,170 Q180,140 236,170" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+          <path d="M124,270 Q180,300 236,270" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+          <!-- Name watermark -->
+          <text x="180" y="226" font-family="'Barlow Condensed', sans-serif" font-size="12" fill="rgba(255,255,255,0.05)"
+                text-anchor="middle" font-weight="900" letter-spacing="4">SHERIF ABAZA</text>
+          <!-- Subtle #1 -->
+          <text x="180" y="210" font-family="'Barlow Condensed', sans-serif" font-size="40"
+                fill="rgba(200,16,46,0.1)" text-anchor="middle" font-weight="900">#1</text>
+        </svg>
+
+        <div class="bball-mini-stats">
+          <div class="bball-mini-stat">
+            <div class="bball-mini-num">25+</div>
+            <div class="bball-mini-label">Years on Court</div>
+          </div>
+          <div class="bball-mini-stat">
+            <div class="bball-mini-num">500+</div>
+            <div class="bball-mini-label">Players Coached</div>
+          </div>
+          <div class="bball-mini-stat">
+            <div class="bball-mini-num">6</div>
+            <div class="bball-mini-label">Continents Played</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ WHY NBA -->
+<section id="why" class="why-section">
+  <div class="container section-pad">
+    <div class="reveal">
+      <div class="eyebrow red">Why I'm the Pick</div>
+      <h2 class="s-title">THREE<br/><span class="blue">REASONS</span></h2>
+      <p class="s-sub">You need someone who knows the game from the inside, can build activations that move fans, and can operate at the global scale the NBA demands.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal" data-num="01">
+        <span class="why-icon">🏀</span>
+        <h3 class="why-title">The Insider</h3>
+        <p class="why-body">
+          I've played, coached, and followed basketball across six continents.
+          I understand <strong>what fans feel</strong>, what communities need,
+          and what makes the NBA's culture unlike any other sport on earth.
+          You don't need to brief me on the game — I can help you shape it.
+        </p>
+        <span class="why-tag red">Lifetime player · Active coach</span>
+      </div>
+
+      <div class="why-card reveal reveal-delay-1" data-num="02">
+        <span class="why-icon">🎪</span>
+        <h3 class="why-title">The Builder</h3>
+        <p class="why-body">
+          I've delivered <strong>150+ events per year</strong>, public festivals for tens of thousands,
+          and global activations across 40+ countries. I built a 140-person event company in Dubai from zero.
+          I know how to design experiences that aren't just organized — they're unforgettable.
+          Not polished boardroom programs. Raw, creative, fan-first energy.
+        </p>
+        <span class="why-tag blue">20 years in events &amp; activations</span>
+      </div>
+
+      <div class="why-card reveal reveal-delay-2" data-num="03">
+        <span class="why-icon">🌍</span>
+        <h3 class="why-title">The Global Operator</h3>
+        <p class="why-body">
+          9 languages. 100+ countries visited. COP-scale international logistics.
+          The NBA is the most global basketball brand on the planet —
+          and I bring the cultural intelligence, multilingual reach, and operational depth
+          to <strong>activate it in every market it wants to grow.</strong>
+        </p>
+        <span class="why-tag silver">9 languages · 100+ countries</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ EXPERIENCE -->
+<section id="experience" class="exp-section">
+  <div class="container section-pad">
+    <div class="reveal">
+      <div class="eyebrow blue">Career Highlights</div>
+      <h2 class="s-title">GAME<br/><span class="red">FILM</span></h2>
+      <p class="s-sub">The plays that matter most — public events, fan activations, brand experiences, and community built at scale.</p>
+    </div>
+
+    <div class="exp-list">
+
+      <!-- Sphere Events -->
+      <div class="exp-card reveal">
+        <div class="exp-meta">
+          <div class="exp-chip red">Activation Peak</div>
+          <div class="exp-company">Sphere Events</div>
+          <div class="exp-role">Founder & Managing Director</div>
+          <div class="exp-period">Dubai, UAE · Jan 2008 – Nov 2018</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Founded and scaled a regional event &amp; communications agency into a <strong>140-person operation delivering 150+ projects per year</strong>, generating USD 8M+ in annual revenue</li>
+          <li>Led major <strong>public entertainment events</strong> — Street Nights, Dubai Chocolate Festival, Marina Music Festival — designing crowd experiences from the ground up for audiences of tens of thousands</li>
+          <li>Partnered with global brands (Adidas, Emirates Airlines, Abu Dhabi Tourism, FIFA, Siemens, Porsche, Emaar) on activations blending creative ambition with flawless on-the-ground delivery</li>
+          <li>Built cross-functional teams covering production, creative, logistics, and client services — with a culture built on ownership, creativity, and adaptability</li>
+          <li>Oversaw everything: strategy, creative direction, production, logistics, finance — from first concept to last crowd leaving</li>
+        </ul>
+      </div>
+
+      <!-- Abaza Business Services -->
+      <div class="exp-card reveal">
+        <div class="exp-meta">
+          <div class="exp-chip red">Global Stage</div>
+          <div class="exp-company">Abaza Business Services</div>
+          <div class="exp-role">Founder & Director</div>
+          <div class="exp-period">Netherlands · Jan 2019 – Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Delivered activations and event operations for the <strong>FIFA Club World Cup</strong> and the <strong>Paris 2024 Olympic Games</strong> — working at the highest level of global sports spectacle and international event production</li>
+          <li>Designed and delivered <strong>end-to-end activations for COP 27 (Egypt), COP 26 (UAE), and COP 29 (Azerbaijan)</strong> — coordinating multinational teams and on-site logistics at true global scale</li>
+          <li>Built agile operational frameworks enabling complex multi-country programs to execute reliably under high-stakes conditions and tight timelines</li>
+          <li>Translated creative vision into structured execution plans for senior government and corporate clients, balancing ambition with operational reality</li>
+          <li>Managed stakeholder alignment across cultures, governments, and time zones — the kind of complexity the NBA faces every All-Star Weekend and global event</li>
+        </ul>
+      </div>
+
+      <!-- Withlocals -->
+      <div class="exp-card reveal">
+        <div class="exp-meta">
+          <div class="exp-chip blue">Growth &amp; Community</div>
+          <div class="exp-company">Withlocals</div>
+          <div class="exp-role">Chief Growth Officer</div>
+          <div class="exp-period">Netherlands · Nov 2018 – Jun 2026</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Owned the full demand funnel — market entry, supply acquisition, host activation, retention, and corporate revenue conversion — scaling from 50 to <strong>300+ cities across 40+ countries</strong>. That's the same growth architecture the NBA needs for every new market it enters</li>
+          <li>Built and scaled a community of <strong>2,000+ experience hosts</strong> by designing the onboarding programs, engagement systems, and loyalty mechanics that kept them performing. Community isn't a nice-to-have — it's the product</li>
+          <li>Drove demand generation across digital and experiential channels; grew to <strong>70+ global corporate clients</strong> including major international brands — proving community-powered experiences convert into serious business value</li>
+          <li>When COVID hit, pivoted the entire demand model to virtual in weeks — maintained growth, opened a new B2B revenue stream, and led through disruption without losing the community</li>
+        </ul>
+      </div>
+
+      <!-- FrontFlip -->
+      <div class="exp-card reveal">
+        <div class="exp-meta">
+          <div class="exp-chip red">Brand Activations</div>
+          <div class="exp-company">FrontFlip (me360)</div>
+          <div class="exp-role">CEO, Middle East &amp; North Africa</div>
+          <div class="exp-period">Kansas City, USA / MENA · Mar 2010 – Oct 2013</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Co-founded and led regional operations of a mobile loyalty startup — raised USD 1.8M in early-stage funding and built a 25-person cross-functional team across the MENA region</li>
+          <li>Delivered major experiential brand partnerships with <strong>Budweiser</strong> and <strong>McDonald's</strong> — including large-scale fan activations for the <strong>Super Bowl XLVII (2013)</strong> with Budweiser</li>
+          <li>Pioneered one of the region's earliest app-based customer engagement platforms, bridging digital loyalty with live brand experiences</li>
+        </ul>
+      </div>
+
+      <!-- ASDAA Burson-Marsteller -->
+      <div class="exp-card reveal">
+        <div class="exp-meta">
+          <div class="exp-chip blue">Early Career</div>
+          <div class="exp-company">ASDAA Burson-Marsteller</div>
+          <div class="exp-role">Senior Account Manager</div>
+          <div class="exp-period">Dubai, UAE · 2005 – 2006</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Played a key role in launching the <strong>inaugural Dubai International Film Festival</strong> — managing stakeholder engagement and communications at global scale from day zero</li>
+          <li>Led accounts for multinational brands including Siemens, Adidas, and Hilton across high-profile campaigns and public events</li>
+        </ul>
+      </div>
+
+      <!-- Sundance Events -->
+      <div class="exp-card reveal">
+        <div class="exp-meta">
+          <div class="exp-chip blue">Early Career</div>
+          <div class="exp-company">Sundance Events</div>
+          <div class="exp-role">Events &amp; Operations</div>
+          <div class="exp-period">Dubai, UAE · 2004 – 2005</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Coordinated on-the-ground logistics and operations for branded events and public experiences across the UAE market</li>
+          <li>Foundation in live event production, client services, and execution under pressure — the bedrock of everything built since</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ VISION -->
+<section id="vision" class="vision-section">
+  <div class="container section-pad">
+    <div class="reveal">
+      <div class="eyebrow red">What I'd Build</div>
+      <h2 class="s-title">MY<br/><span class="blue">PLAYBOOK</span></h2>
+      <p class="s-sub">Four areas where I'd move fast, think differently, and make the NBA's live and fan experience even more extraordinary.</p>
+    </div>
+
+    <div class="vision-grid">
+      <div class="vision-card reveal">
+        <div class="vision-label">Play 01</div>
+        <div class="vision-title">Global Activations That Actually Feel Local</div>
+        <p class="vision-body">
+          The NBA's international expansion is the biggest opportunity in global sports.
+          I'd design <strong>activation frameworks that deploy globally but feel culturally authentic</strong> —
+          connecting local nuance with the universal language of basketball.
+          Having lived and operated in the Middle East, Europe, Africa and beyond,
+          I know the difference between localization and tokenization. The NBA deserves the real thing.
+        </p>
+      </div>
+
+      <div class="vision-card reveal reveal-delay-1">
+        <div class="vision-label">Play 02</div>
+        <div class="vision-title">Public Events That Convert Casual Viewers to Lifelong Fans</div>
+        <p class="vision-body">
+          My biggest events — Dubai's Marina Music Festival, Street Nights, COP activations —
+          weren't just logistically impressive. They <strong>pulled people in and made them feel something</strong>.
+          The NBA can do this outside the arena: in city parks, on beaches, in markets.
+          I know exactly how to design those entry points that turn strangers into superfans.
+        </p>
+      </div>
+
+      <div class="vision-card reveal">
+        <div class="vision-label">Play 03</div>
+        <div class="vision-title">Entertainment-First Thinking at Every Touchpoint</div>
+        <p class="vision-body">
+          Basketball is entertainment. The best NBA experiences aren't just games — they're shows.
+          I'd bring an <strong>entertainment-first lens</strong> to every activation:
+          the pre-game energy, halftime experience, around-the-arena culture, the digital amplification.
+          Not safe and corporate. Creative, bold, and built around the moment.
+        </p>
+      </div>
+
+      <div class="vision-card reveal reveal-delay-1">
+        <div class="vision-label">Play 04</div>
+        <div class="vision-title">Community Courts as the NBA's Greatest Activation</div>
+        <p class="vision-body">
+          The courts where I played and coached are where the next generation of NBA fans are born.
+          <strong>Grassroots basketball activation</strong> — clinics, leagues, community events tied to NBA moments —
+          creates deeper loyalty than any marketing campaign.
+          I've lived on those courts. I know how to build the bridge from the community game to the global stage.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ GLOBAL REACH -->
+<section class="global-section">
+  <div class="container section-pad">
+    <div class="global-grid">
+      <div class="reveal">
+        <div class="eyebrow blue">Global Reach</div>
+        <h2 class="s-title" style="font-size:clamp(44px,6vw,72px);">LANGUAGES<br/><span class="red">&amp; MARKETS</span></h2>
+        <p class="s-sub">The NBA's next billion fans speak Arabic, French, Spanish, Portuguese, Dutch, and Romanian. So do I.</p>
+
+        <div class="lang-list">
+          <div class="lang-row">
+            <span class="lang-name">Arabic</span>
+            <div class="lang-bar-bg"><div class="lang-bar red" style="width:100%"></div></div>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">English</span>
+            <div class="lang-bar-bg"><div class="lang-bar red" style="width:100%"></div></div>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">French</span>
+            <div class="lang-bar-bg"><div class="lang-bar blue" style="width:88%"></div></div>
+            <span class="lang-level">Excellent</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Spanish</span>
+            <div class="lang-bar-bg"><div class="lang-bar blue" style="width:85%"></div></div>
+            <span class="lang-level">Excellent</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Dutch</span>
+            <div class="lang-bar-bg"><div class="lang-bar grey" style="width:60%"></div></div>
+            <span class="lang-level">Working</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Polish</span>
+            <div class="lang-bar-bg"><div class="lang-bar grey" style="width:55%"></div></div>
+            <span class="lang-level">Working</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Portuguese</span>
+            <div class="lang-bar-bg"><div class="lang-bar grey" style="width:35%"></div></div>
+            <span class="lang-level">Basic</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Italian</span>
+            <div class="lang-bar-bg"><div class="lang-bar grey" style="width:30%"></div></div>
+            <span class="lang-level">Basic</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">Romanian</span>
+            <div class="lang-bar-bg"><div class="lang-bar grey" style="width:25%"></div></div>
+            <span class="lang-level">Basic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="globe-card">
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:7rem; font-weight:900; line-height:1; color:#C8102E;">
+            100<span style="font-size:3.5rem; color:rgba(200,16,46,0.5)">+</span>
+          </div>
+          <div class="globe-label">Countries</div>
+          <p class="globe-text">
+            Over 100 countries visited, lived in, and operated across. From running events in the Gulf to delivering
+            activations in Europe, Africa, and beyond — I've spent my career in the places where the NBA's next
+            billion fans are. Currently based in the Netherlands, <strong style="color:rgba(255,255,255,0.75)">ready to relocate to New York</strong> and go wherever the game needs to go.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ CTA -->
+<section class="cta-section">
+  <h2 class="cta-title">LET'S TALK<br/>BASKETBALL</h2>
+  <p class="cta-sub">I've spent my whole life building toward something like this. Let's find out what I can build for the NBA.</p>
+  <div class="cta-links">
+    <a href="mailto:sabaza@gmail.com" class="cta-btn light">✉ sabaza@gmail.com</a>
+    <a href="https://linkedin.com/in/sabaza" class="cta-btn dark" target="_blank">↗ LinkedIn</a>
+    <a href="tel:+31623063073" class="cta-btn dark">📞 +31 6 2306 3073</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ FOOTER -->
+<footer>
+  <div class="footer-name">Sherif <em>Abaza</em> · NBA Application</div>
+  <div class="footer-copy">Built with passion for the game · 2026</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+
+  // Smooth nav hide/show
+  let lastY = 0;
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > lastY && y > 80) nav.style.transform = 'translateY(-100%)';
+    else nav.style.transform = 'translateY(0)';
+    lastY = y;
+  });
+  nav.style.transition = 'transform 0.3s ease';
+</script>
+
+</body>
+</html>

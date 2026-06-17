@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sherif Abaza — Cover Letter · NBA Application</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red:   #C8102E;
+      --blue:  #1D428A;
+      --dark:  #0A0A14;
+      --ink:   #1A1A2A;
+      --ink2:  #3A3A50;
+      --muted: #7A7A96;
+      --rule:  #E2E2EC;
+      --bg:    #F9F9FC;
+      --paper: #FFFFFF;
+      --ff-d:  'Barlow Condensed', 'Arial Narrow', sans-serif;
+      --ff-s:  'Cormorant Garamond', Georgia, serif;
+      --ff-b:  'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--ff-b);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 10.5pt;
+      line-height: 1.65;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 0 0 1px var(--rule), 0 4px 32px rgba(0,0,0,0.06);
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      height: 5px;
+      background: linear-gradient(90deg, var(--red) 50%, var(--blue) 50%);
+    }
+
+    /* ── HEADER ── */
+    .cl-header {
+      padding: 36px 52px 28px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .cl-logo-wrap { }
+    .cl-nba-badge {
+      background: var(--dark);
+      border-radius: 6px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cl-nba-badge img { height: 44px; width: auto; }
+    .cl-nba-text {
+      font-family: var(--ff-d);
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.4;
+    }
+    .cl-nba-text strong {
+      display: block;
+      font-size: 11pt;
+      color: white;
+      letter-spacing: 1px;
+    }
+
+    .cl-sender {
+      text-align: right;
+    }
+    .cl-name {
+      font-family: var(--ff-d);
+      font-size: 22pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .cl-name em { font-style: normal; color: var(--red); }
+    .cl-contact {
+      font-size: 8.5pt;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.7;
+    }
+    .cl-contact a { color: var(--muted); text-decoration: none; }
+
+    /* ── LETTER BODY ── */
+    .cl-body {
+      padding: 44px 52px 52px;
+    }
+
+    .cl-date {
+      font-size: 9pt;
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .cl-to {
+      margin-bottom: 32px;
+    }
+    .cl-to-name {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .cl-to-org {
+      font-size: 9.5pt;
+      color: var(--muted);
+    }
+
+    .cl-subject {
+      display: inline-block;
+      margin-bottom: 36px;
+      padding: 8px 18px;
+      background: rgba(200,16,46,0.05);
+      border-left: 3px solid var(--red);
+      font-size: 9pt;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--red);
+      text-transform: uppercase;
+    }
+
+    .cl-opening {
+      font-family: var(--ff-s);
+      font-size: 15pt;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .cl-opening em {
+      font-style: normal;
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 10.5pt;
+      color: var(--ink2);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    p strong { color: var(--ink); font-weight: 600; }
+    p em { font-style: italic; color: var(--ink); }
+
+    .pull-stat {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      margin: 28px 0;
+    }
+    .pull-stat-item {
+      background: var(--paper);
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .pull-stat-num {
+      font-family: var(--ff-d);
+      font-size: 22pt;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+    }
+    .pull-stat-label {
+      font-size: 7.5pt;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .highlight-block {
+      background: rgba(200,16,46,0.04);
+      border-left: 3px solid var(--red);
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 10pt;
+      color: var(--ink2);
+      line-height: 1.75;
+    }
+    .highlight-block strong { color: var(--ink); }
+
+    .cl-close {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--rule);
+    }
+    .cl-close p { margin-bottom: 0; }
+
+    .cl-sign {
+      margin-top: 28px;
+    }
+    .cl-sign-name {
+      font-family: var(--ff-s);
+      font-size: 22pt;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .cl-sign-title {
+      font-size: 8.5pt;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* ── BOTTOM STRIP ── */
+    .bottom-strip {
+      background: var(--dark);
+      padding: 14px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .bottom-strip-left {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .bottom-strip-left img { height: 24px; width: auto; opacity: 0.7; }
+    .bottom-strip-text {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.35);
+    }
+    .bottom-strip-text strong { color: rgba(255,255,255,0.7); }
+
+    /* ── PRINT ── */
+    @page { margin: 0; size: A4; }
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top-bar"></div>
+
+  <!-- HEADER -->
+  <div class="cl-header">
+    <div class="cl-logo-wrap">
+      <div class="cl-nba-badge">
+        <img src="nba-logo.png" alt="NBA"/>
+        <div class="cl-nba-text">
+          <strong>NBA</strong>
+          Application
+        </div>
+      </div>
+    </div>
+    <div class="cl-sender">
+      <div class="cl-name">Sherif <em>Abaza</em></div>
+      <div class="cl-contact">
+        sabaza@gmail.com &nbsp;·&nbsp; +31 6 2306 3073<br/>
+        linkedin.com/in/sabaza &nbsp;·&nbsp; Available Worldwide
+      </div>
+    </div>
+  </div>
+
+  <!-- LETTER BODY -->
+  <div class="cl-body">
+
+    <div class="cl-date">June 2026</div>
+
+    <div class="cl-to">
+      <div class="cl-to-name">NBA Hiring Team</div>
+      <div class="cl-to-org">National Basketball Association</div>
+    </div>
+
+    <div class="cl-subject">Re: Experiential Business Lead</div>
+
+    <div class="cl-opening">
+      "I've spent my whole life in this game —<br/>
+      first as a <em>player</em>, then as a <em>coach</em>,<br/>
+      and now as someone who wants to help<br/>
+      the NBA bring it to the world."
+    </div>
+
+    <p>
+      I want to be completely honest with you about why I'm writing this letter.
+      This isn't a career move I'm making because the role sounds interesting or because the package might be right.
+      <strong>This is a dream.</strong> I've been watching the NBA since I was a kid dribbling on a court in Cairo,
+      playing through youth competition across Egypt and the region, and spending the last 25 years studying
+      the sport — its culture, its players, its evolution from American league to global religion.
+      I coach basketball. I live basketball. And I've spent two decades building the kind of events,
+      activations, and fan experiences that this role is made for.
+    </p>
+
+    <p>
+      I know that's an emotional opening for a professional letter.
+      But I think it matters — because the NBA doesn't just need someone who can manage event logistics.
+      It needs someone who genuinely <em>understands what the game means to people</em>.
+      I do. Not as an observer. As someone who has been on the court, in the coaching box,
+      and in arenas across the world, feeling exactly what a great basketball experience feels like from the inside.
+    </p>
+
+    <div class="pull-stat">
+      <div class="pull-stat-item">
+        <div class="pull-stat-num">25+</div>
+        <div class="pull-stat-label">Years Playing</div>
+      </div>
+      <div class="pull-stat-item">
+        <div class="pull-stat-num">500+</div>
+        <div class="pull-stat-label">Players Coached</div>
+      </div>
+      <div class="pull-stat-item">
+        <div class="pull-stat-num">150+</div>
+        <div class="pull-stat-label">Events Per Year</div>
+      </div>
+      <div class="pull-stat-item">
+        <div class="pull-stat-num">40+</div>
+        <div class="pull-stat-label">Countries Operated</div>
+      </div>
+    </div>
+
+    <p>
+      My career in events began in Dubai, where I built <strong>Sphere Events</strong> from a one-person operation
+      into a 140-person agency delivering over 150 projects per year and USD 8M+ in revenue.
+      I ran public events for tens of thousands of people — music festivals, food festivals,
+      street activations — and worked with global brands on experiences that had to be both
+      creatively bold and operationally flawless.
+      That duality — creativity without chaos — is something I've always believed in and built toward.
+    </p>
+
+    <p>
+      More recently, I've delivered global activations at a scale that genuinely tests you:
+      end-to-end programs for <strong>COP 27, COP 26, and COP 29</strong>, coordinating multinational teams
+      across governments, corporations, and hundreds of moving parts in locations from Egypt to the UAE to Azerbaijan.
+      If I can make that work on time, on message, and on budget — I can make anything work.
+    </p>
+
+    <div class="highlight-block">
+      What excites me most about this role isn't the prestige of the NBA (though that's real) —
+      it's the <strong>creative and cultural opportunity</strong>. The NBA has the most exciting fan base
+      in global sports. It operates at the intersection of athletics, entertainment, fashion, music, and culture
+      in a way no other league does. The activations, the events, the fan experiences — they should feel
+      just as electric as the game itself. <strong>That's exactly the kind of work I want to build.</strong>
+    </div>
+
+    <p>
+      I'm not coming to the NBA as someone who needs to be taught to love the game.
+      I'm coming as a basketball lifer who learned how to build extraordinary experiences for a living —
+      and who now has the chance to do both things at once, in the most important sporting organization in the world.
+      <strong>That's not a job. That's a calling.</strong>
+    </p>
+
+    <p>
+      I'd be genuinely honored to explore this further.
+      I'm available at any time, in any timezone, and can be wherever you need me to be.
+    </p>
+
+    <div class="cl-close">
+      <p>With respect and real enthusiasm for this conversation,</p>
+    </div>
+
+    <div class="cl-sign">
+      <div class="cl-sign-name">Sherif Abaza</div>
+      <div class="cl-sign-title">sabaza@gmail.com &nbsp;·&nbsp; +31 6 2306 3073</div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM STRIP -->
+  <div class="bottom-strip">
+    <div class="bottom-strip-left">
+      <img src="nba-logo.png" alt="NBA"/>
+      <div class="bottom-strip-text"><strong>Sherif Abaza</strong> · NBA Application · Experiential Business Lead</div>
+    </div>
+    <div class="bottom-strip-text">linkedin.com/in/sabaza</div>
+  </div
