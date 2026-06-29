@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 """Build raa-cv.pdf from raa-cv.html via WeasyPrint (Chrome-free PDF).
 
-WeasyPrint flexbox is pathologically slow here and won't repeat a dark sidebar
-background across pages, so for the PDF we: strip the remote font, swap flex for
-block+margins, trim the print sidebar so it fits one page, and paint the dark
-left rail with a page-sized background IMAGE on <html> (raster root backgrounds
-propagate to every page; gradients do not). The on-screen raa-cv.html is
-untouched.
+WeasyPrint flexbox is slow here and won't repeat a dark sidebar across pages,
+so for the PDF we strip the remote font, swap flex for block+margins, trim the
+print sidebar so it fits one page, place it with position:absolute (so its
+content appears on page 1 only), and paint the dark left rail with a page-sized
+background IMAGE on <html> (raster root backgrounds propagate to every page).
+The on-screen raa-cv.html is untouched.
 """
 import re
 import pathlib
@@ -51,7 +51,6 @@ _int = {
 }
 for _k, _v in _int.items():
     src = src.replace(_k, _v)
-
 
 override = """
 <style>
@@ -99,6 +98,14 @@ override = override.replace("__BG__", BG_URL)
 
 src = src.replace("</head>", override + "\n</head>")
 PRINT.write_text(src, encoding="utf-8")
+
+if not BG.exists():
+    import fitz
+    W, H = 794, 1123
+    pm = fitz.Pixmap(fitz.csRGB, fitz.IRect(0, 0, W, H), False)
+    pm.set_rect(fitz.IRect(0, 0, W, H), (255, 255, 255))
+    pm.set_rect(fitz.IRect(0, 0, 232, H), (30, 41, 59))
+    pm.save(str(BG))
 
 subprocess.run(["weasyprint", str(PRINT), str(OUT)], check=True)
 print("rendered", OUT)
