@@ -1,5 +1,7 @@
 {
   "rewrites": [
+    { "source": "/events-director", "destination": "/events-director/index.html" },
+    { "source": "/raa-application", "destination": "/raa-application/raa-cv.html" },
     { "source": "/sherif-cv-mrbeast", "destination": "/sherif-cv-mrbeast/index.html" },
     { "source": "/nba-application", "destination": "/nba-application/index.html" },
     { "source": "/application-whatnot", "destination": "/application-whatnot/index.html" },
