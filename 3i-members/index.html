@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sherif Abaza - 3i Members Application</title>
+  <meta name="description" content="3i Members application landing page for Sherif Abaza with direct access to CV and profile materials."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #0f172a;
+      --ink-soft: #334155;
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --line: #e2e8f0;
+      --brand: #0f766e;
+      --brand-2: #14b8a6;
+      --accent: #0ea5e9;
+      --maxw: 1120px;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 90% 0%, rgba(20,184,166,0.18) 0%, transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(14,165,233,0.14) 0%, transparent 45%),
+        var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(248,250,252,0.88);
+      border-bottom: 1px solid rgba(15,23,42,0.07);
+    }
+    .nav-wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .brand span { color: var(--brand); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .nav-links a:hover { color: var(--brand); }
+
+    .hero {
+      padding: 78px 28px 40px;
+    }
+    .hero-wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 16px;
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--brand-2);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5.2vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--ink-soft);
+      max-width: 50ch;
+      margin-bottom: 28px;
+    }
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 0.87rem;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 12px 18px;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #ffffff;
+      box-shadow: 0 12px 28px rgba(15,118,110,0.25);
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-outline {
+      background: #ffffff;
+      border-color: var(--line);
+      color: var(--ink);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: #075985;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      font-size: 0.78rem;
+      color: #475569;
+    }
+
+    .profile-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+      max-width: 360px;
+      justify-self: center;
+    }
+    .profile-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    .details {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 22px 28px 70px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .metric {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .metric strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--brand);
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+    .metric span {
+      font-size: 0.84rem;
+      color: var(--ink-soft);
+    }
+
+    .footer {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 28px 36px;
+      font-size: 0.78rem;
+      color: #64748b;
+    }
+    .footer a {
+      color: #0f766e;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-wrap { grid-template-columns: 1fr; text-align: left; }
+      .profile-card { max-width: 280px; justify-self: start; }
+      .details { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrap">
+      <div class="brand">Sherif <span>Abaza</span></div>
+      <div class="nav-links">
+        <a href="/3i-members">Overview</a>
+        <a href="/3i-application-cv">Web CV</a>
+        <a href="/3i-application/3i-cv.pdf">PDF CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-wrap">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> 3i Members Application</div>
+        <h1>Director of Experiential &amp; Programming</h1>
+        <p class="sub">A dedicated application landing page for 3i Members with direct access to the correct CV formats and profile details.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="/3i-application-cv">Open Web CV</a>
+          <a class="btn btn-outline" href="/3i-application/3i-cv.pdf">Download PDF CV</a>
+        </div>
+        <div class="meta">
+          <span>20+ years events leadership</span>
+          <span>800+ events delivered</span>
+          <span>80+ countries</span>
+        </div>
+      </div>
+      <div class="profile-card">
+        <img src="/3i-members/profile.jpg" alt="Sherif Abaza"/>
+      </div>
+    </div>
+  </header>
+
+  <section class="details">
+    <article class="metric"><strong>20+</strong><span>Years building premium live experiences and global programs.</span></article>
+    <article class="metric"><strong>800+</strong><span>Events delivered from private salons to major summits.</span></article>
+    <article class="metric"><strong>9</strong><span>Languages spoken across international stakeholder contexts.</span></article>
+  </section>
+
+  <div class="footer">
+    Direct links: <a href="/3i-application-cv">3i web CV</a> and <a href="/3i-application/3i-cv.pdf">3i PDF CV</a>.
+  </div>
+</body>
+</html>
