@@ -1,6 +1,7 @@
 {
   "rewrites": [
-    { "source": "/3i-application", "destination": "/3i-application/3i-cv.html" },
+    { "source": "/3i-application", "destination": "/3i-application/index.html" },
+    { "source": "/3i-application-cv", "destination": "/3i-application/3i-cv.html" },
     { "source": "/events-director", "destination": "/events-director/index.html" },
     { "source": "/raa-application", "destination": "/raa-application/raa-cv.html" },
     { "source": "/sherif-cv-mrbeast", "destination": "/sherif-cv-mrbeast/index.html" },

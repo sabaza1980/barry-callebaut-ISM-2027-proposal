@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sherif Abaza | 3i Application</title>
+  <meta name="description" content="Sherif Abaza 3i application website with profile overview and CV access."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #111827;
+      --muted: #4b5563;
+      --line: #e5e7eb;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --accent: #0ea5e9;
+      --maxw: 1080px;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(circle at top right, #e0f2fe 0%, #f9fafb 40%, #f9fafb 100%);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    .hero { padding: 72px 0 52px; }
+    .hero-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 36px; align-items: center; }
+    .kicker { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-dark); font-weight: 700; }
+    h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.05; letter-spacing: -0.02em; margin-top: 10px; }
+    .lede { margin-top: 16px; color: var(--muted); max-width: 48ch; font-size: 1.04rem; }
+    .cta-row { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--brand); color: #fff; }
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-outline { border-color: var(--line); color: var(--ink); background: #fff; }
+    .btn-outline:hover { border-color: var(--accent); color: #0c4a6e; }
+    .profile {
+      width: min(300px, 100%);
+      justify-self: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 10px;
+      box-shadow: 0 18px 36px rgba(17, 24, 39, 0.12);
+    }
+    .profile img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 14px; display: block; }
+    .section { padding: 20px 0 70px; }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .metric { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: #fbfdff; }
+    .metric strong { font-size: 1.4rem; color: var(--brand-dark); display: block; line-height: 1; }
+    .metric span { font-size: 0.82rem; color: var(--muted); }
+    .links { margin-top: 18px; color: var(--muted); font-size: 0.92rem; }
+    .links a { color: var(--brand-dark); font-weight: 600; }
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .profile { max-width: 260px; }
+      .panel { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">3i Members Application</div>
+        <h1>Sherif Abaza</h1>
+        <p class="lede">Director of Experiential &amp; Programming with 20+ years producing high-trust gatherings, global summits, and culture-shaping live experiences.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/3i-application/3i-cv.html">Open Web CV</a>
+          <a class="btn btn-outline" href="/3i-application/3i-cv.pdf">Download PDF CV</a>
+        </div>
+        <p class="links">Direct links: <a href="/3i-application/3i-cv.html">CV page</a> and <a href="/3i-application/profile.jpg">profile image</a>.</p>
+      </div>
+      <div class="profile">
+        <img src="/3i-application/profile.jpg" alt="Sherif Abaza"/>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="panel">
+        <div class="metric"><strong>20+</strong><span>Years in events and experiential leadership</span></div>
+        <div class="metric"><strong>800+</strong><span>Events delivered globally</span></div>
+        <div class="metric"><strong>80+</strong><span>Countries served across roles</span></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
