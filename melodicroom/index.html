@@ -336,7 +336,7 @@ footer .back:hover{color:var(--white)}
     <h2>Listen to the Room</h2>
     <p class="lead">Live recordings, originals and premieres — straight from our SoundCloud.</p>
     <div class="sc-frame" style="margin-top:56px">
-      <iframe title="Melodic Room on SoundCloud" height="480" loading="lazy" allow="autoplay"
+      <iframe id="scPlayer" title="Melodic Room on SoundCloud" height="480" allow="autoplay"
         src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F671752640&color=%23111111&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
     </div>
     <p class="muted" style="margin-top:18px">Full catalogue: <a href="https://soundcloud.com/melodicroom_official" target="_blank" rel="noopener" style="color:var(--white);border-bottom:1px solid var(--grey-3)">soundcloud.com/melodicroom_official</a></p>
@@ -389,6 +389,27 @@ footer .back:hover{color:var(--white)}
 </footer>
 
 <script async src="https://www.instagram.com/embed.js"></script>
+<script src="https://w.soundcloud.com/player/api.js"></script>
+<script>
+// start music on the visitor's first interaction anywhere on the page
+(function(){
+  var frame = document.getElementById('scPlayer');
+  if (!frame || typeof SC === 'undefined') return;
+  var widget = SC.Widget(frame);
+  var started = false;
+  function start(){
+    if (started) return;
+    started = true;
+    widget.play();
+    ['pointerdown','keydown','touchstart'].forEach(function(ev){
+      document.removeEventListener(ev, start, true);
+    });
+  }
+  ['pointerdown','keydown','touchstart'].forEach(function(ev){
+    document.addEventListener(ev, start, true);
+  });
+})();
+</script>
 <script>
 // year
 document.getElementById('yr').textContent = new Date().getFullYear();
