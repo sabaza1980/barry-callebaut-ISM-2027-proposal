@@ -1,4 +1,7 @@
 {
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": ".",
   "rewrites": [
     { "source": "/experience-director", "destination": "/3i-members/index.html" },
     { "source": "/events-director", "destination": "/events-director/index.html" },
