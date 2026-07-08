@@ -3,6 +3,7 @@
   "installCommand": "",
   "outputDirectory": ".",
   "rewrites": [
+    { "source": "/melodicroom", "destination": "/melodicroom/index.html" },
     { "source": "/experience-director", "destination": "/3i-members/index.html" },
     { "source": "/events-director", "destination": "/events-director/index.html" },
     { "source": "/raa-application", "destination": "/raa-application/raa-cv.html" },
