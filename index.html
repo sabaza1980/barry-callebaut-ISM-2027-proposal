@@ -234,7 +234,15 @@
   }
   .footer-left  { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.14); }
   .footer-badge { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(210,168,74,0.38); border: 1px solid rgba(210,168,74,0.14); padding: 4px 14px; border-radius: 1px; }
-  .footer-right { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.14); }
+  .footer-right { font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.14); display: flex; align-items: center; gap: 22px; }
+  .footer-mr {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase;
+    color: rgba(255,255,255,0.14); text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer-mr svg { display: block; opacity: 0.9; }
+  .footer-mr:hover { color: rgba(255,255,255,0.65); }
 
   /* ══ CORNERS ══════════════════════════════════════ */
   .c { position: fixed; width: 26px; height: 26px; z-index: 100; }
@@ -462,7 +470,19 @@
   <footer class="footer">
     <div class="footer-left">© 2026 Abaza Business Services</div>
     <div class="footer-badge">New Website Launching Soon</div>
-    <div class="footer-right">abaza.nl</div>
+    <div class="footer-right">
+      <a class="footer-mr" href="/melodicroom" title="Melodic Room — Melodic House &amp; Techno">
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+          <rect x="0"  y="3.5" width="1.5" height="3"  rx="0.75" fill="currentColor"/>
+          <rect x="3"  y="1.5" width="1.5" height="7"  rx="0.75" fill="currentColor"/>
+          <rect x="6"  y="0"   width="1.5" height="10" rx="0.75" fill="currentColor"/>
+          <rect x="9"  y="2"   width="1.5" height="6"  rx="0.75" fill="currentColor"/>
+          <rect x="12" y="4"   width="1.5" height="2"  rx="0.75" fill="currentColor"/>
+        </svg>
+        Melodic Room
+      </a>
+      <span>abaza.nl</span>
+    </div>
   </footer>
 
 </div>
