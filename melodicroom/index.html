@@ -161,6 +161,15 @@ header.hero{
   border:1px solid var(--grey-2);padding:6px 14px;font-size:11px;
   letter-spacing:.16em;text-transform:uppercase;color:var(--grey-3);
 }
+.t-flex{display:flex;gap:32px;align-items:flex-start;justify-content:space-between}
+.t-body{flex:1;min-width:0}
+.t-poster{width:min(250px,100%);flex-shrink:0;border:1px solid var(--grey-2);transition:border-color .3s,transform .3s}
+.t-poster:hover{border-color:var(--grey-3);transform:scale(1.02)}
+@media(max-width:720px){.t-flex{flex-direction:column}.t-poster{width:100%;max-width:340px}}
+.media-strip{display:flex;gap:10px;overflow-x:auto;margin-top:24px;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:var(--grey-2) transparent}
+.media-strip img,.media-strip video{height:170px;width:auto;flex-shrink:0;border:1px solid var(--grey-2);background:var(--off-black);transition:border-color .3s}
+.media-strip img:hover,.media-strip video:hover{border-color:var(--grey-3)}
+.media-strip video{aspect-ratio:9/16;object-fit:cover}
 .ade-badge{
   display:inline-block;margin-top:20px;border:1px solid var(--white);
   padding:10px 22px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;transition:all .3s;
@@ -254,8 +263,8 @@ footer .back:hover{color:var(--white)}
     <div class="stats">
       <div class="stat"><b>2019</b><span>Founded in Cairo</span></div>
       <div class="stat"><b>50+</b><span>Events &amp; Showcases</span></div>
-      <div class="stat"><b>3</b><span>ADE Amsterdam Showcases</span></div>
-      <div class="stat"><b>30+</b><span>International Artists Hosted</span></div>
+      <div class="stat"><b>5</b><span>Years at ADE Amsterdam</span></div>
+      <div class="stat"><b>60+</b><span>International Artists Hosted</span></div>
     </div>
   </div>
 </section>
@@ -284,7 +293,7 @@ footer .back:hover{color:var(--white)}
       <div class="card">
         <div class="loc">Amsterdam · Netherlands</div>
         <h3>ADE Showcases</h3>
-        <p>A returning presence at the world's biggest electronic music gathering — the Amsterdam Dance Event — with dedicated Melodic Room showcases year after year.</p>
+        <p>Five consecutive years at the world's biggest electronic music gathering — the Amsterdam Dance Event — with dedicated Melodic Room showcases since 2021.</p>
         <div class="mini-wave" aria-hidden="true"></div>
       </div>
     </div>
@@ -300,27 +309,110 @@ footer .back:hover{color:var(--white)}
 
     <div class="timeline">
       <div class="t-item">
-        <div class="t-year">ADE 2022</div>
-        <h3>Astral × Melodic Room Showcase</h3>
-        <div class="t-venue">Club NL — Amsterdam</div>
-        <p>Melodic Room's ADE debut: joining forces with Astral Records for a combined showcase in the heart of Amsterdam, guiding the crowd through an uplifting, progressive and melodic soundscape.</p>
-      </div>
-      <div class="t-item">
-        <div class="t-year">ADE 2024</div>
-        <h3>Lelantus × Melodic Room Showcase</h3>
-        <div class="t-venue">50 Hertz Club — Rembrandtplein, Amsterdam</div>
-        <p>A six-hour Melodic Techno journey in the middle of Rembrandtplein, featuring over 30 international DJs across the day.</p>
-        <div class="lineup">
-          <span>Son of Son</span><span>Baset</span><span>Jono Stephenson</span><span>Black Box</span>
-          <span>Unseen.</span><span>Mesh</span><span>Helen&amp;Boys</span><span>DOBé</span>
-          <span>Human Rias</span><span>Khainz</span><span>+ more</span>
+        <div class="t-year">ADE 2021 · The Debut</div>
+        <div class="t-flex">
+          <div class="t-body">
+            <h3>Authentica × Melodic Room × Mind-Matter × Techno Me &amp; You</h3>
+            <div class="t-venue">Recycle Lounge Gallery Club — Amsterdam · Sun 17 October · 12PM–12AM</div>
+            <p>The ADE debut: four collectives, one room, twelve hours from noon to midnight — deep, emotional Melodic House &amp; Techno, opened by an Omar Khalifa × Mehdi Maghraoui b2b.</p>
+            <div class="lineup">
+              <span>Animal Picnic</span><span>Citizen Kain</span><span>Dizharmonia</span><span>Enai</span>
+              <span>19:26</span><span>Miss Melera</span><span>Olivier Weiter</span><span>Rafael Cerato</span>
+            </div>
+          </div>
+          <img class="t-poster" src="/melodicroom/ADE/2021-09-22_16-35-35_UTC.jpg" alt="ADE 2021 — Authentica × Melodic Room lineup poster" loading="lazy">
+        </div>
+        <div class="media-strip">
+          <img src="/melodicroom/ADE/2021-07-18_13-37-19_UTC.jpg" alt="Melodic Room is going to ADE — announcement" loading="lazy">
+          <img src="/melodicroom/ADE/2021-09-22_16-34-45_UTC.jpg" alt="ADE 2021 announcement" loading="lazy">
+          <img src="/melodicroom/ADE/2021-09-22_16-36-04_UTC.jpg" alt="ADE 2021 artwork" loading="lazy">
         </div>
       </div>
       <div class="t-item">
-        <div class="t-year">ADE — Next</div>
+        <div class="t-year">ADE 2022 · Double Weekend</div>
+        <div class="t-flex">
+          <div class="t-body">
+            <h3>Astral Records Showcase &amp; FFM × Rave Ank × Kite Special</h3>
+            <div class="t-venue">Club NL · Fri 21 October — 50:Hertz Experience · Sat 22 October</div>
+            <p>Two showcases in one weekend: Friday in the centre of Amsterdam with Astral Records at Club NL (17:00–23:00), then ten more hours on Saturday at 50:Hertz with FFM, Rave Ank and Kite (12:00–22:00).</p>
+            <div class="lineup">
+              <span>Modeplex</span><span>Oibaf&amp;Wallen</span><span>Paul Anthonee</span><span>Areeas &amp; Moodayz</span>
+              <span>Voices of Valley</span><span>Joshlane</span><span>Linber Lynx</span><span>Anıl Bütün</span>
+              <span>KRCL</span><span>Widerberg</span><span>Omar Khalifa</span><span>Triart</span>
+            </div>
+          </div>
+          <img class="t-poster" src="/melodicroom/ADE/2022-10-01_13-52-23_UTC.webp" alt="ADE 2022 — Astral Records × Melodic Room lineup poster, Club NL" loading="lazy">
+        </div>
+        <div class="media-strip">
+          <img src="/melodicroom/ADE/2022-10-06_17-53-27_UTC.jpg" alt="ADE 2022 — FFM × Melodic Room × Rave Ank × Kite poster, 50:Hertz" loading="lazy">
+          <img src="/melodicroom/ADE/2022-10-01_13-52-12_UTC.webp" alt="ADE 2022 artwork" loading="lazy">
+          <img src="/melodicroom/ADE/2022-10-01_13-52-36_UTC.webp" alt="ADE 2022 artwork" loading="lazy">
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">ADE 2023 · 4th Showcase</div>
+        <div class="t-flex">
+          <div class="t-body">
+            <h3>Oosterbar Takeover — 6 Labels, 2 Floors, 24 Artists</h3>
+            <div class="t-venue">Oosterbar at Generator — Amsterdam · Sat 21 October · 10PM–8AM</div>
+            <p>The 4th Melodic Room showcase: taking over Oosterbar with six record labels across two floors — 24 artists and ten hours of non-stop movement, from midnight to sunrise.</p>
+            <div class="lineup">
+              <span>Black Box</span><span>Hugo Cantarra</span><span>Nihil Young</span><span>Omar Khalifa</span>
+              <span>Triart</span><span>Turako</span><span>Unseen.</span><span>+ 17 more</span>
+            </div>
+          </div>
+          <img class="t-poster" src="/melodicroom/ADE/2023-10-13_17-18-41_UTC.jpg" alt="ADE 2023 — Melodic Room Oosterbar takeover poster" loading="lazy">
+        </div>
+        <div class="media-strip">
+          <video controls preload="none" playsinline poster="/melodicroom/ADE/2023-10-13_17-18-41_UTC.jpg" src="/melodicroom/ADE/2023-10-13_17-18-41_UTC.mp4" title="ADE 2023 announcement video"></video>
+          <img src="/melodicroom/ADE/2023-10-13_17-17-21_UTC.jpg" alt="ADE 2023 artwork" loading="lazy">
+          <img src="/melodicroom/ADE/2023-10-13_17-19-12_UTC.jpg" alt="ADE 2023 artwork" loading="lazy">
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">ADE 2024 · Triple Showcase</div>
+        <div class="t-flex">
+          <div class="t-body">
+            <h3>Lelantus × Melodic Room: Club, All-Nighter &amp; Techno Train</h3>
+            <div class="t-venue">50:Hertz — Rembrandtplein &amp; Amsterdam Central Station · Fri 18 – Sat 19 October</div>
+            <p>The biggest edition yet — three showcases and 60+ international artists. A club showcase on Rembrandtplein (16:00–22:00), an all-night café session till sunrise (22:00–08:00), and the one-of-a-kind Techno Train Experience: a four-hour sunset journey departing Amsterdam Central.</p>
+            <div class="lineup">
+              <span>Son of Son</span><span>Jono Stephenson</span><span>Black Box</span><span>Baset</span>
+              <span>Dizharmonia</span><span>Mesh</span><span>Helen&amp;Boys</span><span>Dish Dash</span>
+              <span>Khainz</span><span>Turako</span><span>Unseen.</span><span>+ 50 more</span>
+            </div>
+          </div>
+          <img class="t-poster" src="/melodicroom/ADE/2024-09-25_16-09-20_UTC.jpg" alt="ADE 2024 — Lelantus × Melodic Room showcase poster" loading="lazy">
+        </div>
+        <div class="media-strip">
+          <video controls preload="none" playsinline poster="/melodicroom/ADE/2024-09-25_16-09-20_UTC.jpg" src="/melodicroom/ADE/2024-09-25_16-09-20_UTC.mp4" title="ADE 2024 — club showcase video"></video>
+          <video controls preload="none" playsinline poster="/melodicroom/ADE/2024-09-25_16-14-36_UTC.jpg" src="/melodicroom/ADE/2024-09-25_16-14-36_UTC.mp4" title="ADE 2024 — all-night showcase video"></video>
+          <video controls preload="none" playsinline poster="/melodicroom/ADE/2024-09-25_16-18-29_UTC.jpg" src="/melodicroom/ADE/2024-09-25_16-18-29_UTC.mp4" title="ADE 2024 — Techno Train Experience video"></video>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">ADE 2025 · Two Dimensions</div>
+        <div class="t-flex">
+          <div class="t-body">
+            <h3>Rave in the Lecture Hall</h3>
+            <div class="t-venue">Auditorium × Oosterbar — Amsterdam · Sat 25 October · 11PM–6AM</div>
+            <p>Two completely different musical dimensions in one building: upstairs, Melodic Room co-curated the Lecture Hall — a masterclass in uplifting, progressive and melodic sound — while downstairs "Detention in the Basement" delivered relentless, high-energy techno.</p>
+            <div class="lineup">
+              <span>Thomas Schumacher</span><span>Glowal</span><span>Juliet Fox</span><span>A.D.H.S.</span>
+              <span>Guzy</span><span>Script</span><span>Olivier Weiter</span><span>Omar Khalifa</span>
+            </div>
+          </div>
+          <img class="t-poster" src="/melodicroom/ADE/2025-09-23_17-12-28_UTC.jpg" alt="ADE 2025 — Rave in the Lecture Hall poster" loading="lazy">
+        </div>
+        <div class="media-strip">
+          <video controls preload="none" playsinline poster="/melodicroom/ADE/2025-09-24_19-26-11_UTC.jpg" src="/melodicroom/ADE/2025-09-24_19-26-11_UTC.mp4" title="ADE 2025 — Rave in the Lecture Hall video"></video>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">ADE 2026</div>
         <h3>The Story Continues</h3>
-        <div class="t-venue">Amsterdam — October</div>
-        <p>Melodic Room returns to Amsterdam Dance Event. Follow us on Instagram for the next showcase announcement.</p>
+        <div class="t-venue">Amsterdam — 21–25 October 2026</div>
+        <p>Melodic Room returns for a sixth year at Amsterdam Dance Event. Follow us on Instagram for the showcase announcement.</p>
         <a class="ade-badge" href="https://www.instagram.com/melodicroomofficial/" target="_blank" rel="noopener">Announcements → @melodicroomofficial</a>
       </div>
     </div>
