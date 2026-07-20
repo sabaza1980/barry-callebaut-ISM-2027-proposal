@@ -1,26 +1,70 @@
 {
-  "buildCommand": "",
-  "installCommand": "",
-  "outputDirectory": ".",
-  "rewrites": [
-    { "source": "/melodicroom", "destination": "/melodicroom/index.html" },
-    { "source": "/experience-director", "destination": "/3i-members/index.html" },
-    { "source": "/events-director", "destination": "/events-director/index.html" },
-    { "source": "/raa-application", "destination": "/raa-application/raa-cv.html" },
-    { "source": "/sherif-cv-mrbeast", "destination": "/sherif-cv-mrbeast/index.html" },
-    { "source": "/nba-application", "destination": "/nba-application/index.html" },
-    { "source": "/application-whatnot", "destination": "/application-whatnot/index.html" },
-    { "source": "/application-anthropic", "destination": "/application-anthropic/index.html" },
-    { "source": "/barry-callebaut/ISM-2027-proposal", "destination": "/ISM_Cologne_2027_Proposal.html" },
-    {
-      "source": "/barry-callebaut/ISM-2027-proposal-mobile",
-      "destination": "/ISM_Cologne_2027_Proposal_mobile.html"
-    },
-    {
-      "source": "/",
-      "has": [{ "type": "header", "key": "user-agent", "value": "(?i).*(mobile|android|iphone|ipad|ipod).*" }],
-      "destination": "/index-mobile.html"
-    },
-    { "source": "/", "destination": "/index.html" }
-  ]
+    "buildCommand":  "",
+    "installCommand":  "",
+    "outputDirectory":  ".",
+    "rewrites":  [
+                     {
+                         "destination":  "/global-events/index.html",
+                         "source":  "/global-events"
+                     },
+                     {
+                         "destination":  "/global-events-cv/global-events-cv.html",
+                         "source":  "/global-events-cv"
+                     },
+                     {
+                         "source":  "/melodicroom",
+                         "destination":  "/melodicroom/index.html"
+                     },
+                     {
+                         "source":  "/experience-director",
+                         "destination":  "/3i-members/index.html"
+                     },
+                     {
+                         "source":  "/events-director",
+                         "destination":  "/events-director/index.html"
+                     },
+                     {
+                         "source":  "/raa-application",
+                         "destination":  "/raa-application/raa-cv.html"
+                     },
+                     {
+                         "source":  "/sherif-cv-mrbeast",
+                         "destination":  "/sherif-cv-mrbeast/index.html"
+                     },
+                     {
+                         "source":  "/nba-application",
+                         "destination":  "/nba-application/index.html"
+                     },
+                     {
+                         "source":  "/application-whatnot",
+                         "destination":  "/application-whatnot/index.html"
+                     },
+                     {
+                         "source":  "/application-anthropic",
+                         "destination":  "/application-anthropic/index.html"
+                     },
+                     {
+                         "source":  "/barry-callebaut/ISM-2027-proposal",
+                         "destination":  "/ISM_Cologne_2027_Proposal.html"
+                     },
+                     {
+                         "source":  "/barry-callebaut/ISM-2027-proposal-mobile",
+                         "destination":  "/ISM_Cologne_2027_Proposal_mobile.html"
+                     },
+                     {
+                         "source":  "/",
+                         "has":  [
+                                     {
+                                         "type":  "header",
+                                         "key":  "user-agent",
+                                         "value":  "(?i).*(mobile|android|iphone|ipad|ipod).*"
+                                     }
+                                 ],
+                         "destination":  "/index-mobile.html"
+                     },
+                     {
+                         "source":  "/",
+                         "destination":  "/index.html"
+                     }
+                 ]
 }
