@@ -3,6 +3,8 @@
     "installCommand":  "",
     "outputDirectory":  ".",
     "rewrites":  [
+                     { "source": "/callebautCMDProposal", "destination": "/callebautCMDProposal/index.html" },
+                     { "source": "/callebautCMDProposal/", "destination": "/callebautCMDProposal/index.html" },
                      {
                          "destination":  "/global-events/index.html",
                          "source":  "/global-events"
@@ -68,3 +70,4 @@
                      }
                  ]
 }
+
