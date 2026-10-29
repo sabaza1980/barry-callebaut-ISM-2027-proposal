@@ -181,11 +181,13 @@ export async function buildScene(THREE, { assetBase = '' } = {}) {
     sp.lookAt(x + (x < 4 ? 6 : 6), 1.2, 0);
   }
 
-  // house 55" return screens, ceiling-hung mid-room, facing the rear rows
-  for (const z of [-2.0, 2.0]) {
-    add(box(0.05, 0.70, 1.24), mBlack, 5.4, 2.12, z);
-    add(new THREE.PlaneGeometry(1.2, 0.66), mSlide, 5.427, 2.12, z, { ry: Math.PI / 2, cast: false });
-    add(cyl(0.015, 0.015, 0.2), mSteel, 5.4, 2.55, z);
+  // house 55" return screens: per Solufak's plan, both hung along one long wall, tilted down 20°, ~3.9 m and ~9.4 m from the main display end
+  for (const x of [3.9, 9.4]) {
+    const g = new THREE.Group(); g.position.set(x, 2.2, hw - 0.45); g.rotation.y = Math.PI / 2 + 0.35; scene.add(g);
+    const t = new THREE.Group(); t.rotation.x = -0.35; g.add(t);
+    add(box(1.24, 0.70, 0.05), mBlack, 0, 0, 0, { parent: t });
+    add(new THREE.PlaneGeometry(1.2, 0.66), mSlide, 0, 0, 0.027, { parent: t, cast: false });
+    add(cyl(0.015, 0.015, 0.3), mSteel, x, 2.5, hw - 0.45);
   }
 
   // 60 chairs: 6 rows of 10, centre aisle
