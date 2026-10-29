@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sherif Abaza · CV · Global Head of Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:#0d0d0d; --ink-2:#1a1a1a; --g700:#3f3f3f; --g600:#555; --g500:#6e6e6e;
+      --g400:#9a9a9a; --g300:#c7c7c7; --g200:#e6e6e6; --g100:#f3f3f3; --white:#fff;
+      --rail:236px;
+    }
+    html { background:var(--g200); }
+    body { font-family:'Inter',system-ui,sans-serif; color:var(--ink-2); font-size:13px; line-height:1.5; }
+    .page { max-width:960px; margin:24px auto; background:var(--white); border-radius:12px; overflow:hidden;
+            display:grid; grid-template-columns:var(--rail) 1fr; box-shadow:0 4px 32px rgba(0,0,0,.12); }
+
+    .sidebar { background:var(--ink); color:var(--g200); padding:30px 22px; display:flex; flex-direction:column; gap:20px; }
+    .photo { display:flex; justify-content:center; }
+    .photo img { width:84px; height:84px; border-radius:50%; object-fit:cover; border:2px solid var(--g500); }
+    .s-title { font-size:.58rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--g400);
+               border-bottom:1px solid #2e2e2e; padding-bottom:5px; margin-bottom:8px; }
+    .s-item { font-size:.7rem; color:var(--g300); line-height:1.5; margin-bottom:5px; display:flex; gap:6px; }
+    .s-item b { color:var(--white); font-weight:600; }
+    .dot { color:var(--g500); }
+    .lang { display:flex; justify-content:space-between; font-size:.7rem; color:var(--g300); margin-bottom:3px; }
+    .lang span:last-child { color:var(--g400); }
+    .stat { margin-bottom:9px; }
+    .stat .n { font-size:1.15rem; font-weight:700; color:var(--white); letter-spacing:-.02em; line-height:1.1; }
+    .stat .l { font-size:.64rem; color:var(--g400); line-height:1.35; }
+
+    .main { padding:34px 36px 30px; display:flex; flex-direction:column; gap:22px; }
+    .name h1 { font-size:2rem; font-weight:700; color:var(--ink); letter-spacing:-.025em; line-height:1.1; }
+    .name .role { font-size:.86rem; font-weight:600; color:var(--g700); margin-top:4px; }
+    .name .strip { display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:8px; font-size:.7rem; color:var(--g500); }
+    .name { border-bottom:1px solid var(--g200); padding-bottom:14px; }
+
+    .sec-h { font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ink);
+             border-bottom:1.5px solid var(--ink); padding-bottom:5px; margin-bottom:11px; }
+    .p { font-size:.79rem; color:var(--g700); line-height:1.7; }
+    .p + .p { margin-top:7px; }
+    .p strong, li strong { color:var(--ink); font-weight:600; }
+
+    .job { break-inside:avoid; }
+    section.job + section.job { border-top:none; padding-top:0; margin-top:0; }
+    div.job + div.job { border-top:1px solid var(--g100); padding-top:11px; margin-top:11px; }
+    .co { font-weight:700; font-size:.86rem; color:var(--ink); }
+    .rr { display:flex; align-items:baseline; gap:8px; margin-top:1px; }
+    .rt { font-size:.78rem; font-weight:600; color:var(--g700); }
+    .pd { font-size:.69rem; color:var(--g500); }
+    ul { list-style:none; margin-top:5px; display:flex; flex-direction:column; gap:3.5px; }
+    li { font-size:.76rem; color:var(--g700); line-height:1.58; padding-left:13px; position:relative; }
+    li::before { content:""; position:absolute; left:2px; top:.62em; width:4px; height:4px; border-radius:50%; background:var(--g400); }
+
+    @page { size:A4; margin:0; }
+    @media print {
+      html { background:linear-gradient(to right, var(--ink) 0, var(--ink) var(--rail), #fff var(--rail));
+             -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      html { font-size:15px; }
+      body { width:210mm; }
+      .main { padding:26px 28px 22px; gap:16px; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+      .sidebar { padding:24px 18px; gap:16px; }
+      .page { margin:0; border-radius:0; box-shadow:none; max-width:none; background:transparent; }
+      .sidebar { background:transparent; }
+      .main { background:transparent; }
+    }
+    @media (max-width:720px) {
+      .page { grid-template-columns:1fr; margin:0; border-radius:0; }
+      .main { padding:26px 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="sidebar">
+    <div class="photo"><img src="profile.jpg" alt="Sherif Abaza"/></div>
+
+    <div>
+      <div class="s-title">Contact</div>
+      <div class="s-item">sabaza@gmail.com</div>
+      <div class="s-item">+31 6 2306 3073</div>
+      <div class="s-item">linkedin.com/in/sabaza</div>
+      <div class="s-item">Netherlands · open to relocating to San Francisco</div>
+    </div>
+
+    <div>
+      <div class="s-title">At a glance</div>
+      <div class="stat"><div class="n">20+ yrs</div><div class="l">leading events businesses and teams</div></div>
+      <div class="stat"><div class="n">8 yrs</div><div class="l">in the C-suite at Withlocals</div></div>
+      <div class="stat"><div class="n">USD 8M+</div><div class="l">annual revenue, company I founded and led</div></div>
+      <div class="stat"><div class="n">800+</div><div class="l">events in 80+ countries</div></div>
+    </div>
+
+    <div>
+      <div class="s-title">What I bring</div>
+      <div class="s-item"><span class="dot">›</span>Global events strategy and portfolio investment</div>
+      <div class="s-item"><span class="dot">›</span>Executive leadership and organisation design</div>
+      <div class="s-item"><span class="dot">›</span>P&amp;L and budget ownership</div>
+      <div class="s-item"><span class="dot">›</span>Brand and experiential marketing</div>
+      <div class="s-item"><span class="dot">›</span>Original formats and event franchises</div>
+      <div class="s-item"><span class="dot">›</span>Agency model and partner management</div>
+      <div class="s-item"><span class="dot">›</span>Leading teams through change</div>
+      <div class="s-item"><span class="dot">›</span>Live, recorded and broadcast production</div>
+      <div class="s-item"><span class="dot">›</span>AI-led ways of working</div>
+    </div>
+
+    <div>
+      <div class="s-title">Languages</div>
+      <div class="lang"><span>Arabic</span><span>Native</span></div>
+      <div class="lang"><span>English</span><span>Native</span></div>
+      <div class="lang"><span>French</span><span>Excellent</span></div>
+      <div class="lang"><span>Spanish</span><span>Excellent</span></div>
+      <div class="lang"><span>Dutch</span><span>Working</span></div>
+      <div class="lang"><span>Polish</span><span>Working</span></div>
+      <div class="lang"><span>Portuguese · Italian · Romanian</span><span>Basic</span></div>
+    </div>
+
+    <div>
+      <div class="s-title">Outside work</div>
+      <div class="s-item"><span class="dot">›</span>Head coach, youth basketball. Former national youth player.</div>
+      <div class="s-item"><span class="dot">›</span>Travelled to 100+ countries.</div>
+      <div class="s-item"><span class="dot">›</span>Board game and card game designer.</div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <div class="name">
+      <h1>Sherif Abaza</h1>
+      <div class="role">Global Events &amp; Experiential Marketing Executive</div>
+      <div class="strip">
+        <span>sabaza@gmail.com</span><span>+31 6 2306 3073</span><span>linkedin.com/in/sabaza</span><span>Dutch citizen</span>
+      </div>
+    </div>
+
+    <section>
+      <div class="sec-h">Profile</div>
+      <p class="p">Executive leader in global events and experiential marketing with 20+ years of setting strategy, building organisations and owning results. I founded and led <strong>Sphere Events</strong> to a <strong>140-person, USD 8M+ business</strong> serving Siemens, Porsche, Cartier, Ericsson and Emaar, and created its own festival franchises. I then spent <strong>eight years in the C-suite at Withlocals</strong> as Chief Growth Officer and Chief Community Officer, leading growth strategy across 300+ cities, the B2B partnership business and a company-wide pivot. Today I advise global brands on event portfolio strategy and investment, and I have led delivery for <strong>three consecutive COP summits</strong>.</p>
+      <p class="p">I lead at the level of portfolio and organisation: deciding which experiences deserve investment and what each must achieve for the business, then building the team, agency model and budget discipline to deliver them consistently across markets. I work closely with CEOs, investors and senior stakeholders, and I take established teams through change. AI is part of how I work every day, including two products I have designed and shipped through AI coding agents.</p>
+    </section>
+
+    <section>
+      <div class="sec-h">Experience</div>
+
+      <div class="job">
+        <div class="co">Abaza Business Services · Netherlands / Global</div>
+        <div class="rr"><span class="rt">Founder &amp; Managing Director</span><span class="pd">2019 – Present</span></div>
+        <ul>
+          <li>Advise brands, agencies and organisations on event strategy, portfolio investment and delivery across three continents.</li>
+          <li>Event portfolio advisor to <strong>Barry Callebaut</strong>: budget strategy and benchmarking across its global events, identifying around <strong>€711K in savings</strong> across two 2025 events, plus World Chocolate Masters 2026 and a CHF 1M leadership meeting.</li>
+          <li>Led delivery for <strong>COP27 (Egypt), COP28 (UAE) and COP29 (Azerbaijan)</strong>, working with heads-of-state, ministerial and senior stakeholder groups and leading multinational teams.</li>
+          <li>Strategic delivery partner to global experiential agencies <strong>Jack Morton, Shelton Fleming and Impact XM</strong>, representing them with their clients and leading their programmes in-market.</li>
+          <li>Event programme strategy for <strong>NBA</strong> market-entry initiatives in Europe and Africa, working with senior league stakeholders.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="co">Withlocals B.V. · Eindhoven, Netherlands</div>
+        <div class="rr"><span class="rt">Chief Community Officer</span><span class="pd">2022 – 2026</span></div>
+        <div class="rr"><span class="rt">Chief Growth Officer</span><span class="pd">2018 – 2022</span></div>
+        <ul>
+          <li>Member of the executive team for eight years, accountable for growth, partnerships and community.</li>
+          <li>Set the growth strategy and market priorities that took the company from 50 to <strong>300+ cities in 80+ countries</strong>.</li>
+          <li>Created the <strong>B2B partnership business</strong>: commercial model, deal structure and multi-year retention of enterprise accounts.</li>
+          <li>Led the company's pivot to virtual experiences, winning <strong>70+ corporate clients in under 90 days</strong> with zero ad spend.</li>
+          <li>Set community strategy for a <strong>2,000+ partner network</strong> across 80+ countries.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="co">Sphere Events and Communication · Dubai, UAE</div>
+        <div class="rr"><span class="rt">Founder &amp; Managing Director</span><span class="pd">2008 – 2018</span></div>
+        <ul>
+          <li>Founded and led the company for ten years, growing it from a sole operator to <strong>140 people and USD 8M+</strong> in annual revenue. Set strategy, pricing and investment, with full P&amp;L accountability.</li>
+          <li>Built original event properties, <strong>Street Nights, Marina Music Festival and Dubai Chocolate Festival</strong>, into recurring franchises with their own commercial models, sponsors and public-sector partners, reaching audiences of tens of thousands.</li>
+          <li>Won and grew multi-year relationships as strategic events partner to <strong>Siemens, Porsche, Cartier, Ericsson and Emaar</strong>.</li>
+          <li>Expanded the portfolio into sport and gaming, including the <strong>KitKat 3x3 basketball tournament</strong> and <strong>esports tournaments</strong> with broadcast production and sponsor integration.</li>
+          <li>Designed the organisation, leadership structure and operating standards that let a multidisciplinary company scale across formats and markets.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="co">FrontFlip (me360) · Kansas City, USA / MENA</div>
+        <div class="rr"><span class="rt">CEO, Middle East &amp; North Africa</span><span class="pd">2010 – 2015</span></div>
+        <ul>
+          <li>Led the regional business with full P&amp;L ownership. <strong>Raised USD 1.8M</strong> and built a 35-person team across 6+ markets.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="co">Sundance Events · Dubai, UAE</div>
+        <div class="rr"><span class="rt">Business Development &amp; Operations Manager</span><span class="pd">2006 – 2008</span></div>
+        <ul>
+          <li>Built the client base and partner network for corporate and government accounts.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="co">ASDAA Burson-Marsteller · Dubai, UAE</div>
+        <div class="rr"><span class="rt">Senior Account Manager</span><span class="pd">2004 – 2006</span></div>
+        <ul>
+          <li>Communications strategy for Siemens, Adidas and Hilton across the Middle East. Key role producing the <strong>inaugural Dubai International Film Festival</strong>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="job">
+      <div class="sec-h">Building with AI</div>
+      <ul style="margin-top:0">
+        <li><strong>The Vault (myvaults.io)</strong>: a collectibles management app with AI card identification, designed and shipped by me through AI coding agents.</li>
+        <li><strong>Cards of Kaladan</strong>: a digital card game in closed Android beta, built the same way.</li>
+        <li>In event work I use AI for RFP and budget analysis, supplier comparisons, run-of-show and brief drafts, and multilingual attendee communications.</li>
+      </ul>
+    </section>
+
+    <section class="job">
+      <div class="sec-h">Education &amp; Leadership</div>
+      <div class="co">Bachelor of Computer Engineering</div>
+      <div class="pd" style="font-size:.74rem">Arab Academy for Science, Technology and Maritime Transport · Alexandria, Egypt</div>
+      <div class="co" style="margin-top:8px">AIESEC International · 1999 – 2004</div>
+      <div class="pd" style="font-size:.74rem">Local Committee President and National Support Team roles, leading cross-cultural teams and exchange programmes.</div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
